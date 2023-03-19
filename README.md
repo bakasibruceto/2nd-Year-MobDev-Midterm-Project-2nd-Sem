@@ -7,12 +7,12 @@
 - Player HP and Mob HP as well as damage
 
 (03/18/2023)
--Timer
--Utilize Panels for switching layouts
--Main menu
--Mob Hp Bar
+- Timer
+- Utilize Panels for switching layouts
+- Main menu
+- Mob Hp Bar
 
 (03/19/2023)
--Keypad
--Player Hp Bar
--Game Over Screen when player HP reaches to 0
+- Keypad
+- Player Hp Bar
+- Game Over Screen when player HP reaches to 0
