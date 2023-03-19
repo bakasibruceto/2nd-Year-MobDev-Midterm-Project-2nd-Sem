@@ -1,0 +1,339 @@
+﻿Build1=Default,b4a.example
+File1=GameOverState.bal
+File2=GameState.bal
+File3=Load.bal
+File4=skeletonlord_phase2_down_2.png
+File5=TitleState.bal
+FileGroup1=Default Group
+FileGroup2=Default Group
+FileGroup3=Default Group
+FileGroup4=Default Group\REs
+FileGroup5=Default Group
+Group=Default Group
+Library1=animation
+Library2=audio
+Library3=b4xdrawer
+Library4=core
+Library5=xui
+Library6=xui views
+Library7=xui2d
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="31"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~
+Module1=Starter
+NumberOfFiles=5
+NumberOfLibraries=7
+NumberOfModules=1
+Version=12.2
+@EndOfDesignText@
+#Region  Project Attributes 
+	#ApplicationLabel: Math Dungeon
+	#VersionCode: 1
+	#VersionName: 
+	'SupportedOrientations possible values: unspecified, landscape or portrait.
+	#SupportedOrientations: unspecified
+	#CanInstallToExternalStorage: False
+#End Region
+
+#Region  Activity Attributes 
+	#FullScreen: False
+	#IncludeTitle: False
+#End Region
+
+Sub Process_Globals
+	'These global variables will be declared once when the application starts.
+	'These variables can be accessed from all modules.
+	Private xui As XUI
+'	Private xplGraph As B4XView
+'	Private cvsGraph As B4XCanvas
+	
+End Sub
+		
+Sub Globals
+	'These are the variables from the Designer
+	Private num1, num2, operation As Label
+	Private HP, mobHP As Label
+	Private answer As Label
+	Private countdown As Label
+	
+	'These are the variables for storing the correct answer
+	Private strAn As Label
+	Private str As String
+	
+	'Default Values
+	Private dammage As Int = 0
+	Private HPval As Int = 100
+	Private mobVal As Int = 500
+	Private timer1 As Timer
+	Private targetTime As Long
+	Private tempStr As String =""
+	Private check As Boolean = False
+	
+	'Game States
+	Private Load, GameState, PauseState, TitleState, GameOverState As Panel
+	Private Button1 As Button
+	
+	'Health Bar
+	Private mob, mob2, ply1, ply2 As Panel
+	Private cvsGraph, cvsGraph2, cvsGraph3, cvsGraph4 As Canvas
+	Private rect1, rect2, rect3, rect4 As Rect
+	
+	'Keypad
+	Private Button0 As Button
+	Private Button1 As Button
+	Private Button2 As Button
+	Private Button3 As Button
+	Private Button4 As Button
+	Private Button5 As Button
+	Private Button6 As Button
+	Private Button7 As Button
+	Private Button8 As Button
+	Private Button9 As Button
+	Private ButtonEnter As Button
+	Private ButtonClear As Button
+	
+	
+End Sub
+
+'Randomizer for Arithmetic Operations
+Public Sub ShuffleArray(StringArray() As String)
+	Dim ArrayVal As String
+	Dim Random As Int
+ 
+	For i = 0 To StringArray.Length - 1
+		Random = Rnd(i, StringArray.Length)
+		ArrayVal = StringArray(i)
+		StringArray(i) = StringArray(Random)
+		StringArray(Random) = ArrayVal
+	Next
+	
+End Sub
+
+Sub state
+	
+	Load.Initialize("") : Load.Visible = False
+	GameState.Initialize("") : GameState.Visible = False
+	GameOverState.Initialize("") : GameOverState.Visible = False
+	PauseState.Initialize(""): PauseState.Visible = False
+	TitleState.Initialize(""): TitleState.Visible = False
+	
+	Load.LoadLayout("Load") 'Regular layouts created with the designer
+	GameState.LoadLayout("GameState")
+	TitleState.LoadLayout("TitleState")
+	GameOverState.LoadLayout("GameOverState")
+	Activity.AddView(Load,0,0,100%x,100%y)
+	Activity.AddView(GameState,0,0,100%x,100%y)
+	Activity.AddView(TitleState,0,0,100%x,100%y)
+	Activity.AddView(GameOverState,0,0,100%x,100%y)
+	
+End Sub
+
+Sub Activity_Create(FirstTime As Boolean)
+
+	state
+	
+	If check == False Then
+		Load.Visible = True
+		Load.Visible = False
+		TitleState.Visible = True
+	End If
+	
+	If HPval <=0 Then
+		GameState.Visible = False
+		GameOverState.Visible = True
+	End If
+		If(HPval <= 100 And HPval >=1)Then
+		
+			HP.Text=HPval
+			mobHP.Text=mobVal
+			
+			mob.Color = Colors.ARGB(0, 0, 0, 0)
+			cvsGraph.Initialize(mob)
+			rect1.Initialize(10dip, 10dip, 250dip, 35dip)
+			cvsGraph.DrawRect(rect1, xui.Color_Black, False, 2dip)
+			
+			mob2.Color=Colors.ARGB(0, 0, 0, 0)
+			cvsGraph2.Initialize(mob2)
+			rect2.Initialize(10dip, 10dip, IntToDIP(mobVal-33), 35dip)
+			cvsGraph2.DrawRect(rect2, xui.Color_Red , True, 2dip)
+			
+			ply1.Color = Colors.ARGB(0, 0, 0, 0)
+			cvsGraph3.Initialize(ply1)
+			rect3.Initialize(10dip, 10dip, 250dip, 35dip)
+			cvsGraph3.DrawRect(rect3, xui.Color_Black, False, 2dip)
+			
+			ply2.Color=Colors.ARGB(0, 0, 0, 0)
+			cvsGraph4.Initialize(ply2)
+			rect4.Initialize(10dip, 10dip, IntToDIP(HPval*4.67), 35dip)
+			cvsGraph4.DrawRect(rect4, xui.Color_Red , True, 2dip)
+
+			Dim symbol() As String = Array As String("+", "*")
+			Dim rand1 As Int = Rnd(0,10)
+			Dim rand2 As Int = Rnd(0,10)
+			num1.Text=rand1
+			num2.Text=rand2
+			ShuffleArray(symbol)
+			operation.text = symbol(0)
+	
+			Select symbol(0)
+				Case "+"
+					str =rand1+rand2
+				Case "-"
+					str =rand1-rand2
+				Case "*"
+					str =rand1*rand2
+				Case "/"
+					str =rand1/rand2
+			End Select
+		
+	End If
+
+End Sub
+
+
+Sub Activity_Resume
+
+End Sub
+
+Sub Activity_Pause (UserClosed As Boolean)
+
+End Sub
+
+Sub IntToDIP(Integer As Int) As Int
+	Dim DIP As Int
+	DIP = Integer *1dip
+	Return DIP
+End Sub
+
+Sub RemoveViews
+	Dim i As Int
+	For i = Activity.NumberOfViews - 1 To 0 Step -1
+		Activity.RemoveViewAt(i)	
+	Next		
+End Sub
+
+Sub time (FirstTime As Boolean)
+	If True Then
+		timer1.Initialize("timer1", 100)
+	End If
+	StartTimer(2)
+End Sub
+
+Sub StartTimer (Minutes As Int) 'insert Hours As Int
+	'DateTime.Now +hours * DateTime.TicksPerHour * DateTime.TicksPerMinute
+	targetTime = DateTime.Now + Minutes * DateTime.TicksPerMinute
+	timer1.Enabled = True
+End Sub
+
+Sub Timer1_Tick
+	Dim t As Long = Max(0, targetTime - DateTime.Now)
+	'hours, insert Dim As Int
+	Dim  minutes, seconds As Int
+	'hours = t / DateTime.TicksPerHour
+	minutes = (t Mod DateTime.TicksPerHour) / DateTime.TicksPerMinute
+	seconds = (t Mod DateTime.TicksPerMinute) / DateTime.TicksPerSecond
+	'Log($"$2.0{hours}:$2.0{minutes}:$2.0{seconds}"$)
+	Log($"$2.0{minutes}:$2.0{seconds}"$)
+	If t = 0 Then
+		timer1.Enabled = False
+	End If
+	countdown.Text=($"$2.0{minutes}:$2.0{seconds}"$)
+End Sub
+
+Private Sub Start_Click
+	check = True
+	TitleState.Visible = False
+	GameState.Visible = True
+	time(True)
+End Sub
+
+Private Sub ButtonEnter_Click
+	tempStr=""
+	dammage = str
+	If answer.Text = str Then
+		strAn.Text = "Correct"
+		
+		mobVal= mobVal-dammage
+	
+	Else
+		strAn.Text = "InCorrect"
+		HPval = HPval-dammage
+		 
+	End If
+	
+	GameState.Visible=False
+	RemoveViews
+	Activity_Create(True)
+	check = True
+	If HPval <= 100 And HPval >= 0 Then
+	GameState.Visible=True
+	End If
+End Sub
+ 
+Private Sub ButtonClear_Click
+	answer.Text=""
+	tempStr=""
+	
+End Sub
+
+Private Sub Button0_Click 
+	answer.Text = tempStr&"0"
+	tempStr = answer.Text
+	
+End Sub
+
+Private Sub Button1_Click 
+	answer.Text = tempStr&"1"
+	tempStr = answer.Text
+End Sub
+
+Private Sub Button2_Click
+	answer.Text = tempStr&"2"
+	tempStr = answer.Text
+End Sub
+
+Private Sub Button3_Click
+	answer.Text = tempStr&"3"
+	tempStr = answer.Text
+End Sub
+
+Private Sub Button4_Click
+	answer.Text = tempStr&"4"
+	tempStr = answer.Text
+End Sub
+
+Private Sub Button5_Click
+	answer.Text = tempStr&"5"
+	tempStr = answer.Text
+End Sub
+
+Private Sub Button6_Click
+	answer.Text = tempStr&"6"
+	tempStr = answer.Text
+End Sub
+
+Private Sub Button7_Click
+	answer.Text = tempStr&"7"
+	tempStr = answer.Text
+End Sub
+
+Private Sub Button8_Click
+	answer.Text = tempStr&"8"
+	tempStr = answer.Text
+End Sub
+
+Private Sub Button9_Click
+	answer.Text = tempStr&"9"
+	tempStr = answer.Text
+End Sub
+
+Private Sub Retry_Click
+	
+	HPval = 100
+	mobVal = 500
+	
+	GameOverState.Visible = False
+	RemoveViews
+	Activity_Create(True)
+	GameState.Visible = True
+	time(True)
+	
+End Sub
