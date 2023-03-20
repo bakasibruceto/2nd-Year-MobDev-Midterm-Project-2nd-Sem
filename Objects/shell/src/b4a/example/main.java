@@ -56,6 +56,10 @@ public boolean isSingleton() {
 	}
 public static RemoteObject __c = RemoteObject.declareNull("anywheresoftware.b4a.keywords.Common");
 public static RemoteObject _xui = RemoteObject.declareNull("anywheresoftware.b4a.objects.B4XViewWrapper.XUI");
+public static RemoteObject _monstertype = RemoteObject.createImmutable(0);
+public static RemoteObject _monster = null;
+public static RemoteObject _filename = RemoteObject.createImmutable("");
+public static RemoteObject _mediaplayer = RemoteObject.declareNull("anywheresoftware.b4a.objects.MediaPlayerWrapper");
 public static RemoteObject _num1 = RemoteObject.declareNull("anywheresoftware.b4a.objects.LabelWrapper");
 public static RemoteObject _num2 = RemoteObject.declareNull("anywheresoftware.b4a.objects.LabelWrapper");
 public static RemoteObject _operation = RemoteObject.declareNull("anywheresoftware.b4a.objects.LabelWrapper");
@@ -63,15 +67,17 @@ public static RemoteObject _hp = RemoteObject.declareNull("anywheresoftware.b4a.
 public static RemoteObject _mobhp = RemoteObject.declareNull("anywheresoftware.b4a.objects.LabelWrapper");
 public static RemoteObject _answer = RemoteObject.declareNull("anywheresoftware.b4a.objects.LabelWrapper");
 public static RemoteObject _countdown = RemoteObject.declareNull("anywheresoftware.b4a.objects.LabelWrapper");
+public static RemoteObject _imageview1 = RemoteObject.declareNull("anywheresoftware.b4a.objects.ImageViewWrapper");
 public static RemoteObject _stran = RemoteObject.declareNull("anywheresoftware.b4a.objects.LabelWrapper");
 public static RemoteObject _str = RemoteObject.createImmutable("");
-public static RemoteObject _dammage = RemoteObject.createImmutable(0);
+public static RemoteObject _damage = RemoteObject.createImmutable(0);
 public static RemoteObject _hpval = RemoteObject.createImmutable(0);
 public static RemoteObject _mobval = RemoteObject.createImmutable(0);
 public static RemoteObject _timer1 = RemoteObject.declareNull("anywheresoftware.b4a.objects.Timer");
 public static RemoteObject _targettime = RemoteObject.createImmutable(0L);
 public static RemoteObject _tempstr = RemoteObject.createImmutable("");
 public static RemoteObject _check = RemoteObject.createImmutable(false);
+public static RemoteObject _operator = null;
 public static RemoteObject _load = RemoteObject.declareNull("anywheresoftware.b4a.objects.PanelWrapper");
 public static RemoteObject _gamestate = RemoteObject.declareNull("anywheresoftware.b4a.objects.PanelWrapper");
 public static RemoteObject _pausestate = RemoteObject.declareNull("anywheresoftware.b4a.objects.PanelWrapper");
@@ -105,6 +111,6 @@ public static RemoteObject _dateutils = RemoteObject.declareNull("b4a.example.da
 public static b4a.example.starter _starter = null;
 public static b4a.example.xuiviewsutils _xuiviewsutils = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Activity",main.mostCurrent._activity,"answer",main.mostCurrent._answer,"Button0",main.mostCurrent._button0,"Button1",main.mostCurrent._button1,"Button2",main.mostCurrent._button2,"Button3",main.mostCurrent._button3,"Button4",main.mostCurrent._button4,"Button5",main.mostCurrent._button5,"Button6",main.mostCurrent._button6,"Button7",main.mostCurrent._button7,"Button8",main.mostCurrent._button8,"Button9",main.mostCurrent._button9,"ButtonClear",main.mostCurrent._buttonclear,"ButtonEnter",main.mostCurrent._buttonenter,"check",main._check,"countdown",main.mostCurrent._countdown,"cvsGraph",main.mostCurrent._cvsgraph,"cvsGraph2",main.mostCurrent._cvsgraph2,"cvsGraph3",main.mostCurrent._cvsgraph3,"cvsGraph4",main.mostCurrent._cvsgraph4,"dammage",main._dammage,"DateUtils",main.mostCurrent._dateutils,"GameOverState",main.mostCurrent._gameoverstate,"GameState",main.mostCurrent._gamestate,"HP",main.mostCurrent._hp,"HPval",main._hpval,"Load",main.mostCurrent._load,"mob",main.mostCurrent._mob,"mob2",main.mostCurrent._mob2,"mobHP",main.mostCurrent._mobhp,"mobVal",main._mobval,"num1",main.mostCurrent._num1,"num2",main.mostCurrent._num2,"operation",main.mostCurrent._operation,"PauseState",main.mostCurrent._pausestate,"ply1",main.mostCurrent._ply1,"ply2",main.mostCurrent._ply2,"rect1",main.mostCurrent._rect1,"rect2",main.mostCurrent._rect2,"rect3",main.mostCurrent._rect3,"rect4",main.mostCurrent._rect4,"Starter",Debug.moduleToString(b4a.example.starter.class),"str",main.mostCurrent._str,"strAn",main.mostCurrent._stran,"targetTime",main._targettime,"tempStr",main.mostCurrent._tempstr,"timer1",main.mostCurrent._timer1,"TitleState",main.mostCurrent._titlestate,"xui",main._xui,"XUIViewsUtils",Debug.moduleToString(b4a.example.xuiviewsutils.class)};
+		return new Object[] {"Activity",main.mostCurrent._activity,"answer",main.mostCurrent._answer,"Button0",main.mostCurrent._button0,"Button1",main.mostCurrent._button1,"Button2",main.mostCurrent._button2,"Button3",main.mostCurrent._button3,"Button4",main.mostCurrent._button4,"Button5",main.mostCurrent._button5,"Button6",main.mostCurrent._button6,"Button7",main.mostCurrent._button7,"Button8",main.mostCurrent._button8,"Button9",main.mostCurrent._button9,"ButtonClear",main.mostCurrent._buttonclear,"ButtonEnter",main.mostCurrent._buttonenter,"check",main._check,"countdown",main.mostCurrent._countdown,"cvsGraph",main.mostCurrent._cvsgraph,"cvsGraph2",main.mostCurrent._cvsgraph2,"cvsGraph3",main.mostCurrent._cvsgraph3,"cvsGraph4",main.mostCurrent._cvsgraph4,"damage",main._damage,"DateUtils",main.mostCurrent._dateutils,"FileName",main._filename,"GameOverState",main.mostCurrent._gameoverstate,"GameState",main.mostCurrent._gamestate,"HP",main.mostCurrent._hp,"HPval",main._hpval,"ImageView1",main.mostCurrent._imageview1,"Load",main.mostCurrent._load,"MediaPlayer",main._mediaplayer,"mob",main.mostCurrent._mob,"mob2",main.mostCurrent._mob2,"mobHP",main.mostCurrent._mobhp,"mobVal",main._mobval,"Monster",main._monster,"MonsterType",main._monstertype,"num1",main.mostCurrent._num1,"num2",main.mostCurrent._num2,"operation",main.mostCurrent._operation,"operator",main.mostCurrent._operator,"PauseState",main.mostCurrent._pausestate,"ply1",main.mostCurrent._ply1,"ply2",main.mostCurrent._ply2,"rect1",main.mostCurrent._rect1,"rect2",main.mostCurrent._rect2,"rect3",main.mostCurrent._rect3,"rect4",main.mostCurrent._rect4,"Starter",Debug.moduleToString(b4a.example.starter.class),"str",main.mostCurrent._str,"strAn",main.mostCurrent._stran,"targetTime",main._targettime,"tempStr",main.mostCurrent._tempstr,"timer1",main.mostCurrent._timer1,"TitleState",main.mostCurrent._titlestate,"xui",main._xui,"XUIViewsUtils",Debug.moduleToString(b4a.example.xuiviewsutils.class)};
 }
 }

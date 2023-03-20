@@ -29,7 +29,7 @@ Version=12.2
 	#VersionCode: 1
 	#VersionName: 
 	'SupportedOrientations possible values: unspecified, landscape or portrait.
-	#SupportedOrientations: unspecified
+	#SupportedOrientations: Portrait
 	#CanInstallToExternalStorage: False
 #End Region
 
@@ -39,12 +39,11 @@ Version=12.2
 #End Region
 
 Sub Process_Globals
-	'These global variables will be declared once when the application starts.
-	'These variables can be accessed from all modules.
 	Private xui As XUI
-'	Private xplGraph As B4XView
-'	Private cvsGraph As B4XCanvas
-	
+	Private MonsterType As Int = 0
+	Private Monster() As String = Array As String("redslime.png", "skeleton.png")
+	Private FileName As String = Monster(MonsterType)
+	Private MediaPlayer As MediaPlayer
 End Sub
 		
 Sub Globals
@@ -53,19 +52,21 @@ Sub Globals
 	Private HP, mobHP As Label
 	Private answer As Label
 	Private countdown As Label
+	Private ImageView1 As ImageView
 	
 	'These are the variables for storing the correct answer
 	Private strAn As Label
 	Private str As String
 	
 	'Default Values
-	Private dammage As Int = 0
+	Private damage As Int = 0
 	Private HPval As Int = 100
-	Private mobVal As Int = 500
+	Private mobVal As Int = 100
 	Private timer1 As Timer
 	Private targetTime As Long
 	Private tempStr As String =""
 	Private check As Boolean = False
+	Private operator() As String = Array As String("+", "*")
 	
 	'Game States
 	Private Load, GameState, PauseState, TitleState, GameOverState As Panel
@@ -93,21 +94,35 @@ Sub Globals
 	
 End Sub
 
-'Randomizer for Arithmetic Operations
-Public Sub ShuffleArray(StringArray() As String)
-	Dim ArrayVal As String
-	Dim Random As Int
- 
-	For i = 0 To StringArray.Length - 1
-		Random = Rnd(i, StringArray.Length)
-		ArrayVal = StringArray(i)
-		StringArray(i) = StringArray(Random)
-		StringArray(Random) = ArrayVal
-	Next
+Sub Activity_Create(FirstTime As Boolean)
 	
+	InitializeState
+	DrawState
+	SoundEfx
+	If(HPval <= 100 And HPval >=1)Then
+			
+		DrawMonster
+		DrawHealth
+		DrawEquation	
+		
+	End If
+
 End Sub
 
-Sub state
+Sub Activity_Resume
+
+End Sub
+
+Sub Activity_Pause (UserClosed As Boolean)
+
+End Sub
+
+Sub SoundEfx
+	MediaPlayer.Initialize()
+	MediaPlayer.Load(File.DirAssets,"roblox.mp3")
+End Sub
+
+Sub InitializeState
 	
 	Load.Initialize("") : Load.Visible = False
 	GameState.Initialize("") : GameState.Visible = False
@@ -126,10 +141,7 @@ Sub state
 	
 End Sub
 
-Sub Activity_Create(FirstTime As Boolean)
-
-	state
-	
+Sub DrawState
 	If check == False Then
 		Load.Visible = True
 		Load.Visible = False
@@ -140,61 +152,72 @@ Sub Activity_Create(FirstTime As Boolean)
 		GameState.Visible = False
 		GameOverState.Visible = True
 	End If
-		If(HPval <= 100 And HPval >=1)Then
-		
-			HP.Text=HPval
-			mobHP.Text=mobVal
-			
-			mob.Color = Colors.ARGB(0, 0, 0, 0)
-			cvsGraph.Initialize(mob)
-			rect1.Initialize(10dip, 10dip, 250dip, 35dip)
-			cvsGraph.DrawRect(rect1, xui.Color_Black, False, 2dip)
-			
-			mob2.Color=Colors.ARGB(0, 0, 0, 0)
-			cvsGraph2.Initialize(mob2)
-			rect2.Initialize(10dip, 10dip, IntToDIP(mobVal-33), 35dip)
-			cvsGraph2.DrawRect(rect2, xui.Color_Red , True, 2dip)
-			
-			ply1.Color = Colors.ARGB(0, 0, 0, 0)
-			cvsGraph3.Initialize(ply1)
-			rect3.Initialize(10dip, 10dip, 250dip, 35dip)
-			cvsGraph3.DrawRect(rect3, xui.Color_Black, False, 2dip)
-			
-			ply2.Color=Colors.ARGB(0, 0, 0, 0)
-			cvsGraph4.Initialize(ply2)
-			rect4.Initialize(10dip, 10dip, IntToDIP(HPval*4.67), 35dip)
-			cvsGraph4.DrawRect(rect4, xui.Color_Red , True, 2dip)
+End Sub
 
-			Dim symbol() As String = Array As String("+", "*")
-			Dim rand1 As Int = Rnd(0,10)
-			Dim rand2 As Int = Rnd(0,10)
-			num1.Text=rand1
-			num2.Text=rand2
-			ShuffleArray(symbol)
-			operation.text = symbol(0)
-	
-			Select symbol(0)
-				Case "+"
-					str =rand1+rand2
-				Case "-"
-					str =rand1-rand2
-				Case "*"
-					str =rand1*rand2
-				Case "/"
-					str =rand1/rand2
-			End Select
-		
+Sub DrawMonster
+	If mobVal <= 0 Then
+		MonsterType = 1
+		mobVal = 200
 	End If
-
+	FileName = Monster(MonsterType)
+	ImageView1.Bitmap = LoadBitmap(File.DirAssets, FileName)
 End Sub
 
-
-Sub Activity_Resume
-
+Sub DrawHealth
+	HP.Text=HPval
+	mobHP.Text=mobVal
+			
+	mob.Color = Colors.ARGB(0, 0, 0, 0)
+	cvsGraph.Initialize(mob)
+	rect1.Initialize(10dip, 10dip, 250dip, 35dip)
+	cvsGraph.DrawRect(rect1, xui.Color_Black, False, 2dip)
+			
+	mob2.Color=Colors.ARGB(0, 0, 0, 0)
+	cvsGraph2.Initialize(mob2)
+	rect2.Initialize(10dip, 10dip, IntToDIP(mobVal-33), 35dip)
+	cvsGraph2.DrawRect(rect2, xui.Color_Red , True, 2dip)
+			
+	ply1.Color = Colors.ARGB(0, 0, 0, 0)
+	cvsGraph3.Initialize(ply1)
+	rect3.Initialize(10dip, 10dip, 250dip, 35dip)
+	cvsGraph3.DrawRect(rect3, xui.Color_Black, False, 2dip)
+			
+	ply2.Color=Colors.ARGB(0, 0, 0, 0)
+	cvsGraph4.Initialize(ply2)
+	rect4.Initialize(10dip, 10dip, IntToDIP(HPval*4.67), 35dip)
+	cvsGraph4.DrawRect(rect4, xui.Color_Red , True, 2dip)
 End Sub
 
-Sub Activity_Pause (UserClosed As Boolean)
+Sub DrawEquation
+	Dim rand1 As Int = Rnd(0,10)
+	Dim rand2 As Int = Rnd(0,10)
+	num1.Text=rand1
+	num2.Text=rand2
+	ShuffleArray(operator)
+	operation.text = operator(0)
+	Select operator(0)
+		Case "+"
+			str =rand1+rand2
+		Case "-"
+			str =rand1-rand2
+		Case "*"
+			str =rand1*rand2
+		Case "/"
+			str =rand1/rand2
+	End Select
+End Sub
 
+Sub ShuffleArray(StringArray() As String)
+	Dim ArrayVal As String
+	Dim Random As Int
+ 
+	For i = 0 To StringArray.Length - 1
+		Random = Rnd(i, StringArray.Length)
+		ArrayVal = StringArray(i)
+		StringArray(i) = StringArray(Random)
+		StringArray(Random) = ArrayVal
+	Next
+	
 End Sub
 
 Sub IntToDIP(Integer As Int) As Int
@@ -203,7 +226,7 @@ Sub IntToDIP(Integer As Int) As Int
 	Return DIP
 End Sub
 
-Sub RemoveViews
+Sub ReDraw
 	Dim i As Int
 	For i = Activity.NumberOfViews - 1 To 0 Step -1
 		Activity.RemoveViewAt(i)	
@@ -245,22 +268,37 @@ Private Sub Start_Click
 	time(True)
 End Sub
 
+Private Sub Retry_Click
+	
+	HPval = 100
+	mobVal = 100
+	MonsterType = 0
+	FileName = Monster(MonsterType)
+	GameOverState.Visible = False
+	ReDraw
+	Activity_Create(True)
+	GameState.Visible = True
+	time(True)
+	
+End Sub
+
 Private Sub ButtonEnter_Click
 	tempStr=""
-	dammage = str
+	damage = str
 	If answer.Text = str Then
 		strAn.Text = "Correct"
 		
-		mobVal= mobVal-dammage
+		mobVal= mobVal-damage
 	
 	Else
 		strAn.Text = "InCorrect"
-		HPval = HPval-dammage
+		HPval = HPval-damage
+		MediaPlayer.Play
 		 
 	End If
 	
 	GameState.Visible=False
-	RemoveViews
+	ReDraw
 	Activity_Create(True)
 	check = True
 	If HPval <= 100 And HPval >= 0 Then
@@ -325,15 +363,3 @@ Private Sub Button9_Click
 	tempStr = answer.Text
 End Sub
 
-Private Sub Retry_Click
-	
-	HPval = 100
-	mobVal = 500
-	
-	GameOverState.Visible = False
-	RemoveViews
-	Activity_Create(True)
-	GameState.Visible = True
-	time(True)
-	
-End Sub
