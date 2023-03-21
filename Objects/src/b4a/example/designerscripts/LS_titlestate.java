@@ -11,6 +11,10 @@ java.util.Map<String, anywheresoftware.b4a.keywords.LayoutBuilder.ViewWrapperAnd
 anywheresoftware.b4a.keywords.LayoutBuilder.setScaleRate(0.3);
 //BA.debugLineNum = 2;BA.debugLine="AutoScaleAll"[TitleState/General script]
 anywheresoftware.b4a.keywords.LayoutBuilder.scaleAll(views);
+//BA.debugLineNum = 7;BA.debugLine="titlepanel.Width = 100%x"[TitleState/General script]
+views.get("titlepanel").vw.setWidth((int)((100d / 100 * width)));
+//BA.debugLineNum = 8;BA.debugLine="titlepanel.Height = 100%y"[TitleState/General script]
+views.get("titlepanel").vw.setHeight((int)((100d / 100 * height)));
 
 }
 }

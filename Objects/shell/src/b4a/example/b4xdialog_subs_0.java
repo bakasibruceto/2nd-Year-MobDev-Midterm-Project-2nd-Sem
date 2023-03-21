@@ -200,7 +200,7 @@ __ref.runClassMethod (b4a.example.b4xdialog.class, "_setavg" /*RemoteObject*/ ,(
 ;
  BA.debugLineNum = 320;BA.debugLine="Log(\"Time: \" & (DateTime.Now - n))";
 Debug.JustUpdateDeviceLine();
-b4xdialog.__c.runVoidMethod ("LogImpl","99699364",RemoteObject.concat(RemoteObject.createImmutable("Time: "),(RemoteObject.solve(new RemoteObject[] {b4xdialog.__c.getField(false,"DateTime").runMethod(true,"getNow"),_n}, "-",1, 2))),0);
+b4xdialog.__c.runVoidMethod ("LogImpl","99961508",RemoteObject.concat(RemoteObject.createImmutable("Time: "),(RemoteObject.solve(new RemoteObject[] {b4xdialog.__c.getField(false,"DateTime").runMethod(true,"getNow"),_n}, "-",1, 2))),0);
  BA.debugLineNum = 321;BA.debugLine="Return bc";
 Debug.JustUpdateDeviceLine();
 if (true) return _bc;
