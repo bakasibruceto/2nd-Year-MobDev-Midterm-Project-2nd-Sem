@@ -305,7 +305,8 @@ Private Sub Start_Click
 End Sub
 
 Private Sub Retry_Click
-	
+	hpshake = False
+	mobshake = False
 	HPval = 100
 	mobVal = 100
 	MonsterType = 0
