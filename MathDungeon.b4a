@@ -1,20 +1,26 @@
 ﻿Build1=Default,b4a.example
-File1=GameOverState.bal
-File2=GameState.bal
-File3=Load.bal
-File4=MathTitle.png
-File5=redslime.png
-File6=skeletonlord_phase2_down_2.png
-File7=TitleScreen.png
-File8=TitleState.bal
+File1=alagard.ttf
+File10=TitleScreen.png
+File11=TitleState.bal
+File2=GameDefeated.bal
+File3=GameOverState.bal
+File4=GameState.bal
+File5=Load.bal
+File6=MathTitle.png
+File7=PauseState.bal
+File8=redslime.png
+File9=skeletonlord_phase2_down_2.png
 FileGroup1=Default Group
+FileGroup10=Default Group
+FileGroup11=Default Group
 FileGroup2=Default Group
 FileGroup3=Default Group
-FileGroup4=New Group
-FileGroup5=New Group
-FileGroup6=Default Group\REs
+FileGroup4=Default Group
+FileGroup5=Default Group
+FileGroup6=New Group
 FileGroup7=Default Group
-FileGroup8=Default Group
+FileGroup8=New Group
+FileGroup9=Default Group\REs
 Group=Default Group
 Library1=animation
 Library2=audio
@@ -25,7 +31,7 @@ Library6=xui views
 Library7=xui2d
 ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="31"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~
 Module1=Starter
-NumberOfFiles=8
+NumberOfFiles=11
 NumberOfLibraries=7
 NumberOfModules=1
 Version=12.2
@@ -49,7 +55,7 @@ Version=12.2
 Sub Process_Globals
 	Private xui As XUI
 	Private MonsterType As Int = 0
-	Private Monster() As String = Array As String("redslime.png", "skeleton.png")
+	Private Monster() As String = Array As String("redslime.png", "orc.png","skeleton.png")
 	Private FileName As String = Monster(MonsterType)
 	Private MediaPlayer As MediaPlayer
 End Sub
@@ -71,15 +77,16 @@ Sub Globals
 	'Default Values
 	Private damage As Int = 0
 	Private HPval As Int = 100
-	Private mobVal As Int = 100
+	Private mobVal As Int = 1
 	Private timer1 As Timer
 	Private targetTime As Long
 	Private tempStr As String =""
 	Private check As Boolean = False
 	Private operator() As String = Array As String("+", "*")
+	Private barsize As Int
 	
 	'Game States
-	Private Load, GameState, PauseState, TitleState, GameOverState As Panel
+	Private Load, GameState, PauseState, TitleState, GameOverState, GameDefeated As Panel
 	Private Button1 As Button
 	
 	'Health Bar
@@ -100,6 +107,8 @@ Sub Globals
 	Private Button9 As Button
 	Private ButtonEnter As Button
 	Private ButtonClear As Button
+	
+	Private shake As Animation
 	
 	
 End Sub
@@ -136,7 +145,7 @@ End Sub
 
 Sub SoundEfx
 	MediaPlayer.Initialize()
-	MediaPlayer.Load(File.DirAssets,"roblox.mp3")
+	MediaPlayer.Load(File.DirAssets,"pdam.mp3")
 End Sub
 
 Sub InitializeState
@@ -147,15 +156,18 @@ Sub InitializeState
 	GameOverState.Initialize("") : GameOverState.Visible = False
 	PauseState.Initialize(""): PauseState.Visible = False
 	TitleState.Initialize(""): TitleState.Visible = False
+	GameDefeated.Initialize(""): GameDefeated.Visible = False
 	
 	Load.LoadLayout("Load") 'Regular layouts created with the designer
 	GameState.LoadLayout("GameState")
 	TitleState.LoadLayout("TitleState")
 	GameOverState.LoadLayout("GameOverState")
+	GameDefeated.LoadLayout("GameDefeated")
 	Activity.AddView(Load,0,0,100%x,100%y)
 	Activity.AddView(GameState,0,0,100%x,100%y)
 	Activity.AddView(TitleState,0,0,100%x,100%y)
 	Activity.AddView(GameOverState,0,0,100%x,100%y)
+	Activity.AddView(GameDefeated,0,0,100%x,100%y)
 	
 End Sub
 
@@ -170,15 +182,28 @@ Sub DrawState
 		GameState.Visible = False
 		GameOverState.Visible = True
 	End If
+	
+	
+	
 End Sub
 
 Sub DrawMonster
 	If mobVal <= 0 Then
-		MonsterType = 1
-		mobVal = 200
+		MonsterType = MonsterType+1
+		Select MonsterType
+			Case 1
+				mobVal = 1
+			Case 2
+				mobVal = 1
+		End Select
+		
 	End If
-	FileName = Monster(MonsterType)
-	ImageView1.Bitmap = LoadBitmap(File.DirAssets, FileName)
+	
+	If MonsterType<3 Then
+		FileName = Monster(MonsterType)
+		ImageView1.Bitmap = LoadBitmap(File.DirAssets, FileName)
+	End If
+	
 End Sub
 
 Sub DrawHealth
@@ -251,39 +276,12 @@ Sub ReDraw
 	Next		
 End Sub
 
-Sub time (FirstTime As Boolean)
-	If True Then
-		timer1.Initialize("timer1", 100)
-	End If
-	StartTimer(2)
-End Sub
-
-Sub StartTimer (Minutes As Int) 'insert Hours As Int
-	'DateTime.Now +hours * DateTime.TicksPerHour * DateTime.TicksPerMinute
-	targetTime = DateTime.Now + Minutes * DateTime.TicksPerMinute
-	timer1.Enabled = True
-End Sub
-
-Sub Timer1_Tick
-	Dim t As Long = Max(0, targetTime - DateTime.Now)
-	'hours, insert Dim As Int
-	Dim  minutes, seconds As Int
-	'hours = t / DateTime.TicksPerHour
-	minutes = (t Mod DateTime.TicksPerHour) / DateTime.TicksPerMinute
-	seconds = (t Mod DateTime.TicksPerMinute) / DateTime.TicksPerSecond
-	'Log($"$2.0{hours}:$2.0{minutes}:$2.0{seconds}"$)
-	Log($"$2.0{minutes}:$2.0{seconds}"$)
-	If t = 0 Then
-		timer1.Enabled = False
-	End If
-	countdown.Text=($"$2.0{minutes}:$2.0{seconds}"$)
-End Sub
 
 Private Sub Start_Click
 	check = True
 	TitleState.Visible = False
 	GameState.Visible = True
-	time(True)
+	
 End Sub
 
 Private Sub Retry_Click
@@ -296,7 +294,7 @@ Private Sub Retry_Click
 	ReDraw
 	Activity_Create(True)
 	GameState.Visible = True
-	time(True)
+	
 	
 End Sub
 
@@ -318,10 +316,15 @@ Private Sub ButtonEnter_Click
 	GameState.Visible=False
 	ReDraw
 	Activity_Create(True)
-	check = True
-	If HPval <= 100 And HPval >= 0 Then
-	GameState.Visible=True
+	If MonsterType == 3 Then
+		GameDefeated.Visible=True
+	Else
+		check = True
+		If HPval <= 100 And HPval >= 0 Then
+			GameState.Visible=True
+		End If	
 	End If
+	
 End Sub
  
 Private Sub ButtonClear_Click

@@ -55,103 +55,103 @@ roundslider
 scrollinglabel
 swiftbutton
 xuiviewsutils
-main,activity_create,1,1,79,94
-,hpval,,titlepanel,,load,,gamestate,,gameoverstate,,pausestate,,titlestate,,answer,,button0,,button1,,button2,,button3,,button4,,button5,,button6,,button7,,button8,,button9,,buttonclear,,buttonenter,,countdown,,hp,,imageview1,,mob,,mob2,,mobhp,,num1,,num2,,operation,,ply1,,ply2,,stran,,check,,mediaplayer,,mobval,,monstertype,,filename,,monster,,cvsgraph,,rect1,,xui,,cvsgraph2,,rect2,,cvsgraph3,,rect3,,cvsgraph4,,rect4,,operator,,str
+main,activity_create,1,0,82,97
+,hpval,,titlepanel,,load,,gamestate,,gameoverstate,,pausestate,,titlestate,,gamedefeated,,answer,,button0,,button1,,button2,,button3,,button4,,button5,,button6,,button7,,button8,,button9,,buttonclear,,buttonenter,,countdown,,hp,,imageview1,,mob,,mob2,,mobhp,,num1,,num2,,operation,,ply1,,ply2,,stran,,check,,mediaplayer,,mobval,,monstertype,,filename,,monster,,cvsgraph,,rect1,,xui,,cvsgraph2,,rect2,,cvsgraph3,,rect3,,cvsgraph4,,rect4,,operator,,str
 ,answer,,button0,,button1,,button2,,button3,,button4,,button5,,button6,,button7,,button8,,button9,,buttonclear,,buttonenter,,countdown,,hp,,imageview1,,mob,,mob2,,mobhp,,num1,,num2,,operation,,ply1,,ply2,,stran,,titlepanel,,monstertype,,mobval,,filename,,str
 ,initializestate,,drawstate,,soundefx,,drawmonster,,drawhealth,,drawequation,,inttodip,,shufflearray
-main,initializestate,1,0,110,128
-,titlepanel,,load,,gamestate,,gameoverstate,,pausestate,,titlestate,,answer,,button0,,button1,,button2,,button3,,button4,,button5,,button6,,button7,,button8,,button9,,buttonclear,,buttonenter,,countdown,,hp,,imageview1,,mob,,mob2,,mobhp,,num1,,num2,,operation,,ply1,,ply2,,stran
+main,initializestate,1,1,113,134
+,titlepanel,,load,,gamestate,,gameoverstate,,pausestate,,titlestate,,gamedefeated,,answer,,button0,,button1,,button2,,button3,,button4,,button5,,button6,,button7,,button8,,button9,,buttonclear,,buttonenter,,countdown,,hp,,imageview1,,mob,,mob2,,mobhp,,num1,,num2,,operation,,ply1,,ply2,,stran
 ,answer,,button0,,button1,,button2,,button3,,button4,,button5,,button6,,button7,,button8,,button9,,buttonclear,,buttonenter,,countdown,,hp,,imageview1,,mob,,mob2,,mobhp,,num1,,num2,,operation,,ply1,,ply2,,stran,,titlepanel
 
-main,drawstate,0,0,130,141
+main,drawstate,0,1,136,150
 ,check,,load,,titlestate,,hpval,,gamestate,,gameoverstate
 
 
-main,soundefx,0,0,105,108
+main,soundefx,0,0,108,111
 ,mediaplayer
 
 
-main,drawmonster,0,0,143,150
+main,drawmonster,0,1,152,169
 ,mobval,,monstertype,,filename,,monster,,imageview1
 ,monstertype,,mobval,,filename
 
-main,drawhealth,0,0,152,175
+main,drawhealth,0,0,171,194
 ,hp,,hpval,,mobhp,,mobval,,mob,,cvsgraph,,rect1,,xui,,mob2,,cvsgraph2,,rect2,,ply1,,cvsgraph3,,rect3,,ply2,,cvsgraph4,,rect4
 
 ,inttodip
-main,drawequation,0,0,177,194
+main,drawequation,0,0,196,213
 ,num1,,num2,,operator,,operation,,str
 ,str
 ,shufflearray
-main,activity_pause,0,0,101,103
+main,activity_pause,0,0,104,106
 
 
 
-main,activity_resume,0,0,97,99
+main,activity_resume,0,0,100,102
 
 
 
-main,button0_click,0,0,301,305
+main,button0_click,0,0,298,302
 ,answer,,tempstr
 ,tempstr
 
-main,button1_click,0,0,307,310
+main,button1_click,0,0,304,307
 ,answer,,tempstr
 ,tempstr
 
-main,button2_click,0,0,312,315
+main,button2_click,0,0,309,312
 ,answer,,tempstr
 ,tempstr
 
-main,button3_click,0,0,317,320
+main,button3_click,0,0,314,317
 ,answer,,tempstr
 ,tempstr
 
-main,button4_click,0,0,322,325
+main,button4_click,0,0,319,322
 ,answer,,tempstr
 ,tempstr
 
-main,button5_click,0,0,327,330
+main,button5_click,0,0,324,327
 ,answer,,tempstr
 ,tempstr
 
-main,button6_click,0,0,332,335
+main,button6_click,0,0,329,332
 ,answer,,tempstr
 ,tempstr
 
-main,button7_click,0,0,337,340
+main,button7_click,0,0,334,337
 ,answer,,tempstr
 ,tempstr
 
-main,button8_click,0,0,342,345
+main,button8_click,0,0,339,342
 ,answer,,tempstr
 ,tempstr
 
-main,button9_click,0,0,347,350
+main,button9_click,0,0,344,347
 ,answer,,tempstr
 ,tempstr
 
-main,buttonclear_click,0,0,295,299
+main,buttonclear_click,0,0,292,296
 ,answer,,tempstr
 ,tempstr
 
-main,buttonenter_click,1,0,271,293
-,tempstr,,damage,,str,,answer,,stran,,mobval,,hpval,,mediaplayer,,gamestate,,check,,titlepanel,,load,,gameoverstate,,pausestate,,titlestate,,button0,,button1,,button2,,button3,,button4,,button5,,button6,,button7,,button8,,button9,,buttonclear,,buttonenter,,countdown,,hp,,imageview1,,mob,,mob2,,mobhp,,num1,,num2,,operation,,ply1,,ply2,,monstertype,,filename,,monster,,cvsgraph,,rect1,,xui,,cvsgraph2,,rect2,,cvsgraph3,,rect3,,cvsgraph4,,rect4,,operator
+main,buttonenter_click,1,1,263,290
+,tempstr,,damage,,str,,answer,,stran,,mobval,,hpval,,mediaplayer,,gamestate,,monstertype,,gamedefeated,,check,,titlepanel,,load,,gameoverstate,,pausestate,,titlestate,,button0,,button1,,button2,,button3,,button4,,button5,,button6,,button7,,button8,,button9,,buttonclear,,buttonenter,,countdown,,hp,,imageview1,,mob,,mob2,,mobhp,,num1,,num2,,operation,,ply1,,ply2,,filename,,monster,,cvsgraph,,rect1,,xui,,cvsgraph2,,rect2,,cvsgraph3,,rect3,,cvsgraph4,,rect4,,operator
 ,tempstr,,damage,,mobval,,hpval,,check,,answer,,button0,,button1,,button2,,button3,,button4,,button5,,button6,,button7,,button8,,button9,,buttonclear,,buttonenter,,countdown,,hp,,imageview1,,mob,,mob2,,mobhp,,num1,,num2,,operation,,ply1,,ply2,,stran,,titlepanel,,monstertype,,filename,,str
 ,redraw,,activity_create,,initializestate,,drawstate,,soundefx,,drawmonster,,drawhealth,,drawequation,,inttodip,,shufflearray
-main,redraw,0,0,215,220
+main,redraw,0,0,234,239
 
 
 
-main,shufflearray,0,0,196,207
+main,shufflearray,0,0,215,226
 
 
 
-main,inttodip,0,0,209,213
+main,inttodip,0,0,228,232
 
 
 
-main,globals,0,1,25,73
+main,globals,0,1,25,76
 ,damage,,hpval,,mobval,,tempstr,,check,,operator
 ,damage,,hpval,,mobval,,tempstr,,check,,operator
 
@@ -159,25 +159,13 @@ main,process_globals,0,1,17,23
 ,monstertype,,monster,,filename
 ,monstertype,,monster,,filename
 
-main,retry_click,1,0,257,269
-,hpval,,mobval,,monstertype,,filename,,monster,,gameoverstate,,gamestate,,titlepanel,,load,,pausestate,,titlestate,,answer,,button0,,button1,,button2,,button3,,button4,,button5,,button6,,button7,,button8,,button9,,buttonclear,,buttonenter,,countdown,,hp,,imageview1,,mob,,mob2,,mobhp,,num1,,num2,,operation,,ply1,,ply2,,stran,,check,,mediaplayer,,cvsgraph,,rect1,,xui,,cvsgraph2,,rect2,,cvsgraph3,,rect3,,cvsgraph4,,rect4,,operator,,str,,timer1,,targettime
-,hpval,,mobval,,monstertype,,filename,,answer,,button0,,button1,,button2,,button3,,button4,,button5,,button6,,button7,,button8,,button9,,buttonclear,,buttonenter,,countdown,,hp,,imageview1,,mob,,mob2,,mobhp,,num1,,num2,,operation,,ply1,,ply2,,stran,,titlepanel,,str,,targettime
-,redraw,,activity_create,,time,,initializestate,,drawstate,,soundefx,,drawmonster,,drawhealth,,drawequation,,inttodip,,shufflearray,,starttimer
-main,time,0,0,222,227
-,timer1,,targettime
-,targettime
-,starttimer
-main,start_click,0,0,250,255
-,check,,titlestate,,gamestate,,timer1,,targettime
-,check,,targettime
-,time,,starttimer
-main,starttimer,0,0,229,233
-,targettime,,timer1
-,targettime
-
-main,timer1_tick,0,0,235,248
-,targettime,,timer1,,countdown
-
+main,retry_click,1,0,249,261
+,hpval,,mobval,,monstertype,,filename,,monster,,gameoverstate,,gamestate,,titlepanel,,load,,pausestate,,titlestate,,gamedefeated,,answer,,button0,,button1,,button2,,button3,,button4,,button5,,button6,,button7,,button8,,button9,,buttonclear,,buttonenter,,countdown,,hp,,imageview1,,mob,,mob2,,mobhp,,num1,,num2,,operation,,ply1,,ply2,,stran,,check,,mediaplayer,,cvsgraph,,rect1,,xui,,cvsgraph2,,rect2,,cvsgraph3,,rect3,,cvsgraph4,,rect4,,operator,,str
+,hpval,,mobval,,monstertype,,filename,,answer,,button0,,button1,,button2,,button3,,button4,,button5,,button6,,button7,,button8,,button9,,buttonclear,,buttonenter,,countdown,,hp,,imageview1,,mob,,mob2,,mobhp,,num1,,num2,,operation,,ply1,,ply2,,stran,,titlepanel,,str
+,redraw,,activity_create,,initializestate,,drawstate,,soundefx,,drawmonster,,drawhealth,,drawequation,,inttodip,,shufflearray
+main,start_click,0,0,242,247
+,check,,titlestate,,gamestate
+,check
 
 starter,application_error,0,0,27,29
 

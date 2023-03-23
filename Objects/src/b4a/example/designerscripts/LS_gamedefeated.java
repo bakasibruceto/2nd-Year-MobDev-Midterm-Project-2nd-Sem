@@ -4,15 +4,13 @@ import anywheresoftware.b4a.objects.ImageViewWrapper;
 import anywheresoftware.b4a.BA;
 
 
-public class LS_titlestate{
+public class LS_gamedefeated{
 
 public static void LS_general(anywheresoftware.b4a.BA ba, android.view.View parent, anywheresoftware.b4a.keywords.LayoutValues lv, java.util.Map props,
 java.util.Map<String, anywheresoftware.b4a.keywords.LayoutBuilder.ViewWrapperAndAnchor> views, int width, int height, float scale) throws Exception {
 anywheresoftware.b4a.keywords.LayoutBuilder.setScaleRate(0.3);
+//BA.debugLineNum = 2;BA.debugLine="AutoScaleAll"[GameDefeated/General script]
 anywheresoftware.b4a.keywords.LayoutBuilder.scaleAll(views);
-views.get("titlepanel").vw.setWidth((int)((100d / 100 * width)));
-//BA.debugLineNum = 8;BA.debugLine="titlepanel.Height = 100%y"[TitleState/General script]
-views.get("titlepanel").vw.setHeight((int)((100d / 100 * height)));
 
 }
 }
