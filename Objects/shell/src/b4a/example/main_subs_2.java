@@ -3,7 +3,7 @@ package b4a.example;
 import anywheresoftware.b4a.BA;
 import anywheresoftware.b4a.pc.*;
 
-public class main_subs_1 {
+public class main_subs_2 {
 
 
 public static RemoteObject  _activity_create(RemoteObject _firsttime) throws Exception{
@@ -694,8 +694,8 @@ main.mostCurrent._str = RemoteObject.createImmutable("");
 main._damage = BA.numberCast(int.class, 0);
  //BA.debugLineNum = 43;BA.debugLine="Private HPval As Int = 100";
 main._hpval = BA.numberCast(int.class, 100);
- //BA.debugLineNum = 44;BA.debugLine="Private mobVal As Int = 0";
-main._mobval = BA.numberCast(int.class, 0);
+ //BA.debugLineNum = 44;BA.debugLine="Private mobVal As Int = 100";
+main._mobval = BA.numberCast(int.class, 100);
  //BA.debugLineNum = 45;BA.debugLine="Private tempStr As String =\"\"";
 main.mostCurrent._tempstr = BA.ObjectToString("");
  //BA.debugLineNum = 46;BA.debugLine="Private check As Boolean = False";
