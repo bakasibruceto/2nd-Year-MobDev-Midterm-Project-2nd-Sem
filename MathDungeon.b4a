@@ -58,6 +58,7 @@ Sub Process_Globals
 	Private Monster() As String = Array As String("redslime.png", "orc.png","skeleton.png")
 	Private FileName As String = Monster(MonsterType)
 	Private MediaPlayer As MediaPlayer
+	Private Font As Typeface = Typeface.LoadFromAssets("alagard.ttf")
 End Sub
 		
 Sub Globals
@@ -138,9 +139,19 @@ Sub Activity_Pause (UserClosed As Boolean)
 
 End Sub
 
+Sub FontStyle
+	num1.Typeface = Font
+	num2.Typeface = Font
+	operation.Typeface = Font
+	HP.Typeface = Font
+	mobHP.Typeface = Font
+End Sub
+
 
 
 Sub InitializeState
+	
+	
 	MediaPlayer.Initialize()
 	shake.InitializeTranslate("", -9dip, 0, 9dip, 0)
 	shake.RepeatCount = 3
@@ -167,7 +178,7 @@ Sub InitializeState
 	Activity.AddView(GameOverState,0,0,100%x,100%y)
 	Activity.AddView(GameDefeated,0,0,100%x,100%y)
 	Activity.AddView(PauseState,0,0,100%x,100%y)
-	
+	FontStyle
 End Sub
 
 Sub DrawState

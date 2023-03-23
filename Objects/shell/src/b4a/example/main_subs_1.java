@@ -3,7 +3,7 @@ package b4a.example;
 import anywheresoftware.b4a.BA;
 import anywheresoftware.b4a.pc.*;
 
-public class main_subs_0 {
+public class main_subs_1 {
 
 
 public static RemoteObject  _activity_create(RemoteObject _firsttime) throws Exception{
@@ -669,9 +669,9 @@ finally {
 		}}
 public static RemoteObject  _fontstyle() throws Exception{
 try {
-		Debug.PushSubsStack("fontstyle (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,104);
+		Debug.PushSubsStack("FontStyle (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,104);
 if (RapidSub.canDelegate("fontstyle")) { return b4a.example.main.remoteMe.runUserSub(false, "main","fontstyle");}
- BA.debugLineNum = 104;BA.debugLine="Sub fontstyle";
+ BA.debugLineNum = 104;BA.debugLine="Sub FontStyle";
 Debug.ShouldStop(128);
  BA.debugLineNum = 105;BA.debugLine="num1.Typeface = Font";
 Debug.ShouldStop(256);
@@ -881,7 +881,7 @@ main.mostCurrent._activity.runVoidMethod ("AddView",(Object)((main.mostCurrent._
  BA.debugLineNum = 142;BA.debugLine="Activity.AddView(PauseState,0,0,100%x,100%y)";
 Debug.ShouldStop(8192);
 main.mostCurrent._activity.runVoidMethod ("AddView",(Object)((main.mostCurrent._pausestate.getObject())),(Object)(BA.numberCast(int.class, 0)),(Object)(BA.numberCast(int.class, 0)),(Object)(main.mostCurrent.__c.runMethod(true,"PerXToCurrent",(Object)(BA.numberCast(float.class, 100)),main.mostCurrent.activityBA)),(Object)(main.mostCurrent.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 100)),main.mostCurrent.activityBA)));
- BA.debugLineNum = 143;BA.debugLine="fontstyle";
+ BA.debugLineNum = 143;BA.debugLine="FontStyle";
 Debug.ShouldStop(16384);
 _fontstyle();
  BA.debugLineNum = 144;BA.debugLine="End Sub";

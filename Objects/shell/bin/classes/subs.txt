@@ -55,111 +55,115 @@ roundslider
 scrollinglabel
 swiftbutton
 xuiviewsutils
-main,activity_create,1,0,79,92
-,hpval,,mediaplayer,,shake,,load,,gamestate,,gameoverstate,,pausestate,,titlestate,,gamedefeated,,answer,,button0,,button1,,button2,,button3,,button4,,button5,,button6,,button7,,button8,,button9,,buttonclear,,buttonenter,,countdown,,hp,,imageview1,,mob,,mob2,,mobhp,,num1,,num2,,operation,,ply1,,ply2,,stran,,check,,mobval,,monstertype,,filename,,monster,,barsize,,cvsgraph,,rect1,,xui,,cvsgraph2,,rect2,,cvsgraph3,,rect3,,cvsgraph4,,rect4,,hpshake,,mobshake,,operator,,str
+main,activity_create,1,0,80,93
+,hpval,,mediaplayer,,shake,,load,,gamestate,,gameoverstate,,pausestate,,titlestate,,gamedefeated,,answer,,button0,,button1,,button2,,button3,,button4,,button5,,button6,,button7,,button8,,button9,,buttonclear,,buttonenter,,countdown,,hp,,imageview1,,mob,,mob2,,mobhp,,num1,,num2,,operation,,ply1,,ply2,,stran,,font,,check,,mobval,,monstertype,,filename,,monster,,barsize,,cvsgraph,,rect1,,xui,,cvsgraph2,,rect2,,cvsgraph3,,rect3,,cvsgraph4,,rect4,,hpshake,,mobshake,,operator,,str
 ,answer,,button0,,button1,,button2,,button3,,button4,,button5,,button6,,button7,,button8,,button9,,buttonclear,,buttonenter,,countdown,,hp,,imageview1,,mob,,mob2,,mobhp,,num1,,num2,,operation,,ply1,,ply2,,stran,,monstertype,,mobval,,filename,,barsize,,hpshake,,mobshake,,str
-,initializestate,,drawstate,,drawmonster,,drawhealth,,drawequation,,inttodip,,shufflearray
-main,initializestate,1,0,105,133
-,mediaplayer,,shake,,load,,gamestate,,gameoverstate,,pausestate,,titlestate,,gamedefeated,,answer,,button0,,button1,,button2,,button3,,button4,,button5,,button6,,button7,,button8,,button9,,buttonclear,,buttonenter,,countdown,,hp,,imageview1,,mob,,mob2,,mobhp,,num1,,num2,,operation,,ply1,,ply2,,stran
+,initializestate,,drawstate,,drawmonster,,drawhealth,,drawequation,,fontstyle,,inttodip,,shufflearray
+main,initializestate,1,1,114,144
+,mediaplayer,,shake,,load,,gamestate,,gameoverstate,,pausestate,,titlestate,,gamedefeated,,answer,,button0,,button1,,button2,,button3,,button4,,button5,,button6,,button7,,button8,,button9,,buttonclear,,buttonenter,,countdown,,hp,,imageview1,,mob,,mob2,,mobhp,,num1,,num2,,operation,,ply1,,ply2,,stran,,font
 ,answer,,button0,,button1,,button2,,button3,,button4,,button5,,button6,,button7,,button8,,button9,,buttonclear,,buttonenter,,countdown,,hp,,imageview1,,mob,,mob2,,mobhp,,num1,,num2,,operation,,ply1,,ply2,,stran
-
-main,drawstate,0,0,135,149
+,fontstyle
+main,drawstate,0,0,146,160
 ,check,,load,,titlestate,,hpval,,gamestate,,gameoverstate
 
 
-main,drawmonster,0,0,151,168
+main,drawmonster,0,0,162,179
 ,mobval,,monstertype,,filename,,monster,,imageview1
 ,monstertype,,mobval,,filename
 
-main,drawhealth,0,0,171,214
+main,drawhealth,0,0,182,225
 ,hp,,hpval,,mobhp,,mobval,,monstertype,,barsize,,mob,,cvsgraph,,rect1,,xui,,mob2,,cvsgraph2,,rect2,,ply1,,cvsgraph3,,rect3,,ply2,,cvsgraph4,,rect4,,hpshake,,shake,,mobshake,,imageview1
 ,barsize,,hpshake,,mobshake
 ,inttodip
-main,drawequation,0,0,216,233
+main,drawequation,0,0,227,244
 ,num1,,num2,,operator,,operation,,str
 ,str
 ,shufflearray
-main,activity_pause,0,0,99,101
+main,activity_pause,0,0,100,102
 
 
 
-main,activity_resume,0,0,95,97
+main,activity_resume,0,0,96,98
 
 
 
-main,button0_click,0,0,322,326
+main,button0_click,0,0,333,337
 ,answer,,tempstr
 ,tempstr
 
-main,button1_click,0,0,328,331
+main,button1_click,0,0,339,342
 ,answer,,tempstr
 ,tempstr
 
-main,button2_click,0,0,333,336
+main,button2_click,0,0,344,347
 ,answer,,tempstr
 ,tempstr
 
-main,button3_click,0,0,338,341
+main,button3_click,0,0,349,352
 ,answer,,tempstr
 ,tempstr
 
-main,button4_click,0,0,343,346
+main,button4_click,0,0,354,357
 ,answer,,tempstr
 ,tempstr
 
-main,button5_click,0,0,348,351
+main,button5_click,0,0,359,362
 ,answer,,tempstr
 ,tempstr
 
-main,button6_click,0,0,353,356
+main,button6_click,0,0,364,367
 ,answer,,tempstr
 ,tempstr
 
-main,button7_click,0,0,358,361
+main,button7_click,0,0,369,372
 ,answer,,tempstr
 ,tempstr
 
-main,button8_click,0,0,363,366
+main,button8_click,0,0,374,377
 ,answer,,tempstr
 ,tempstr
 
-main,button9_click,0,0,368,371
+main,button9_click,0,0,379,382
 ,answer,,tempstr
 ,tempstr
 
-main,buttonclear_click,0,0,316,320
+main,buttonclear_click,0,0,327,331
 ,answer,,tempstr
 ,tempstr
 
-main,buttonenter_click,1,0,284,314
-,tempstr,,damage,,str,,answer,,stran,,mobval,,mobshake,,mediaplayer,,hpval,,hpshake,,gamestate,,monstertype,,gamedefeated,,check,,shake,,load,,gameoverstate,,pausestate,,titlestate,,button0,,button1,,button2,,button3,,button4,,button5,,button6,,button7,,button8,,button9,,buttonclear,,buttonenter,,countdown,,hp,,imageview1,,mob,,mob2,,mobhp,,num1,,num2,,operation,,ply1,,ply2,,filename,,monster,,barsize,,cvsgraph,,rect1,,xui,,cvsgraph2,,rect2,,cvsgraph3,,rect3,,cvsgraph4,,rect4,,operator
+main,buttonenter_click,1,0,295,325
+,tempstr,,damage,,str,,answer,,stran,,mobval,,mobshake,,mediaplayer,,hpval,,hpshake,,gamestate,,monstertype,,gamedefeated,,check,,shake,,load,,gameoverstate,,pausestate,,titlestate,,button0,,button1,,button2,,button3,,button4,,button5,,button6,,button7,,button8,,button9,,buttonclear,,buttonenter,,countdown,,hp,,imageview1,,mob,,mob2,,mobhp,,num1,,num2,,operation,,ply1,,ply2,,font,,filename,,monster,,barsize,,cvsgraph,,rect1,,xui,,cvsgraph2,,rect2,,cvsgraph3,,rect3,,cvsgraph4,,rect4,,operator
 ,tempstr,,damage,,mobval,,mobshake,,hpval,,hpshake,,check,,answer,,button0,,button1,,button2,,button3,,button4,,button5,,button6,,button7,,button8,,button9,,buttonclear,,buttonenter,,countdown,,hp,,imageview1,,mob,,mob2,,mobhp,,num1,,num2,,operation,,ply1,,ply2,,stran,,monstertype,,filename,,barsize,,str
-,redraw,,activity_create,,initializestate,,drawstate,,drawmonster,,drawhealth,,drawequation,,inttodip,,shufflearray
-main,redraw,0,0,254,259
+,redraw,,activity_create,,initializestate,,drawstate,,drawmonster,,drawhealth,,drawequation,,fontstyle,,inttodip,,shufflearray
+main,redraw,0,0,265,270
 
 
 
-main,shufflearray,0,0,235,246
+main,shufflearray,0,0,246,257
 
 
 
-main,inttodip,0,0,248,252
+main,inttodip,0,0,259,263
 
 
 
-main,globals,0,1,25,73
+main,fontstyle,0,1,104,110
+,num1,,font,,num2,,operation,,hp,,mobhp
+
+
+main,globals,0,1,26,74
 ,damage,,hpval,,mobval,,tempstr,,check,,operator,,hpshake,,mobshake
 ,damage,,hpval,,mobval,,tempstr,,check,,operator,,hpshake,,mobshake
 
-main,process_globals,0,1,17,23
-,monstertype,,monster,,filename
-,monstertype,,monster,,filename
+main,process_globals,0,1,17,24
+,monstertype,,monster,,filename,,font
+,monstertype,,monster,,filename,,font
 
-main,retry_click,1,1,269,282
-,hpshake,,mobshake,,hpval,,mobval,,monstertype,,filename,,monster,,gameoverstate,,gamestate,,mediaplayer,,shake,,load,,pausestate,,titlestate,,gamedefeated,,answer,,button0,,button1,,button2,,button3,,button4,,button5,,button6,,button7,,button8,,button9,,buttonclear,,buttonenter,,countdown,,hp,,imageview1,,mob,,mob2,,mobhp,,num1,,num2,,operation,,ply1,,ply2,,stran,,check,,barsize,,cvsgraph,,rect1,,xui,,cvsgraph2,,rect2,,cvsgraph3,,rect3,,cvsgraph4,,rect4,,operator,,str
+main,retry_click,1,0,280,293
+,hpshake,,mobshake,,hpval,,mobval,,monstertype,,filename,,monster,,gameoverstate,,gamestate,,mediaplayer,,shake,,load,,pausestate,,titlestate,,gamedefeated,,answer,,button0,,button1,,button2,,button3,,button4,,button5,,button6,,button7,,button8,,button9,,buttonclear,,buttonenter,,countdown,,hp,,imageview1,,mob,,mob2,,mobhp,,num1,,num2,,operation,,ply1,,ply2,,stran,,font,,check,,barsize,,cvsgraph,,rect1,,xui,,cvsgraph2,,rect2,,cvsgraph3,,rect3,,cvsgraph4,,rect4,,operator,,str
 ,hpshake,,mobshake,,hpval,,mobval,,monstertype,,filename,,answer,,button0,,button1,,button2,,button3,,button4,,button5,,button6,,button7,,button8,,button9,,buttonclear,,buttonenter,,countdown,,hp,,imageview1,,mob,,mob2,,mobhp,,num1,,num2,,operation,,ply1,,ply2,,stran,,barsize,,str
-,redraw,,activity_create,,initializestate,,drawstate,,drawmonster,,drawhealth,,drawequation,,inttodip,,shufflearray
-main,start_click,0,0,262,267
+,redraw,,activity_create,,initializestate,,drawstate,,drawmonster,,drawhealth,,drawequation,,fontstyle,,inttodip,,shufflearray
+main,start_click,0,0,273,278
 ,check,,titlestate,,gamestate
 ,check
 
