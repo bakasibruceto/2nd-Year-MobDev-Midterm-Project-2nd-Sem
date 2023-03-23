@@ -2,13 +2,19 @@
 File1=GameOverState.bal
 File2=GameState.bal
 File3=Load.bal
-File4=skeletonlord_phase2_down_2.png
-File5=TitleState.bal
+File4=MathTitle.png
+File5=redslime.png
+File6=skeletonlord_phase2_down_2.png
+File7=TitleScreen.png
+File8=TitleState.bal
 FileGroup1=Default Group
 FileGroup2=Default Group
 FileGroup3=Default Group
-FileGroup4=Default Group\REs
-FileGroup5=Default Group
+FileGroup4=New Group
+FileGroup5=New Group
+FileGroup6=Default Group\REs
+FileGroup7=Default Group
+FileGroup8=Default Group
 Group=Default Group
 Library1=animation
 Library2=audio
@@ -19,7 +25,7 @@ Library6=xui views
 Library7=xui2d
 ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="31"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~
 Module1=Starter
-NumberOfFiles=5
+NumberOfFiles=8
 NumberOfLibraries=7
 NumberOfModules=1
 Version=12.2
@@ -38,6 +44,8 @@ Version=12.2
 	#IncludeTitle: False
 #End Region
 
+
+
 Sub Process_Globals
 	Private xui As XUI
 	Private MonsterType As Int = 0
@@ -53,6 +61,8 @@ Sub Globals
 	Private answer As Label
 	Private countdown As Label
 	Private ImageView1 As ImageView
+	Private titlepanel As Panel
+	Private titlebg As ImageView
 	
 	'These are the variables for storing the correct answer
 	Private strAn As Label
@@ -94,7 +104,13 @@ Sub Globals
 	
 End Sub
 
+
+
+
+
 Sub Activity_Create(FirstTime As Boolean)
+	
+	
 	
 	InitializeState
 	DrawState
@@ -108,6 +124,7 @@ Sub Activity_Create(FirstTime As Boolean)
 	End If
 
 End Sub
+
 
 Sub Activity_Resume
 
@@ -123,7 +140,8 @@ Sub SoundEfx
 End Sub
 
 Sub InitializeState
-	
+	titlepanel.Initialize("")
+	Activity.AddView(titlepanel, 0, 0, 100dip, 100dip)
 	Load.Initialize("") : Load.Visible = False
 	GameState.Initialize("") : GameState.Visible = False
 	GameOverState.Initialize("") : GameOverState.Visible = False
