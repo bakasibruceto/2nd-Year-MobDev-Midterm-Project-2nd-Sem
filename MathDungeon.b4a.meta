@@ -4,10 +4,6 @@ ModuleBreakpoints0=
 ModuleBreakpoints1=
 ModuleClosedNodes0=
 ModuleClosedNodes1=
-<<<<<<< Updated upstream
-NavigationStack=Visual Designer,TitleState.bal,-100,1,Visual Designer,GameDefeated.bal,-100,1,Main,DrawState,147,6,Main,DrawMonster,169,6,Main,DrawHealth,202,6,Main,Globals,41,6,Main,ButtonEnter_Click,280,6,Main,Activity_Create,84,0,Main,InitializeState,114,1
-=======
-NavigationStack=Main,Retry_Click,277,0,Main,Activity_Resume,102,0,Main,InitializeState,111,2,Main,ButtonEnter_Click,295,6,Main,Activity_Pause,107,0,Main,Activity_Create,86,0,Main,DrawHealth,175,6,Main,DrawMonster,160,0,Main,Globals,53,6,Main,Process_Globals,19,6
->>>>>>> Stashed changes
+NavigationStack=Main,Retry_Click,277,0,Main,Activity_Resume,102,0,Main,ButtonEnter_Click,295,6,Main,DrawHealth,175,6,Main,DrawMonster,160,0,Main,Process_Globals,18,6,Main,Globals,31,6,Main,InitializeState,111,2,Main,Activity_Create,90,0,Main,Activity_Pause,98,0
 SelectedBuild=0
 VisibleModules=1
