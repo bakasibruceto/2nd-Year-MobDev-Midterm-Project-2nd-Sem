@@ -67,11 +67,15 @@ main,drawstate,0,0,142,156
 ,check,,load,,titlestate,,hpval,,gamestate,,gameoverstate
 
 
+<<<<<<< Updated upstream
 main,soundefx,0,0,109,112
 ,mediaplayer
 
 
 main,drawmonster,0,0,158,175
+=======
+main,drawmonster,0,0,156,173
+>>>>>>> Stashed changes
 ,mobval,,monstertype,,filename,,monster,,imageview1
 ,monstertype,,mobval,,filename
 

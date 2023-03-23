@@ -576,9 +576,15 @@ main._monstertype = RemoteObject.solve(new RemoteObject[] {main._monstertype,Rem
 Debug.ShouldStop(1073741824);
 switch (BA.switchObjectToInt(main._monstertype,BA.numberCast(int.class, 1),BA.numberCast(int.class, 2))) {
 case 0: {
+<<<<<<< Updated upstream
  BA.debugLineNum = 161;BA.debugLine="mobVal = 1";
 Debug.ShouldStop(1);
 main._mobval = BA.numberCast(int.class, 1);
+=======
+ BA.debugLineNum = 161;BA.debugLine="mobVal = 200";
+Debug.ShouldStop(1);
+main._mobval = BA.numberCast(int.class, 200);
+>>>>>>> Stashed changes
  break; }
 case 1: {
  BA.debugLineNum = 163;BA.debugLine="mobVal = 1";
@@ -674,12 +680,17 @@ main.mostCurrent._str = RemoteObject.createImmutable("");
 main._damage = BA.numberCast(int.class, 0);
  //BA.debugLineNum = 41;BA.debugLine="Private HPval As Int = 100";
 main._hpval = BA.numberCast(int.class, 100);
+<<<<<<< Updated upstream
  //BA.debugLineNum = 42;BA.debugLine="Private mobVal As Int = 1";
 main._mobval = BA.numberCast(int.class, 1);
  //BA.debugLineNum = 43;BA.debugLine="Private timer1 As Timer";
 main.mostCurrent._timer1 = RemoteObject.createNew ("anywheresoftware.b4a.objects.Timer");
  //BA.debugLineNum = 44;BA.debugLine="Private targetTime As Long";
 main._targettime = RemoteObject.createImmutable(0L);
+=======
+ //BA.debugLineNum = 44;BA.debugLine="Private mobVal As Int = 100";
+main._mobval = BA.numberCast(int.class, 100);
+>>>>>>> Stashed changes
  //BA.debugLineNum = 45;BA.debugLine="Private tempStr As String =\"\"";
 main.mostCurrent._tempstr = BA.ObjectToString("");
  //BA.debugLineNum = 46;BA.debugLine="Private check As Boolean = False";

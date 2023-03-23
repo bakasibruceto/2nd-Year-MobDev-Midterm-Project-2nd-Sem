@@ -632,8 +632,13 @@ RDebugUtils.currentLine=589827;
 switch (_monstertype) {
 case 1: {
 RDebugUtils.currentLine=589829;
+<<<<<<< Updated upstream
  //BA.debugLineNum = 589829;BA.debugLine="mobVal = 1";
 _mobval = (int) (1);
+=======
+ //BA.debugLineNum = 589829;BA.debugLine="mobVal = 200";
+_mobval = (int) (200);
+>>>>>>> Stashed changes
  break; }
 case 2: {
 RDebugUtils.currentLine=589831;
