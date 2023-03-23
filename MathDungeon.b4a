@@ -55,9 +55,7 @@ Version=12.2
 Sub Process_Globals
 	Private xui As XUI
 	Private MonsterType As Int = 0
-	Private AudioType As Int = 0
 	Private Monster() As String = Array As String("redslime.png", "orc.png","skeleton.png")
-	Private AudioFile() As String = Array As String("pdam.mp3","dam.mp3")
 	Private FileName As String = Monster(MonsterType)
 	Private MediaPlayer As MediaPlayer
 End Sub
@@ -69,8 +67,6 @@ Sub Globals
 	Private answer As Label
 	Private countdown As Label
 	Private ImageView1 As ImageView
-	Private titlepanel As Panel
-	Private titlebg As ImageView
 	
 	'These are the variables for storing the correct answer
 	Private strAn As Label
@@ -151,8 +147,7 @@ Sub InitializeState
 	shake.RepeatMode = shake.REPEAT_REVERSE
 	shake.Duration = 30
 	
-	titlepanel.Initialize("")
-	Activity.AddView(titlepanel, 0, 0, 100dip, 100dip)
+	
 	Load.Initialize("") : Load.Visible = False
 	GameState.Initialize("") : GameState.Visible = False
 	GameOverState.Initialize("") : GameOverState.Visible = False
