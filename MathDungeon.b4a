@@ -84,7 +84,8 @@ Sub Globals
 	Private check As Boolean = False
 	Private operator() As String = Array As String("+", "*")
 	Private barsize As Int
-	
+	Private hpshake As Boolean = False
+	Private mobshake As Boolean = False
 	'Game States
 	Private Load, GameState, PauseState, TitleState, GameOverState, GameDefeated As Panel
 	Private Button1 As Button
@@ -149,6 +150,11 @@ Sub SoundEfx
 End Sub
 
 Sub InitializeState
+	shake.InitializeTranslate("", -9dip, 0, 9dip, 0)
+	shake.RepeatCount = 5
+	shake.RepeatMode = shake.REPEAT_REVERSE
+	shake.Duration = 30
+	
 	titlepanel.Initialize("")
 	Activity.AddView(titlepanel, 0, 0, 100dip, 100dip)
 	Load.Initialize("") : Load.Visible = False
@@ -206,6 +212,7 @@ Sub DrawMonster
 	
 End Sub
 
+
 Sub DrawHealth
 	HP.Text=HPval
 	mobHP.Text=mobVal
@@ -229,6 +236,14 @@ Sub DrawHealth
 	cvsGraph4.Initialize(ply2)
 	rect4.Initialize(10dip, 10dip, IntToDIP(HPval*4.67), 35dip)
 	cvsGraph4.DrawRect(rect4, xui.Color_Red , True, 2dip)
+	
+	If hpshake == True Then
+		shakestatus = False
+		shake.Start(ply2)
+	Else If mobshake == True Then
+		shakestatus = False
+		shake.Start(mob2)
+	End If
 End Sub
 
 Sub DrawEquation
@@ -303,14 +318,14 @@ Private Sub ButtonEnter_Click
 	damage = str
 	If answer.Text = str Then
 		strAn.Text = "Correct"
-		
 		mobVal= mobVal-damage
-	
+		mobshake = True
+		
 	Else
 		strAn.Text = "InCorrect"
 		HPval = HPval-damage
 		MediaPlayer.Play
-		 
+		hpshake = True 
 	End If
 	
 	GameState.Visible=False

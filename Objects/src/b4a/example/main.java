@@ -404,6 +404,8 @@ public static String _tempstr = "";
 public static boolean _check = false;
 public static String[] _operator = null;
 public static int _barsize = 0;
+public static boolean _hpshake = false;
+public static boolean _mobshake = false;
 public anywheresoftware.b4a.objects.PanelWrapper _load = null;
 public anywheresoftware.b4a.objects.PanelWrapper _gamestate = null;
 public anywheresoftware.b4a.objects.PanelWrapper _pausestate = null;
@@ -444,30 +446,42 @@ if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create", false))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_create", new Object[] {_firsttime}));}
 RDebugUtils.currentLine=131072;
  //BA.debugLineNum = 131072;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+RDebugUtils.currentLine=131074;
+ //BA.debugLineNum = 131074;BA.debugLine="shake.InitializeTranslate(\"\", -10dip, 0, 10dip, 0";
+mostCurrent._shake.InitializeTranslate(mostCurrent.activityBA,"",(float) (-anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (10))),(float) (0),(float) (anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (10))),(float) (0));
+RDebugUtils.currentLine=131075;
+ //BA.debugLineNum = 131075;BA.debugLine="shake.RepeatCount = 5";
+mostCurrent._shake.setRepeatCount((int) (5));
 RDebugUtils.currentLine=131076;
- //BA.debugLineNum = 131076;BA.debugLine="InitializeState";
-_initializestate();
+ //BA.debugLineNum = 131076;BA.debugLine="shake.RepeatMode = shake.REPEAT_REVERSE";
+mostCurrent._shake.setRepeatMode(mostCurrent._shake.REPEAT_REVERSE);
 RDebugUtils.currentLine=131077;
- //BA.debugLineNum = 131077;BA.debugLine="DrawState";
-_drawstate();
-RDebugUtils.currentLine=131078;
- //BA.debugLineNum = 131078;BA.debugLine="SoundEfx";
-_soundefx();
+ //BA.debugLineNum = 131077;BA.debugLine="shake.Duration = 50";
+mostCurrent._shake.setDuration((long) (50));
 RDebugUtils.currentLine=131079;
- //BA.debugLineNum = 131079;BA.debugLine="If(HPval <= 100 And HPval >=1)Then";
-if ((_hpval<=100 && _hpval>=1)) { 
+ //BA.debugLineNum = 131079;BA.debugLine="InitializeState";
+_initializestate();
+RDebugUtils.currentLine=131080;
+ //BA.debugLineNum = 131080;BA.debugLine="DrawState";
+_drawstate();
 RDebugUtils.currentLine=131081;
- //BA.debugLineNum = 131081;BA.debugLine="DrawMonster";
-_drawmonster();
+ //BA.debugLineNum = 131081;BA.debugLine="SoundEfx";
+_soundefx();
 RDebugUtils.currentLine=131082;
- //BA.debugLineNum = 131082;BA.debugLine="DrawHealth";
+ //BA.debugLineNum = 131082;BA.debugLine="If(HPval <= 100 And HPval >=1)Then";
+if ((_hpval<=100 && _hpval>=1)) { 
+RDebugUtils.currentLine=131084;
+ //BA.debugLineNum = 131084;BA.debugLine="DrawMonster";
+_drawmonster();
+RDebugUtils.currentLine=131085;
+ //BA.debugLineNum = 131085;BA.debugLine="DrawHealth";
 _drawhealth();
-RDebugUtils.currentLine=131083;
- //BA.debugLineNum = 131083;BA.debugLine="DrawEquation";
+RDebugUtils.currentLine=131086;
+ //BA.debugLineNum = 131086;BA.debugLine="DrawEquation";
 _drawequation();
  };
-RDebugUtils.currentLine=131087;
- //BA.debugLineNum = 131087;BA.debugLine="End Sub";
+RDebugUtils.currentLine=131090;
+ //BA.debugLineNum = 131090;BA.debugLine="End Sub";
 return "";
 }
 public static String  _initializestate() throws Exception{
@@ -647,6 +661,7 @@ public static String  _drawhealth() throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "drawhealth", false))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "drawhealth", null));}
+String _shakestatus = "";
 RDebugUtils.currentLine=655360;
  //BA.debugLineNum = 655360;BA.debugLine="Sub DrawHealth";
 RDebugUtils.currentLine=655361;
@@ -703,8 +718,29 @@ mostCurrent._rect4.Initialize(anywheresoftware.b4a.keywords.Common.DipToCurrent(
 RDebugUtils.currentLine=655382;
  //BA.debugLineNum = 655382;BA.debugLine="cvsGraph4.DrawRect(rect4, xui.Color_Red , True, 2";
 mostCurrent._cvsgraph4.DrawRect((android.graphics.Rect)(mostCurrent._rect4.getObject()),_xui.Color_Red,anywheresoftware.b4a.keywords.Common.True,(float) (anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (2))));
-RDebugUtils.currentLine=655383;
- //BA.debugLineNum = 655383;BA.debugLine="End Sub";
+RDebugUtils.currentLine=655384;
+ //BA.debugLineNum = 655384;BA.debugLine="If hpshake == True Then";
+if (_hpshake==anywheresoftware.b4a.keywords.Common.True) { 
+RDebugUtils.currentLine=655385;
+ //BA.debugLineNum = 655385;BA.debugLine="shakestatus = False";
+_shakestatus = BA.ObjectToString(anywheresoftware.b4a.keywords.Common.False);
+RDebugUtils.currentLine=655386;
+ //BA.debugLineNum = 655386;BA.debugLine="shake.Start(ply2)";
+mostCurrent._shake.Start((android.view.View)(mostCurrent._ply2.getObject()));
+ }else 
+{RDebugUtils.currentLine=655387;
+ //BA.debugLineNum = 655387;BA.debugLine="Else If mobshake == True Then";
+if (_mobshake==anywheresoftware.b4a.keywords.Common.True) { 
+RDebugUtils.currentLine=655388;
+ //BA.debugLineNum = 655388;BA.debugLine="shakestatus = False";
+_shakestatus = BA.ObjectToString(anywheresoftware.b4a.keywords.Common.False);
+RDebugUtils.currentLine=655389;
+ //BA.debugLineNum = 655389;BA.debugLine="shake.Start(mob2)";
+mostCurrent._shake.Start((android.view.View)(mostCurrent._mob2.getObject()));
+ }}
+;
+RDebugUtils.currentLine=655391;
+ //BA.debugLineNum = 655391;BA.debugLine="End Sub";
 return "";
 }
 public static String  _drawequation() throws Exception{
@@ -974,9 +1010,12 @@ if ((mostCurrent._answer.getText()).equals(mostCurrent._str)) {
 RDebugUtils.currentLine=1310724;
  //BA.debugLineNum = 1310724;BA.debugLine="strAn.Text = \"Correct\"";
 mostCurrent._stran.setText(BA.ObjectToCharSequence("Correct"));
-RDebugUtils.currentLine=1310726;
- //BA.debugLineNum = 1310726;BA.debugLine="mobVal= mobVal-damage";
+RDebugUtils.currentLine=1310725;
+ //BA.debugLineNum = 1310725;BA.debugLine="mobVal= mobVal-damage";
 _mobval = (int) (_mobval-_damage);
+RDebugUtils.currentLine=1310726;
+ //BA.debugLineNum = 1310726;BA.debugLine="mobshake = True";
+_mobshake = anywheresoftware.b4a.keywords.Common.True;
  }else {
 RDebugUtils.currentLine=1310729;
  //BA.debugLineNum = 1310729;BA.debugLine="strAn.Text = \"InCorrect\"";
@@ -987,6 +1026,9 @@ _hpval = (int) (_hpval-_damage);
 RDebugUtils.currentLine=1310731;
  //BA.debugLineNum = 1310731;BA.debugLine="MediaPlayer.Play";
 _mediaplayer.Play();
+RDebugUtils.currentLine=1310732;
+ //BA.debugLineNum = 1310732;BA.debugLine="hpshake = True";
+_hpshake = anywheresoftware.b4a.keywords.Common.True;
  };
 RDebugUtils.currentLine=1310735;
  //BA.debugLineNum = 1310735;BA.debugLine="GameState.Visible=False";
