@@ -55,7 +55,9 @@ Version=12.2
 Sub Process_Globals
 	Private xui As XUI
 	Private MonsterType As Int = 0
+	Private AudioType As Int = 0
 	Private Monster() As String = Array As String("redslime.png", "orc.png","skeleton.png")
+	Private AudioFile() As String = Array As String("pdam.mp3","dam.mp3")
 	Private FileName As String = Monster(MonsterType)
 	Private MediaPlayer As MediaPlayer
 End Sub
@@ -77,9 +79,7 @@ Sub Globals
 	'Default Values
 	Private damage As Int = 0
 	Private HPval As Int = 100
-	Private mobVal As Int = 1
-	Private timer1 As Timer
-	Private targetTime As Long
+	Private mobVal As Int = 0
 	Private tempStr As String =""
 	Private check As Boolean = False
 	Private operator() As String = Array As String("+", "*")
@@ -120,11 +120,9 @@ End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
 	
-	
-	
 	InitializeState
 	DrawState
-	SoundEfx
+	
 	If(HPval <= 100 And HPval >=1)Then
 			
 		DrawMonster
@@ -144,14 +142,12 @@ Sub Activity_Pause (UserClosed As Boolean)
 
 End Sub
 
-Sub SoundEfx
-	MediaPlayer.Initialize()
-	MediaPlayer.Load(File.DirAssets,"pdam.mp3")
-End Sub
+
 
 Sub InitializeState
+	MediaPlayer.Initialize()
 	shake.InitializeTranslate("", -9dip, 0, 9dip, 0)
-	shake.RepeatCount = 5
+	shake.RepeatCount = 3
 	shake.RepeatMode = shake.REPEAT_REVERSE
 	shake.Duration = 30
 	
@@ -169,11 +165,13 @@ Sub InitializeState
 	TitleState.LoadLayout("TitleState")
 	GameOverState.LoadLayout("GameOverState")
 	GameDefeated.LoadLayout("GameDefeated")
+	PauseState.LoadLayout("PauseState")
 	Activity.AddView(Load,0,0,100%x,100%y)
 	Activity.AddView(GameState,0,0,100%x,100%y)
 	Activity.AddView(TitleState,0,0,100%x,100%y)
 	Activity.AddView(GameOverState,0,0,100%x,100%y)
 	Activity.AddView(GameDefeated,0,0,100%x,100%y)
+	Activity.AddView(PauseState,0,0,100%x,100%y)
 	
 End Sub
 
@@ -198,9 +196,9 @@ Sub DrawMonster
 		MonsterType = MonsterType+1
 		Select MonsterType
 			Case 1
-				mobVal = 1
+				mobVal = 200
 			Case 2
-				mobVal = 1
+				mobVal = 300
 		End Select
 		
 	End If
@@ -216,6 +214,17 @@ End Sub
 Sub DrawHealth
 	HP.Text=HPval
 	mobHP.Text=mobVal
+	
+	If MonsterType<3 Then
+		Select MonsterType
+			Case 0
+				barsize = mobVal*4.68
+			Case 1
+				barsize = mobVal*2.39
+			Case 2	
+				barsize = mobVal*1.558
+		End Select
+	End If
 			
 	mob.Color = Colors.ARGB(0, 0, 0, 0)
 	cvsGraph.Initialize(mob)
@@ -224,7 +233,7 @@ Sub DrawHealth
 			
 	mob2.Color=Colors.ARGB(0, 0, 0, 0)
 	cvsGraph2.Initialize(mob2)
-	rect2.Initialize(10dip, 10dip, IntToDIP(mobVal-33), 35dip)
+	rect2.Initialize(10dip, 10dip, IntToDIP(barsize), 35dip)
 	cvsGraph2.DrawRect(rect2, xui.Color_Red , True, 2dip)
 			
 	ply1.Color = Colors.ARGB(0, 0, 0, 0)
@@ -234,21 +243,22 @@ Sub DrawHealth
 			
 	ply2.Color=Colors.ARGB(0, 0, 0, 0)
 	cvsGraph4.Initialize(ply2)
-	rect4.Initialize(10dip, 10dip, IntToDIP(HPval*4.67), 35dip)
+	rect4.Initialize(10dip, 10dip, IntToDIP(HPval*4.68), 35dip)
 	cvsGraph4.DrawRect(rect4, xui.Color_Red , True, 2dip)
 	
 	If hpshake == True Then
-		shakestatus = False
+		hpshake = False
 		shake.Start(ply2)
 	Else If mobshake == True Then
-		shakestatus = False
+		mobshake = False
 		shake.Start(mob2)
+		shake.Start(ImageView1)
 	End If
 End Sub
 
 Sub DrawEquation
-	Dim rand1 As Int = Rnd(0,10)
-	Dim rand2 As Int = Rnd(0,10)
+	Dim rand1 As Int = Rnd(1,11)
+	Dim rand2 As Int = Rnd(1,11)
 	num1.Text=rand1
 	num2.Text=rand2
 	ShuffleArray(operator)
@@ -320,13 +330,16 @@ Private Sub ButtonEnter_Click
 		strAn.Text = "Correct"
 		mobVal= mobVal-damage
 		mobshake = True
+		MediaPlayer.Load(File.DirAssets,"dam.mp3")
 		
 	Else
 		strAn.Text = "InCorrect"
 		HPval = HPval-damage
 		MediaPlayer.Play
 		hpshake = True 
+		MediaPlayer.Load(File.DirAssets,"pdam.mp3")	
 	End If
+	MediaPlayer.Play
 	
 	GameState.Visible=False
 	ReDraw
