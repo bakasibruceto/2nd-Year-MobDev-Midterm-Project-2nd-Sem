@@ -71,7 +71,7 @@ main,drawmonster,0,1,156,173
 ,mobval,,monstertype,,filename,,monster,,imageview1
 ,monstertype,,mobval,,filename
 
-main,drawhealth,0,1,176,219
+main,drawhealth,0,0,176,219
 ,hp,,hpval,,mobhp,,mobval,,monstertype,,barsize,,mob,,cvsgraph,,rect1,,xui,,mob2,,cvsgraph2,,rect2,,ply1,,cvsgraph3,,rect3,,ply2,,cvsgraph4,,rect4,,hpshake,,shake,,mobshake,,imageview1
 ,barsize,,hpshake,,mobshake
 ,inttodip

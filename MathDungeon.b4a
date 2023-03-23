@@ -79,7 +79,7 @@ Sub Globals
 	'Default Values
 	Private damage As Int = 0
 	Private HPval As Int = 100
-	Private mobVal As Int = 0
+	Private mobVal As Int = 100
 	Private tempStr As String =""
 	Private check As Boolean = False
 	Private operator() As String = Array As String("+", "*")
@@ -196,7 +196,7 @@ Sub DrawMonster
 		MonsterType = MonsterType+1
 		Select MonsterType
 			Case 1
-				mobVal = 0
+				mobVal = 200
 			Case 2
 				mobVal = 300
 		End Select
