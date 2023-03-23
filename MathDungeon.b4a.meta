@@ -4,6 +4,6 @@ ModuleBreakpoints0=
 ModuleBreakpoints1=
 ModuleClosedNodes0=8,9,12,13,14,15,16,17,18,19
 ModuleClosedNodes1=
-NavigationStack=Main,Retry_Click,277,0,Main,Activity_Resume,102,0,Main,Process_Globals,21,6,Main,InitializeState,111,2,Main,ButtonEnter_Click,295,6,Main,Activity_Pause,107,0,Main,Activity_Create,86,0,Main,DrawMonster,162,0,Main,Globals,43,6,Main,DrawHealth,184,6
+NavigationStack=Main,Retry_Click,277,0,Main,Activity_Resume,102,0,Main,Process_Globals,21,6,Main,InitializeState,111,2,Main,ButtonEnter_Click,295,6,Main,Activity_Pause,107,0,Main,Activity_Create,86,0,Main,Globals,43,6,Main,DrawMonster,160,0,Main,DrawHealth,186,6
 SelectedBuild=0
 VisibleModules=1

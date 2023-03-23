@@ -486,14 +486,14 @@ Debug.ShouldStop(4194304);
 main._barsize = BA.numberCast(int.class, RemoteObject.solve(new RemoteObject[] {main._mobval,RemoteObject.createImmutable(4.68)}, "*",0, 0));
  break; }
 case 1: {
- BA.debugLineNum = 185;BA.debugLine="barsize = mobVal*2.39";
+ BA.debugLineNum = 185;BA.debugLine="barsize = mobVal*2.34";
 Debug.ShouldStop(16777216);
-main._barsize = BA.numberCast(int.class, RemoteObject.solve(new RemoteObject[] {main._mobval,RemoteObject.createImmutable(2.39)}, "*",0, 0));
+main._barsize = BA.numberCast(int.class, RemoteObject.solve(new RemoteObject[] {main._mobval,RemoteObject.createImmutable(2.34)}, "*",0, 0));
  break; }
 case 2: {
- BA.debugLineNum = 187;BA.debugLine="barsize = mobVal*1.558";
+ BA.debugLineNum = 187;BA.debugLine="barsize = mobVal*1.56";
 Debug.ShouldStop(67108864);
-main._barsize = BA.numberCast(int.class, RemoteObject.solve(new RemoteObject[] {main._mobval,RemoteObject.createImmutable(1.558)}, "*",0, 0));
+main._barsize = BA.numberCast(int.class, RemoteObject.solve(new RemoteObject[] {main._mobval,RemoteObject.createImmutable(1.56)}, "*",0, 0));
  break; }
 }
 ;
@@ -596,9 +596,9 @@ main._monstertype = RemoteObject.solve(new RemoteObject[] {main._monstertype,Rem
 Debug.ShouldStop(1073741824);
 switch (BA.switchObjectToInt(main._monstertype,BA.numberCast(int.class, 1),BA.numberCast(int.class, 2))) {
 case 0: {
- BA.debugLineNum = 161;BA.debugLine="mobVal = 200";
+ BA.debugLineNum = 161;BA.debugLine="mobVal = 0";
 Debug.ShouldStop(1);
-main._mobval = BA.numberCast(int.class, 200);
+main._mobval = BA.numberCast(int.class, 0);
  break; }
 case 1: {
  BA.debugLineNum = 163;BA.debugLine="mobVal = 300";

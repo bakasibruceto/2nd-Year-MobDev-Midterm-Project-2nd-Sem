@@ -196,7 +196,7 @@ Sub DrawMonster
 		MonsterType = MonsterType+1
 		Select MonsterType
 			Case 1
-				mobVal = 200
+				mobVal = 0
 			Case 2
 				mobVal = 300
 		End Select
@@ -220,9 +220,9 @@ Sub DrawHealth
 			Case 0
 				barsize = mobVal*4.68
 			Case 1
-				barsize = mobVal*2.39
+				barsize = mobVal*2.34
 			Case 2	
-				barsize = mobVal*1.558
+				barsize = mobVal*1.56
 		End Select
 	End If
 			

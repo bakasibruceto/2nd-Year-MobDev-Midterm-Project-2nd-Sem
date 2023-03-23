@@ -622,8 +622,8 @@ RDebugUtils.currentLine=589827;
 switch (_monstertype) {
 case 1: {
 RDebugUtils.currentLine=589829;
- //BA.debugLineNum = 589829;BA.debugLine="mobVal = 200";
-_mobval = (int) (200);
+ //BA.debugLineNum = 589829;BA.debugLine="mobVal = 0";
+_mobval = (int) (0);
  break; }
 case 2: {
 RDebugUtils.currentLine=589831;
@@ -672,13 +672,13 @@ _barsize = (int) (_mobval*4.68);
  break; }
 case 1: {
 RDebugUtils.currentLine=655369;
- //BA.debugLineNum = 655369;BA.debugLine="barsize = mobVal*2.39";
-_barsize = (int) (_mobval*2.39);
+ //BA.debugLineNum = 655369;BA.debugLine="barsize = mobVal*2.34";
+_barsize = (int) (_mobval*2.34);
  break; }
 case 2: {
 RDebugUtils.currentLine=655371;
- //BA.debugLineNum = 655371;BA.debugLine="barsize = mobVal*1.558";
-_barsize = (int) (_mobval*1.558);
+ //BA.debugLineNum = 655371;BA.debugLine="barsize = mobVal*1.56";
+_barsize = (int) (_mobval*1.56);
  break; }
 }
 ;
