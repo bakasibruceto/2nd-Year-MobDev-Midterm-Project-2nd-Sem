@@ -66,8 +66,8 @@ Sub Globals
 	'These are the variables from the Designer
 	Private num1, num2, operation As Label
 	Private HP, mobHP As Label
-	Private answer As Label
-	Private countdown As Label
+	Private answer, equal As Label
+	
 	Private ImageView1 As ImageView
 	
 	'These are the variables for storing the correct answer
@@ -160,6 +160,8 @@ Sub FontStyle
 	operation.Typeface = Font
 	HP.Typeface = Font
 	mobHP.Typeface = Font
+	answer.Typeface = Font	
+	equal.Typeface = Font
 End Sub
 
 

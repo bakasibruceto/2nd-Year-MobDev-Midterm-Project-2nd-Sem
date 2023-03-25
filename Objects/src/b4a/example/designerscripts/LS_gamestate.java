@@ -29,29 +29,29 @@ views.get("mob").vw.setTop((int)((views.get("panel1").vw.getHeight())/10d - (vie
 views.get("mob2").vw.setLeft((int)((views.get("panel1").vw.getWidth())/2d - (views.get("mob2").vw.getWidth() / 2)));
 //BA.debugLineNum = 13;BA.debugLine="mob2.VerticalCenter = Panel1.Height/10"[GameState/General script]
 views.get("mob2").vw.setTop((int)((views.get("panel1").vw.getHeight())/10d - (views.get("mob2").vw.getHeight() / 2)));
-//BA.debugLineNum = 14;BA.debugLine="mobHP.HorizontalCenter = Panel1.Width/2"[GameState/General script]
-views.get("mobhp").vw.setLeft((int)((views.get("panel1").vw.getWidth())/2d - (views.get("mobhp").vw.getWidth() / 2)));
+//BA.debugLineNum = 14;BA.debugLine="mobHP.HorizontalCenter = Panel1.Width/1.85"[GameState/General script]
+views.get("mobhp").vw.setLeft((int)((views.get("panel1").vw.getWidth())/1.85d - (views.get("mobhp").vw.getWidth() / 2)));
 //BA.debugLineNum = 15;BA.debugLine="mobHP.VerticalCenter = Panel1.Height/10"[GameState/General script]
 views.get("mobhp").vw.setTop((int)((views.get("panel1").vw.getHeight())/10d - (views.get("mobhp").vw.getHeight() / 2)));
-//BA.debugLineNum = 21;BA.debugLine="ply1.HorizontalCenter = Panel1.Width/2"[GameState/General script]
+//BA.debugLineNum = 17;BA.debugLine="ply1.HorizontalCenter = Panel1.Width/2"[GameState/General script]
 views.get("ply1").vw.setLeft((int)((views.get("panel1").vw.getWidth())/2d - (views.get("ply1").vw.getWidth() / 2)));
-//BA.debugLineNum = 22;BA.debugLine="ply1.VerticalCenter = Panel1.Height/1.7"[GameState/General script]
+//BA.debugLineNum = 18;BA.debugLine="ply1.VerticalCenter = Panel1.Height/1.7"[GameState/General script]
 views.get("ply1").vw.setTop((int)((views.get("panel1").vw.getHeight())/1.7d - (views.get("ply1").vw.getHeight() / 2)));
-//BA.debugLineNum = 23;BA.debugLine="ply2.HorizontalCenter = Panel1.Width/2"[GameState/General script]
+//BA.debugLineNum = 19;BA.debugLine="ply2.HorizontalCenter = Panel1.Width/2"[GameState/General script]
 views.get("ply2").vw.setLeft((int)((views.get("panel1").vw.getWidth())/2d - (views.get("ply2").vw.getWidth() / 2)));
-//BA.debugLineNum = 24;BA.debugLine="ply2.VerticalCenter = Panel1.Height/1.7"[GameState/General script]
+//BA.debugLineNum = 20;BA.debugLine="ply2.VerticalCenter = Panel1.Height/1.7"[GameState/General script]
 views.get("ply2").vw.setTop((int)((views.get("panel1").vw.getHeight())/1.7d - (views.get("ply2").vw.getHeight() / 2)));
-//BA.debugLineNum = 25;BA.debugLine="HP.HorizontalCenter = Panel1.Width/2"[GameState/General script]
-views.get("hp").vw.setLeft((int)((views.get("panel1").vw.getWidth())/2d - (views.get("hp").vw.getWidth() / 2)));
-//BA.debugLineNum = 26;BA.debugLine="HP.VerticalCenter = Panel1.Height/1.7"[GameState/General script]
+//BA.debugLineNum = 21;BA.debugLine="HP.HorizontalCenter = Panel1.Width/1.85"[GameState/General script]
+views.get("hp").vw.setLeft((int)((views.get("panel1").vw.getWidth())/1.85d - (views.get("hp").vw.getWidth() / 2)));
+//BA.debugLineNum = 22;BA.debugLine="HP.VerticalCenter = Panel1.Height/1.7"[GameState/General script]
 views.get("hp").vw.setTop((int)((views.get("panel1").vw.getHeight())/1.7d - (views.get("hp").vw.getHeight() / 2)));
-//BA.debugLineNum = 28;BA.debugLine="Panel2.HorizontalCenter = Panel1.Width/2"[GameState/General script]
+//BA.debugLineNum = 24;BA.debugLine="Panel2.HorizontalCenter = Panel1.Width/2"[GameState/General script]
 views.get("panel2").vw.setLeft((int)((views.get("panel1").vw.getWidth())/2d - (views.get("panel2").vw.getWidth() / 2)));
-//BA.debugLineNum = 29;BA.debugLine="Panel2.VerticalCenter = Panel1.Height/1.2"[GameState/General script]
+//BA.debugLineNum = 25;BA.debugLine="Panel2.VerticalCenter = Panel1.Height/1.2"[GameState/General script]
 views.get("panel2").vw.setTop((int)((views.get("panel1").vw.getHeight())/1.2d - (views.get("panel2").vw.getHeight() / 2)));
-//BA.debugLineNum = 31;BA.debugLine="Panel3.HorizontalCenter = Panel1.Width/2"[GameState/General script]
-views.get("panel3").vw.setLeft((int)((views.get("panel1").vw.getWidth())/2d - (views.get("panel3").vw.getWidth() / 2)));
-//BA.debugLineNum = 32;BA.debugLine="Panel3.VerticalCenter = Panel1.Height/2"[GameState/General script]
+//BA.debugLineNum = 27;BA.debugLine="Panel3.HorizontalCenter = Panel1.Width/1.89"[GameState/General script]
+views.get("panel3").vw.setLeft((int)((views.get("panel1").vw.getWidth())/1.89d - (views.get("panel3").vw.getWidth() / 2)));
+//BA.debugLineNum = 28;BA.debugLine="Panel3.VerticalCenter = Panel1.Height/2"[GameState/General script]
 views.get("panel3").vw.setTop((int)((views.get("panel1").vw.getHeight())/2d - (views.get("panel3").vw.getHeight() / 2)));
 
 }
