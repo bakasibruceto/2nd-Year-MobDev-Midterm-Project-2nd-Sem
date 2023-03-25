@@ -75,6 +75,7 @@ Sub Globals
 	Private str As String
 	
 	'Default Values
+	Private bar As Int = 100
 	Private damage As Int = 0
 	Private HPval As Int = 100
 	Private mobVal As Int = 100
@@ -125,7 +126,7 @@ Sub Activity_Create(FirstTime As Boolean)
 			
 		DrawMonster
 		DrawHealth
-		DrawEquation	
+		DrawEquation
 		
 	End If
 
@@ -171,7 +172,7 @@ Sub InitializeState
 	shake.RepeatMode = shake.REPEAT_REVERSE
 	shake.Duration = 30
 	
-	
+	strAn.Initialize("")
 	Load.Initialize("") : Load.Visible = False
 	GameState.Initialize("") : GameState.Visible = False
 	GameOverState.Initialize("") : GameOverState.Visible = False
@@ -240,14 +241,14 @@ Sub DrawHealth
 				barsize = mobVal*4.68
 			Case 1
 				barsize = mobVal*2.34
-			Case 2	
+			Case 2
 				barsize = mobVal*1.56
 		End Select
 	End If
 			
 	mob.Color = Colors.ARGB(0, 0, 0, 0)
 	cvsGraph.Initialize(mob)
-	rect1.Initialize(10dip, 10dip, 250dip, 35dip)
+	rect1.Initialize(10dip, 10dip, IntToDIP(bar*4.67), 35dip)
 	cvsGraph.DrawRect(rect1, xui.Color_Black, False, 2dip)
 			
 	mob2.Color=Colors.ARGB(0, 0, 0, 0)
@@ -257,7 +258,7 @@ Sub DrawHealth
 			
 	ply1.Color = Colors.ARGB(0, 0, 0, 0)
 	cvsGraph3.Initialize(ply1)
-	rect3.Initialize(10dip, 10dip, 250dip, 35dip)
+	rect3.Initialize(10dip, 10dip, IntToDIP(bar*4.67), 35dip)
 	cvsGraph3.DrawRect(rect3, xui.Color_Black, False, 2dip)
 			
 	ply2.Color=Colors.ARGB(0, 0, 0, 0)
@@ -316,8 +317,8 @@ End Sub
 Sub ReDraw
 	Dim i As Int
 	For i = Activity.NumberOfViews - 1 To 0 Step -1
-		Activity.RemoveViewAt(i)	
-	Next		
+		Activity.RemoveViewAt(i)
+	Next
 End Sub
 
 
@@ -356,8 +357,8 @@ Private Sub ButtonEnter_Click
 		strAn.Text = "InCorrect"
 		HPval = HPval-damage
 		MediaPlayer.Play
-		hpshake = True 
-		MediaPlayer.Load(File.DirAssets,"pdam.mp3")	
+		hpshake = True
+		MediaPlayer.Load(File.DirAssets,"pdam.mp3")
 	End If
 	MediaPlayer.Play
 	
@@ -370,7 +371,7 @@ Private Sub ButtonEnter_Click
 		check = True
 		If HPval <= 100 And HPval >= 0 Then
 			GameState.Visible=True
-		End If	
+		End If
 	End If
 	
 End Sub
@@ -381,13 +382,13 @@ Private Sub ButtonClear_Click
 	
 End Sub
 
-Private Sub Button0_Click 
+Private Sub Button0_Click
 	answer.Text = tempStr&"0"
 	tempStr = answer.Text
 	
 End Sub
 
-Private Sub Button1_Click 
+Private Sub Button1_Click
 	answer.Text = tempStr&"1"
 	tempStr = answer.Text
 End Sub
@@ -431,4 +432,3 @@ Private Sub Button9_Click
 	answer.Text = tempStr&"9"
 	tempStr = answer.Text
 End Sub
-
