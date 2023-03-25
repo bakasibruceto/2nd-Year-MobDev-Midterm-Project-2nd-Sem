@@ -11,7 +11,6 @@ java.util.Map<String, anywheresoftware.b4a.keywords.LayoutBuilder.ViewWrapperAnd
 anywheresoftware.b4a.keywords.LayoutBuilder.setScaleRate(0.3);
 anywheresoftware.b4a.keywords.LayoutBuilder.scaleAll(views);
 views.get("pausepanel").vw.setWidth((int)((100d / 100 * width)));
-//BA.debugLineNum = 4;BA.debugLine="PausePanel.Width = 100%y"[PauseState/General script]
 views.get("pausepanel").vw.setWidth((int)((100d / 100 * height)));
 
 }
