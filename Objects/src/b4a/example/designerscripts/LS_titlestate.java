@@ -12,6 +12,8 @@ anywheresoftware.b4a.keywords.LayoutBuilder.setScaleRate(0.3);
 anywheresoftware.b4a.keywords.LayoutBuilder.scaleAll(views);
 views.get("titlepanel").vw.setWidth((int)((100d / 100 * width)));
 views.get("titlepanel").vw.setHeight((int)((100d / 100 * height)));
+views.get("start").vw.setLeft((int)((views.get("titlepanel").vw.getWidth())/2d - (views.get("start").vw.getWidth() / 2)));
+views.get("start").vw.setTop((int)((views.get("titlepanel").vw.getHeight())/1.5d - (views.get("start").vw.getHeight() / 2)));
 
 }
 }

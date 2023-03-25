@@ -1273,4 +1273,14 @@ RDebugUtils.currentLine=917509;
  //BA.debugLineNum = 917509;BA.debugLine="End Sub";
 return "";
 }
+public static String  _start_pressed() throws Exception{
+RDebugUtils.currentModule="main";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "start_pressed", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "start_pressed", null));}
+RDebugUtils.currentLine=26148864;
+ //BA.debugLineNum = 26148864;BA.debugLine="Private Sub Start_Pressed";
+RDebugUtils.currentLine=26148866;
+ //BA.debugLineNum = 26148866;BA.debugLine="End Sub";
+return "";
+}
 }
