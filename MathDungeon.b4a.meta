@@ -4,6 +4,6 @@ ModuleBreakpoints0=
 ModuleBreakpoints1=
 ModuleClosedNodes0=
 ModuleClosedNodes1=
-NavigationStack=Main,Start_Click,290,0,Main,Button9_Click,398,0,Main,Activity_KeyPress,114,0,Main,Button1_Click,351,0,Main,Button4_Click,366,0,Main,ButtonEnter_Click,317,0,Main,InitializeState,135,4,Main,Globals,39,6,Visual Designer,GameState.bal,-100,6,Main,DrawHealth,219,6
+NavigationStack=Main,Start_Click,290,0,Main,Button9_Click,398,0,Main,Activity_KeyPress,114,0,Main,Button1_Click,351,0,Main,Button4_Click,366,0,Main,ButtonEnter_Click,317,0,Main,InitializeState,135,4,Main,Globals,39,6,Visual Designer,GameState.bal,-100,6,Main,DrawHealth,218,6
 SelectedBuild=0
 VisibleModules=1

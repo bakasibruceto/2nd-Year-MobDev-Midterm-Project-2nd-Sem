@@ -254,7 +254,7 @@ Sub DrawHealth
 	mob2.Color=Colors.ARGB(0, 0, 0, 0)
 	cvsGraph2.Initialize(mob2)
 	rect2.Initialize(10dip, 10dip, IntToDIP(barsize), 35dip)
-	cvsGraph2.DrawRect(rect2, xui.Color_Red , True, 2dip)
+	cvsGraph2.DrawRect(rect2, xui.Color_Red , True, 3dip)
 			
 	ply1.Color = Colors.ARGB(0, 0, 0, 0)
 	cvsGraph3.Initialize(ply1)

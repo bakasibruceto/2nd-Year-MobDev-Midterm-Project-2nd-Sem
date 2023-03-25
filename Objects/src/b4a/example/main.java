@@ -679,8 +679,8 @@ mostCurrent._mob2.setColor(anywheresoftware.b4a.keywords.Common.Colors.ARGB((int
 mostCurrent._cvsgraph2.Initialize((android.view.View)(mostCurrent._mob2.getObject()));
  //BA.debugLineNum = 218;BA.debugLine="rect2.Initialize(10dip, 10dip, IntToDIP(barsize),";
 mostCurrent._rect2.Initialize(anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (10)),anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (10)),_inttodip(_barsize),anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (35)));
- //BA.debugLineNum = 219;BA.debugLine="cvsGraph2.DrawRect(rect2, xui.Color_Red , True, 2";
-mostCurrent._cvsgraph2.DrawRect((android.graphics.Rect)(mostCurrent._rect2.getObject()),_xui.Color_Red,anywheresoftware.b4a.keywords.Common.True,(float) (anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (2))));
+ //BA.debugLineNum = 219;BA.debugLine="cvsGraph2.DrawRect(rect2, xui.Color_Red , True, 3";
+mostCurrent._cvsgraph2.DrawRect((android.graphics.Rect)(mostCurrent._rect2.getObject()),_xui.Color_Red,anywheresoftware.b4a.keywords.Common.True,(float) (anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (3))));
  //BA.debugLineNum = 221;BA.debugLine="ply1.Color = Colors.ARGB(0, 0, 0, 0)";
 mostCurrent._ply1.setColor(anywheresoftware.b4a.keywords.Common.Colors.ARGB((int) (0),(int) (0),(int) (0),(int) (0)));
  //BA.debugLineNum = 222;BA.debugLine="cvsGraph3.Initialize(ply1)";
