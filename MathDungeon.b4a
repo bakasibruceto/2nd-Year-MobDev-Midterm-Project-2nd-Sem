@@ -55,10 +55,11 @@ Version=12.2
 Sub Process_Globals
 	Private xui As XUI
 	Private MonsterType As Int = 0
-	Private Monster() As String = Array As String("redslime.png", "orc.png","skeleton.png")
+	Private Monster() As String = Array As String("redslime.png", "orc.png","sk\eleton.png")
 	Private FileName As String = Monster(MonsterType)
 	Private MediaPlayer As MediaPlayer
 	Private Font As Typeface = Typeface.LoadFromAssets("alagard.ttf")
+	
 End Sub
 		
 Sub Globals
@@ -139,6 +140,19 @@ Sub Activity_Pause (UserClosed As Boolean)
 
 End Sub
 
+Sub Activity_KeyPress (KeyCode As Int) As Boolean
+	If KeyCode = KeyCodes.KEYCODE_BACK Then
+		If Msgbox2("Are you sure to exit?", "", "Yes", "", "No", Null) = DialogResponse.POSITIVE Then
+			Return False
+			ExitApplication '...or whatever other previous killing actions.
+		Else
+			Return True
+		End If
+	Else
+		Return False    ' Handle the other presses in the OS
+	End If
+End Sub
+
 Sub FontStyle
 	num1.Typeface = Font
 	num2.Typeface = Font
@@ -150,7 +164,6 @@ End Sub
 
 
 Sub InitializeState
-	
 	
 	MediaPlayer.Initialize()
 	shake.InitializeTranslate("", -9dip, 0, 9dip, 0)

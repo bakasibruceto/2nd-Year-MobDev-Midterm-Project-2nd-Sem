@@ -4,6 +4,6 @@ ModuleBreakpoints0=
 ModuleBreakpoints1=
 ModuleClosedNodes0=
 ModuleClosedNodes1=
-NavigationStack=Main,Activity_Create,93,0,Main,Process_Globals,22,6,Main,Globals,27,6,Main,Activity_Pause,102,0,Main,FontStyle,103,5,Main,InitializeState,142,3
+NavigationStack=Main,Globals,27,6,Main,FontStyle,103,5,Main,DrawHealth,198,6,Main,InitializeState,135,3,Visual Designer,GameState.bal,-100,6,Main,Process_Globals,17,6,Main,Activity_Create,93,0,Main,Activity_Pause,103,0,Main,Activity_KeyPress,105,0
 SelectedBuild=0
 VisibleModules=1

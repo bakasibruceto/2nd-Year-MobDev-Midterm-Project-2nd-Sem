@@ -9,9 +9,7 @@ public class LS_pausestate{
 public static void LS_general(anywheresoftware.b4a.BA ba, android.view.View parent, anywheresoftware.b4a.keywords.LayoutValues lv, java.util.Map props,
 java.util.Map<String, anywheresoftware.b4a.keywords.LayoutBuilder.ViewWrapperAndAnchor> views, int width, int height, float scale) throws Exception {
 anywheresoftware.b4a.keywords.LayoutBuilder.setScaleRate(0.3);
-//BA.debugLineNum = 2;BA.debugLine="AutoScaleAll"[PauseState/General script]
 anywheresoftware.b4a.keywords.LayoutBuilder.scaleAll(views);
-//BA.debugLineNum = 3;BA.debugLine="PausePanel.Width = 100%x"[PauseState/General script]
 views.get("pausepanel").vw.setWidth((int)((100d / 100 * width)));
 //BA.debugLineNum = 4;BA.debugLine="PausePanel.Width = 100%y"[PauseState/General script]
 views.get("pausepanel").vw.setWidth((int)((100d / 100 * height)));

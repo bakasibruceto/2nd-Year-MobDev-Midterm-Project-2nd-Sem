@@ -11,6 +11,12 @@ java.util.Map<String, anywheresoftware.b4a.keywords.LayoutBuilder.ViewWrapperAnd
 anywheresoftware.b4a.keywords.LayoutBuilder.setScaleRate(0.3);
 //BA.debugLineNum = 2;BA.debugLine="AutoScaleAll"[GameState/General script]
 anywheresoftware.b4a.keywords.LayoutBuilder.scaleAll(views);
+//BA.debugLineNum = 4;BA.debugLine="Panel1.SetLeftAndRight(0,100%x)"[GameState/General script]
+views.get("panel1").vw.setLeft((int)(0d));
+views.get("panel1").vw.setWidth((int)((100d / 100 * width) - (0d)));
+//BA.debugLineNum = 5;BA.debugLine="Panel1.SetTopAndBottom(0,100%y)"[GameState/General script]
+views.get("panel1").vw.setTop((int)(0d));
+views.get("panel1").vw.setHeight((int)((100d / 100 * height) - (0d)));
 
 }
 }
