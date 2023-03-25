@@ -86,7 +86,7 @@ Sub Globals
 	Private hpshake As Boolean = False
 	Private mobshake As Boolean = False
 	'Game States
-	Private Load, GameState, PauseState, TitleState, GameOverState, GameDefeated As Panel
+	Private GameState, PauseState, TitleState, GameOverState, GameDefeated As Panel
 	Private Button1 As Button
 	
 	'Health Bar
@@ -175,20 +175,20 @@ Sub InitializeState
 	shake.Duration = 30
 	
 	strAn.Initialize("")
-	Load.Initialize("") : Load.Visible = False
+
 	GameState.Initialize("") : GameState.Visible = False
 	GameOverState.Initialize("") : GameOverState.Visible = False
 	PauseState.Initialize(""): PauseState.Visible = False
 	TitleState.Initialize(""): TitleState.Visible = False
 	GameDefeated.Initialize(""): GameDefeated.Visible = False
 	
-	Load.LoadLayout("Load") 'Regular layouts created with the designer
+	
 	GameState.LoadLayout("GameState")
 	TitleState.LoadLayout("TitleState")
 	GameOverState.LoadLayout("GameOverState")
 	GameDefeated.LoadLayout("GameDefeated")
 	PauseState.LoadLayout("PauseState")
-	Activity.AddView(Load,0,0,100%x,100%y)
+
 	Activity.AddView(GameState,0,0,100%x,100%y)
 	Activity.AddView(TitleState,0,0,100%x,100%y)
 	Activity.AddView(GameOverState,0,0,100%x,100%y)
@@ -199,8 +199,6 @@ End Sub
 
 Sub DrawState
 	If check == False Then
-		Load.Visible = True
-		Load.Visible = False
 		TitleState.Visible = True
 	End If
 	
