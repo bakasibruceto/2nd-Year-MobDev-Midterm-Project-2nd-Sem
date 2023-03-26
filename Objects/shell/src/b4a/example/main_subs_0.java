@@ -116,18 +116,18 @@ finally {
 		}}
 public static RemoteObject  _button0_click() throws Exception{
 try {
-		Debug.PushSubsStack("Button0_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,350);
+		Debug.PushSubsStack("Button0_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,368);
 if (RapidSub.canDelegate("button0_click")) { return b4a.example.main.remoteMe.runUserSub(false, "main","button0_click");}
- BA.debugLineNum = 350;BA.debugLine="Private Sub Button0_Click";
-Debug.ShouldStop(536870912);
- BA.debugLineNum = 351;BA.debugLine="answer.Text = tempStr&\"0\"";
-Debug.ShouldStop(1073741824);
+ BA.debugLineNum = 368;BA.debugLine="Private Sub Button0_Click";
+Debug.ShouldStop(32768);
+ BA.debugLineNum = 369;BA.debugLine="answer.Text = tempStr&\"0\"";
+Debug.ShouldStop(65536);
 main.mostCurrent._answer.runMethod(true,"setText",BA.ObjectToCharSequence(RemoteObject.concat(main.mostCurrent._tempstr,RemoteObject.createImmutable("0"))));
- BA.debugLineNum = 352;BA.debugLine="tempStr = answer.Text";
-Debug.ShouldStop(-2147483648);
+ BA.debugLineNum = 370;BA.debugLine="tempStr = answer.Text";
+Debug.ShouldStop(131072);
 main.mostCurrent._tempstr = main.mostCurrent._answer.runMethod(true,"getText");
- BA.debugLineNum = 354;BA.debugLine="End Sub";
-Debug.ShouldStop(2);
+ BA.debugLineNum = 372;BA.debugLine="End Sub";
+Debug.ShouldStop(524288);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -138,18 +138,18 @@ finally {
 		}}
 public static RemoteObject  _button1_click() throws Exception{
 try {
-		Debug.PushSubsStack("Button1_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,356);
+		Debug.PushSubsStack("Button1_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,374);
 if (RapidSub.canDelegate("button1_click")) { return b4a.example.main.remoteMe.runUserSub(false, "main","button1_click");}
- BA.debugLineNum = 356;BA.debugLine="Private Sub Button1_Click";
-Debug.ShouldStop(8);
- BA.debugLineNum = 357;BA.debugLine="answer.Text = tempStr&\"1\"";
-Debug.ShouldStop(16);
+ BA.debugLineNum = 374;BA.debugLine="Private Sub Button1_Click";
+Debug.ShouldStop(2097152);
+ BA.debugLineNum = 375;BA.debugLine="answer.Text = tempStr&\"1\"";
+Debug.ShouldStop(4194304);
 main.mostCurrent._answer.runMethod(true,"setText",BA.ObjectToCharSequence(RemoteObject.concat(main.mostCurrent._tempstr,RemoteObject.createImmutable("1"))));
- BA.debugLineNum = 358;BA.debugLine="tempStr = answer.Text";
-Debug.ShouldStop(32);
+ BA.debugLineNum = 376;BA.debugLine="tempStr = answer.Text";
+Debug.ShouldStop(8388608);
 main.mostCurrent._tempstr = main.mostCurrent._answer.runMethod(true,"getText");
- BA.debugLineNum = 359;BA.debugLine="End Sub";
-Debug.ShouldStop(64);
+ BA.debugLineNum = 377;BA.debugLine="End Sub";
+Debug.ShouldStop(16777216);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -160,18 +160,18 @@ finally {
 		}}
 public static RemoteObject  _button2_click() throws Exception{
 try {
-		Debug.PushSubsStack("Button2_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,361);
+		Debug.PushSubsStack("Button2_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,379);
 if (RapidSub.canDelegate("button2_click")) { return b4a.example.main.remoteMe.runUserSub(false, "main","button2_click");}
- BA.debugLineNum = 361;BA.debugLine="Private Sub Button2_Click";
-Debug.ShouldStop(256);
- BA.debugLineNum = 362;BA.debugLine="answer.Text = tempStr&\"2\"";
-Debug.ShouldStop(512);
+ BA.debugLineNum = 379;BA.debugLine="Private Sub Button2_Click";
+Debug.ShouldStop(67108864);
+ BA.debugLineNum = 380;BA.debugLine="answer.Text = tempStr&\"2\"";
+Debug.ShouldStop(134217728);
 main.mostCurrent._answer.runMethod(true,"setText",BA.ObjectToCharSequence(RemoteObject.concat(main.mostCurrent._tempstr,RemoteObject.createImmutable("2"))));
- BA.debugLineNum = 363;BA.debugLine="tempStr = answer.Text";
-Debug.ShouldStop(1024);
+ BA.debugLineNum = 381;BA.debugLine="tempStr = answer.Text";
+Debug.ShouldStop(268435456);
 main.mostCurrent._tempstr = main.mostCurrent._answer.runMethod(true,"getText");
- BA.debugLineNum = 364;BA.debugLine="End Sub";
-Debug.ShouldStop(2048);
+ BA.debugLineNum = 382;BA.debugLine="End Sub";
+Debug.ShouldStop(536870912);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -182,18 +182,18 @@ finally {
 		}}
 public static RemoteObject  _button3_click() throws Exception{
 try {
-		Debug.PushSubsStack("Button3_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,366);
+		Debug.PushSubsStack("Button3_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,384);
 if (RapidSub.canDelegate("button3_click")) { return b4a.example.main.remoteMe.runUserSub(false, "main","button3_click");}
- BA.debugLineNum = 366;BA.debugLine="Private Sub Button3_Click";
-Debug.ShouldStop(8192);
- BA.debugLineNum = 367;BA.debugLine="answer.Text = tempStr&\"3\"";
-Debug.ShouldStop(16384);
+ BA.debugLineNum = 384;BA.debugLine="Private Sub Button3_Click";
+Debug.ShouldStop(-2147483648);
+ BA.debugLineNum = 385;BA.debugLine="answer.Text = tempStr&\"3\"";
+Debug.ShouldStop(1);
 main.mostCurrent._answer.runMethod(true,"setText",BA.ObjectToCharSequence(RemoteObject.concat(main.mostCurrent._tempstr,RemoteObject.createImmutable("3"))));
- BA.debugLineNum = 368;BA.debugLine="tempStr = answer.Text";
-Debug.ShouldStop(32768);
+ BA.debugLineNum = 386;BA.debugLine="tempStr = answer.Text";
+Debug.ShouldStop(2);
 main.mostCurrent._tempstr = main.mostCurrent._answer.runMethod(true,"getText");
- BA.debugLineNum = 369;BA.debugLine="End Sub";
-Debug.ShouldStop(65536);
+ BA.debugLineNum = 387;BA.debugLine="End Sub";
+Debug.ShouldStop(4);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -204,18 +204,18 @@ finally {
 		}}
 public static RemoteObject  _button4_click() throws Exception{
 try {
-		Debug.PushSubsStack("Button4_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,371);
+		Debug.PushSubsStack("Button4_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,389);
 if (RapidSub.canDelegate("button4_click")) { return b4a.example.main.remoteMe.runUserSub(false, "main","button4_click");}
- BA.debugLineNum = 371;BA.debugLine="Private Sub Button4_Click";
-Debug.ShouldStop(262144);
- BA.debugLineNum = 372;BA.debugLine="answer.Text = tempStr&\"4\"";
-Debug.ShouldStop(524288);
+ BA.debugLineNum = 389;BA.debugLine="Private Sub Button4_Click";
+Debug.ShouldStop(16);
+ BA.debugLineNum = 390;BA.debugLine="answer.Text = tempStr&\"4\"";
+Debug.ShouldStop(32);
 main.mostCurrent._answer.runMethod(true,"setText",BA.ObjectToCharSequence(RemoteObject.concat(main.mostCurrent._tempstr,RemoteObject.createImmutable("4"))));
- BA.debugLineNum = 373;BA.debugLine="tempStr = answer.Text";
-Debug.ShouldStop(1048576);
+ BA.debugLineNum = 391;BA.debugLine="tempStr = answer.Text";
+Debug.ShouldStop(64);
 main.mostCurrent._tempstr = main.mostCurrent._answer.runMethod(true,"getText");
- BA.debugLineNum = 374;BA.debugLine="End Sub";
-Debug.ShouldStop(2097152);
+ BA.debugLineNum = 392;BA.debugLine="End Sub";
+Debug.ShouldStop(128);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -226,18 +226,18 @@ finally {
 		}}
 public static RemoteObject  _button5_click() throws Exception{
 try {
-		Debug.PushSubsStack("Button5_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,376);
+		Debug.PushSubsStack("Button5_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,394);
 if (RapidSub.canDelegate("button5_click")) { return b4a.example.main.remoteMe.runUserSub(false, "main","button5_click");}
- BA.debugLineNum = 376;BA.debugLine="Private Sub Button5_Click";
-Debug.ShouldStop(8388608);
- BA.debugLineNum = 377;BA.debugLine="answer.Text = tempStr&\"5\"";
-Debug.ShouldStop(16777216);
+ BA.debugLineNum = 394;BA.debugLine="Private Sub Button5_Click";
+Debug.ShouldStop(512);
+ BA.debugLineNum = 395;BA.debugLine="answer.Text = tempStr&\"5\"";
+Debug.ShouldStop(1024);
 main.mostCurrent._answer.runMethod(true,"setText",BA.ObjectToCharSequence(RemoteObject.concat(main.mostCurrent._tempstr,RemoteObject.createImmutable("5"))));
- BA.debugLineNum = 378;BA.debugLine="tempStr = answer.Text";
-Debug.ShouldStop(33554432);
+ BA.debugLineNum = 396;BA.debugLine="tempStr = answer.Text";
+Debug.ShouldStop(2048);
 main.mostCurrent._tempstr = main.mostCurrent._answer.runMethod(true,"getText");
- BA.debugLineNum = 379;BA.debugLine="End Sub";
-Debug.ShouldStop(67108864);
+ BA.debugLineNum = 397;BA.debugLine="End Sub";
+Debug.ShouldStop(4096);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -248,18 +248,18 @@ finally {
 		}}
 public static RemoteObject  _button6_click() throws Exception{
 try {
-		Debug.PushSubsStack("Button6_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,381);
+		Debug.PushSubsStack("Button6_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,399);
 if (RapidSub.canDelegate("button6_click")) { return b4a.example.main.remoteMe.runUserSub(false, "main","button6_click");}
- BA.debugLineNum = 381;BA.debugLine="Private Sub Button6_Click";
-Debug.ShouldStop(268435456);
- BA.debugLineNum = 382;BA.debugLine="answer.Text = tempStr&\"6\"";
-Debug.ShouldStop(536870912);
+ BA.debugLineNum = 399;BA.debugLine="Private Sub Button6_Click";
+Debug.ShouldStop(16384);
+ BA.debugLineNum = 400;BA.debugLine="answer.Text = tempStr&\"6\"";
+Debug.ShouldStop(32768);
 main.mostCurrent._answer.runMethod(true,"setText",BA.ObjectToCharSequence(RemoteObject.concat(main.mostCurrent._tempstr,RemoteObject.createImmutable("6"))));
- BA.debugLineNum = 383;BA.debugLine="tempStr = answer.Text";
-Debug.ShouldStop(1073741824);
+ BA.debugLineNum = 401;BA.debugLine="tempStr = answer.Text";
+Debug.ShouldStop(65536);
 main.mostCurrent._tempstr = main.mostCurrent._answer.runMethod(true,"getText");
- BA.debugLineNum = 384;BA.debugLine="End Sub";
-Debug.ShouldStop(-2147483648);
+ BA.debugLineNum = 402;BA.debugLine="End Sub";
+Debug.ShouldStop(131072);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -270,18 +270,18 @@ finally {
 		}}
 public static RemoteObject  _button7_click() throws Exception{
 try {
-		Debug.PushSubsStack("Button7_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,386);
+		Debug.PushSubsStack("Button7_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,404);
 if (RapidSub.canDelegate("button7_click")) { return b4a.example.main.remoteMe.runUserSub(false, "main","button7_click");}
- BA.debugLineNum = 386;BA.debugLine="Private Sub Button7_Click";
-Debug.ShouldStop(2);
- BA.debugLineNum = 387;BA.debugLine="answer.Text = tempStr&\"7\"";
-Debug.ShouldStop(4);
+ BA.debugLineNum = 404;BA.debugLine="Private Sub Button7_Click";
+Debug.ShouldStop(524288);
+ BA.debugLineNum = 405;BA.debugLine="answer.Text = tempStr&\"7\"";
+Debug.ShouldStop(1048576);
 main.mostCurrent._answer.runMethod(true,"setText",BA.ObjectToCharSequence(RemoteObject.concat(main.mostCurrent._tempstr,RemoteObject.createImmutable("7"))));
- BA.debugLineNum = 388;BA.debugLine="tempStr = answer.Text";
-Debug.ShouldStop(8);
+ BA.debugLineNum = 406;BA.debugLine="tempStr = answer.Text";
+Debug.ShouldStop(2097152);
 main.mostCurrent._tempstr = main.mostCurrent._answer.runMethod(true,"getText");
- BA.debugLineNum = 389;BA.debugLine="End Sub";
-Debug.ShouldStop(16);
+ BA.debugLineNum = 407;BA.debugLine="End Sub";
+Debug.ShouldStop(4194304);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -292,18 +292,18 @@ finally {
 		}}
 public static RemoteObject  _button8_click() throws Exception{
 try {
-		Debug.PushSubsStack("Button8_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,391);
+		Debug.PushSubsStack("Button8_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,409);
 if (RapidSub.canDelegate("button8_click")) { return b4a.example.main.remoteMe.runUserSub(false, "main","button8_click");}
- BA.debugLineNum = 391;BA.debugLine="Private Sub Button8_Click";
-Debug.ShouldStop(64);
- BA.debugLineNum = 392;BA.debugLine="answer.Text = tempStr&\"8\"";
-Debug.ShouldStop(128);
+ BA.debugLineNum = 409;BA.debugLine="Private Sub Button8_Click";
+Debug.ShouldStop(16777216);
+ BA.debugLineNum = 410;BA.debugLine="answer.Text = tempStr&\"8\"";
+Debug.ShouldStop(33554432);
 main.mostCurrent._answer.runMethod(true,"setText",BA.ObjectToCharSequence(RemoteObject.concat(main.mostCurrent._tempstr,RemoteObject.createImmutable("8"))));
- BA.debugLineNum = 393;BA.debugLine="tempStr = answer.Text";
-Debug.ShouldStop(256);
+ BA.debugLineNum = 411;BA.debugLine="tempStr = answer.Text";
+Debug.ShouldStop(67108864);
 main.mostCurrent._tempstr = main.mostCurrent._answer.runMethod(true,"getText");
- BA.debugLineNum = 394;BA.debugLine="End Sub";
-Debug.ShouldStop(512);
+ BA.debugLineNum = 412;BA.debugLine="End Sub";
+Debug.ShouldStop(134217728);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -314,18 +314,18 @@ finally {
 		}}
 public static RemoteObject  _button9_click() throws Exception{
 try {
-		Debug.PushSubsStack("Button9_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,396);
+		Debug.PushSubsStack("Button9_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,414);
 if (RapidSub.canDelegate("button9_click")) { return b4a.example.main.remoteMe.runUserSub(false, "main","button9_click");}
- BA.debugLineNum = 396;BA.debugLine="Private Sub Button9_Click";
-Debug.ShouldStop(2048);
- BA.debugLineNum = 397;BA.debugLine="answer.Text = tempStr&\"9\"";
-Debug.ShouldStop(4096);
+ BA.debugLineNum = 414;BA.debugLine="Private Sub Button9_Click";
+Debug.ShouldStop(536870912);
+ BA.debugLineNum = 415;BA.debugLine="answer.Text = tempStr&\"9\"";
+Debug.ShouldStop(1073741824);
 main.mostCurrent._answer.runMethod(true,"setText",BA.ObjectToCharSequence(RemoteObject.concat(main.mostCurrent._tempstr,RemoteObject.createImmutable("9"))));
- BA.debugLineNum = 398;BA.debugLine="tempStr = answer.Text";
-Debug.ShouldStop(8192);
+ BA.debugLineNum = 416;BA.debugLine="tempStr = answer.Text";
+Debug.ShouldStop(-2147483648);
 main.mostCurrent._tempstr = main.mostCurrent._answer.runMethod(true,"getText");
- BA.debugLineNum = 399;BA.debugLine="End Sub";
-Debug.ShouldStop(16384);
+ BA.debugLineNum = 417;BA.debugLine="End Sub";
+Debug.ShouldStop(1);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -336,18 +336,18 @@ finally {
 		}}
 public static RemoteObject  _buttonclear_click() throws Exception{
 try {
-		Debug.PushSubsStack("ButtonClear_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,344);
+		Debug.PushSubsStack("ButtonClear_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,362);
 if (RapidSub.canDelegate("buttonclear_click")) { return b4a.example.main.remoteMe.runUserSub(false, "main","buttonclear_click");}
- BA.debugLineNum = 344;BA.debugLine="Private Sub ButtonClear_Click";
-Debug.ShouldStop(8388608);
- BA.debugLineNum = 345;BA.debugLine="answer.Text=\"\"";
-Debug.ShouldStop(16777216);
+ BA.debugLineNum = 362;BA.debugLine="Private Sub ButtonClear_Click";
+Debug.ShouldStop(512);
+ BA.debugLineNum = 363;BA.debugLine="answer.Text=\"\"";
+Debug.ShouldStop(1024);
 main.mostCurrent._answer.runMethod(true,"setText",BA.ObjectToCharSequence(""));
- BA.debugLineNum = 346;BA.debugLine="tempStr=\"\"";
-Debug.ShouldStop(33554432);
+ BA.debugLineNum = 364;BA.debugLine="tempStr=\"\"";
+Debug.ShouldStop(2048);
 main.mostCurrent._tempstr = BA.ObjectToString("");
- BA.debugLineNum = 348;BA.debugLine="End Sub";
-Debug.ShouldStop(134217728);
+ BA.debugLineNum = 366;BA.debugLine="End Sub";
+Debug.ShouldStop(8192);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -358,80 +358,135 @@ finally {
 		}}
 public static RemoteObject  _buttonenter_click() throws Exception{
 try {
-		Debug.PushSubsStack("ButtonEnter_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,312);
+		Debug.PushSubsStack("ButtonEnter_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,330);
 if (RapidSub.canDelegate("buttonenter_click")) { return b4a.example.main.remoteMe.runUserSub(false, "main","buttonenter_click");}
- BA.debugLineNum = 312;BA.debugLine="Private Sub ButtonEnter_Click";
-Debug.ShouldStop(8388608);
- BA.debugLineNum = 313;BA.debugLine="tempStr=\"\"";
-Debug.ShouldStop(16777216);
+ BA.debugLineNum = 330;BA.debugLine="Private Sub ButtonEnter_Click";
+Debug.ShouldStop(512);
+ BA.debugLineNum = 331;BA.debugLine="tempStr=\"\"";
+Debug.ShouldStop(1024);
 main.mostCurrent._tempstr = BA.ObjectToString("");
- BA.debugLineNum = 314;BA.debugLine="damage = str";
-Debug.ShouldStop(33554432);
+ BA.debugLineNum = 332;BA.debugLine="damage = str";
+Debug.ShouldStop(2048);
 main._damage = BA.numberCast(int.class, main.mostCurrent._str);
- BA.debugLineNum = 315;BA.debugLine="If answer.Text = str Then";
-Debug.ShouldStop(67108864);
+ BA.debugLineNum = 333;BA.debugLine="If answer.Text = str Then";
+Debug.ShouldStop(4096);
 if (RemoteObject.solveBoolean("=",main.mostCurrent._answer.runMethod(true,"getText"),main.mostCurrent._str)) { 
- BA.debugLineNum = 316;BA.debugLine="strAn.Text = \"Correct\"";
-Debug.ShouldStop(134217728);
+ BA.debugLineNum = 334;BA.debugLine="strAn.Text = \"Correct\"";
+Debug.ShouldStop(8192);
 main.mostCurrent._stran.runMethod(true,"setText",BA.ObjectToCharSequence("Correct"));
- BA.debugLineNum = 317;BA.debugLine="mobVal= mobVal-damage";
-Debug.ShouldStop(268435456);
+ BA.debugLineNum = 335;BA.debugLine="mobVal= mobVal-damage";
+Debug.ShouldStop(16384);
 main._mobval = RemoteObject.solve(new RemoteObject[] {main._mobval,main._damage}, "-",1, 1);
- BA.debugLineNum = 318;BA.debugLine="mobshake = True";
-Debug.ShouldStop(536870912);
+ BA.debugLineNum = 336;BA.debugLine="mobshake = True";
+Debug.ShouldStop(32768);
 main._mobshake = main.mostCurrent.__c.getField(true,"True");
- BA.debugLineNum = 319;BA.debugLine="MediaPlayer.Load(File.DirAssets,\"dam.mp3\")";
-Debug.ShouldStop(1073741824);
+ BA.debugLineNum = 337;BA.debugLine="MediaPlayer.Load(File.DirAssets,\"dam.mp3\")";
+Debug.ShouldStop(65536);
 main._mediaplayer.runVoidMethod ("Load",(Object)(main.mostCurrent.__c.getField(false,"File").runMethod(true,"getDirAssets")),(Object)(RemoteObject.createImmutable("dam.mp3")));
  }else {
- BA.debugLineNum = 322;BA.debugLine="strAn.Text = \"InCorrect\"";
-Debug.ShouldStop(2);
+ BA.debugLineNum = 340;BA.debugLine="strAn.Text = \"InCorrect\"";
+Debug.ShouldStop(524288);
 main.mostCurrent._stran.runMethod(true,"setText",BA.ObjectToCharSequence("InCorrect"));
- BA.debugLineNum = 323;BA.debugLine="HPval = HPval-damage";
-Debug.ShouldStop(4);
+ BA.debugLineNum = 341;BA.debugLine="HPval = HPval-damage";
+Debug.ShouldStop(1048576);
 main._hpval = RemoteObject.solve(new RemoteObject[] {main._hpval,main._damage}, "-",1, 1);
- BA.debugLineNum = 324;BA.debugLine="MediaPlayer.Play";
-Debug.ShouldStop(8);
+ BA.debugLineNum = 342;BA.debugLine="MediaPlayer.Play";
+Debug.ShouldStop(2097152);
 main._mediaplayer.runVoidMethod ("Play");
- BA.debugLineNum = 325;BA.debugLine="hpshake = True";
-Debug.ShouldStop(16);
+ BA.debugLineNum = 343;BA.debugLine="hpshake = True";
+Debug.ShouldStop(4194304);
 main._hpshake = main.mostCurrent.__c.getField(true,"True");
- BA.debugLineNum = 326;BA.debugLine="MediaPlayer.Load(File.DirAssets,\"pdam.mp3\")";
-Debug.ShouldStop(32);
+ BA.debugLineNum = 344;BA.debugLine="MediaPlayer.Load(File.DirAssets,\"pdam.mp3\")";
+Debug.ShouldStop(8388608);
 main._mediaplayer.runVoidMethod ("Load",(Object)(main.mostCurrent.__c.getField(false,"File").runMethod(true,"getDirAssets")),(Object)(RemoteObject.createImmutable("pdam.mp3")));
  };
- BA.debugLineNum = 328;BA.debugLine="MediaPlayer.Play";
-Debug.ShouldStop(128);
+ BA.debugLineNum = 346;BA.debugLine="MediaPlayer.Play";
+Debug.ShouldStop(33554432);
 main._mediaplayer.runVoidMethod ("Play");
- BA.debugLineNum = 330;BA.debugLine="GameState.Visible=False";
-Debug.ShouldStop(512);
+ BA.debugLineNum = 348;BA.debugLine="GameState.Visible=False";
+Debug.ShouldStop(134217728);
 main.mostCurrent._gamestate.runMethod(true,"setVisible",main.mostCurrent.__c.getField(true,"False"));
- BA.debugLineNum = 331;BA.debugLine="ReDraw";
-Debug.ShouldStop(1024);
+ BA.debugLineNum = 349;BA.debugLine="ReDraw";
+Debug.ShouldStop(268435456);
 _redraw();
- BA.debugLineNum = 332;BA.debugLine="Activity_Create(True)";
-Debug.ShouldStop(2048);
+ BA.debugLineNum = 350;BA.debugLine="Activity_Create(True)";
+Debug.ShouldStop(536870912);
 _activity_create(main.mostCurrent.__c.getField(true,"True"));
- BA.debugLineNum = 333;BA.debugLine="If MonsterType == 3 Then";
-Debug.ShouldStop(4096);
+ BA.debugLineNum = 351;BA.debugLine="If MonsterType == 3 Then";
+Debug.ShouldStop(1073741824);
 if (RemoteObject.solveBoolean("=",main._monstertype,BA.numberCast(double.class, 3))) { 
- BA.debugLineNum = 334;BA.debugLine="GameDefeated.Visible=True";
-Debug.ShouldStop(8192);
+ BA.debugLineNum = 352;BA.debugLine="GameDefeated.Visible=True";
+Debug.ShouldStop(-2147483648);
 main.mostCurrent._gamedefeated.runMethod(true,"setVisible",main.mostCurrent.__c.getField(true,"True"));
  }else {
- BA.debugLineNum = 336;BA.debugLine="check = True";
-Debug.ShouldStop(32768);
+ BA.debugLineNum = 354;BA.debugLine="check = True";
+Debug.ShouldStop(2);
 main._check = main.mostCurrent.__c.getField(true,"True");
- BA.debugLineNum = 337;BA.debugLine="If HPval <= 100 And HPval >= 0 Then";
-Debug.ShouldStop(65536);
+ BA.debugLineNum = 355;BA.debugLine="If HPval <= 100 And HPval >= 0 Then";
+Debug.ShouldStop(4);
 if (RemoteObject.solveBoolean("k",main._hpval,BA.numberCast(double.class, 100)) && RemoteObject.solveBoolean("g",main._hpval,BA.numberCast(double.class, 0))) { 
- BA.debugLineNum = 338;BA.debugLine="GameState.Visible=True";
-Debug.ShouldStop(131072);
+ BA.debugLineNum = 356;BA.debugLine="GameState.Visible=True";
+Debug.ShouldStop(8);
 main.mostCurrent._gamestate.runMethod(true,"setVisible",main.mostCurrent.__c.getField(true,"True"));
  };
  };
- BA.debugLineNum = 342;BA.debugLine="End Sub";
-Debug.ShouldStop(2097152);
+ BA.debugLineNum = 360;BA.debugLine="End Sub";
+Debug.ShouldStop(128);
+return RemoteObject.createImmutable("");
+}
+catch (Exception e) {
+			throw Debug.ErrorCaught(e);
+		} 
+finally {
+			Debug.PopSubsStack();
+		}}
+public static RemoteObject  _buttonresume_click() throws Exception{
+try {
+		Debug.PushSubsStack("ButtonResume_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,419);
+if (RapidSub.canDelegate("buttonresume_click")) { return b4a.example.main.remoteMe.runUserSub(false, "main","buttonresume_click");}
+ BA.debugLineNum = 419;BA.debugLine="Private Sub ButtonResume_Click";
+Debug.ShouldStop(4);
+ BA.debugLineNum = 420;BA.debugLine="PauseState.Visible = False";
+Debug.ShouldStop(8);
+main.mostCurrent._pausestate.runMethod(true,"setVisible",main.mostCurrent.__c.getField(true,"False"));
+ BA.debugLineNum = 421;BA.debugLine="Button0.Enabled = True";
+Debug.ShouldStop(16);
+main.mostCurrent._button0.runMethod(true,"setEnabled",main.mostCurrent.__c.getField(true,"True"));
+ BA.debugLineNum = 422;BA.debugLine="Button1.Enabled = True";
+Debug.ShouldStop(32);
+main.mostCurrent._button1.runMethod(true,"setEnabled",main.mostCurrent.__c.getField(true,"True"));
+ BA.debugLineNum = 423;BA.debugLine="Button2.Enabled = True";
+Debug.ShouldStop(64);
+main.mostCurrent._button2.runMethod(true,"setEnabled",main.mostCurrent.__c.getField(true,"True"));
+ BA.debugLineNum = 424;BA.debugLine="Button3.Enabled = True";
+Debug.ShouldStop(128);
+main.mostCurrent._button3.runMethod(true,"setEnabled",main.mostCurrent.__c.getField(true,"True"));
+ BA.debugLineNum = 425;BA.debugLine="Button4.Enabled = True";
+Debug.ShouldStop(256);
+main.mostCurrent._button4.runMethod(true,"setEnabled",main.mostCurrent.__c.getField(true,"True"));
+ BA.debugLineNum = 426;BA.debugLine="Button5.Enabled = True";
+Debug.ShouldStop(512);
+main.mostCurrent._button5.runMethod(true,"setEnabled",main.mostCurrent.__c.getField(true,"True"));
+ BA.debugLineNum = 427;BA.debugLine="Button6.Enabled = True";
+Debug.ShouldStop(1024);
+main.mostCurrent._button6.runMethod(true,"setEnabled",main.mostCurrent.__c.getField(true,"True"));
+ BA.debugLineNum = 428;BA.debugLine="Button7.Enabled = True";
+Debug.ShouldStop(2048);
+main.mostCurrent._button7.runMethod(true,"setEnabled",main.mostCurrent.__c.getField(true,"True"));
+ BA.debugLineNum = 429;BA.debugLine="Button8.Enabled = True";
+Debug.ShouldStop(4096);
+main.mostCurrent._button8.runMethod(true,"setEnabled",main.mostCurrent.__c.getField(true,"True"));
+ BA.debugLineNum = 430;BA.debugLine="Button9.Enabled = True";
+Debug.ShouldStop(8192);
+main.mostCurrent._button9.runMethod(true,"setEnabled",main.mostCurrent.__c.getField(true,"True"));
+ BA.debugLineNum = 431;BA.debugLine="ButtonEnter.Enabled = True";
+Debug.ShouldStop(16384);
+main.mostCurrent._buttonenter.runMethod(true,"setEnabled",main.mostCurrent.__c.getField(true,"True"));
+ BA.debugLineNum = 432;BA.debugLine="ButtonClear.Enabled = True";
+Debug.ShouldStop(32768);
+main.mostCurrent._buttonclear.runMethod(true,"setEnabled",main.mostCurrent.__c.getField(true,"True"));
+ BA.debugLineNum = 433;BA.debugLine="End Sub";
+Debug.ShouldStop(65536);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -749,6 +804,8 @@ main.mostCurrent._mobhp = RemoteObject.createNew ("anywheresoftware.b4a.objects.
  //BA.debugLineNum = 31;BA.debugLine="Private answer, equal As Label";
 main.mostCurrent._answer = RemoteObject.createNew ("anywheresoftware.b4a.objects.LabelWrapper");
 main.mostCurrent._equal = RemoteObject.createNew ("anywheresoftware.b4a.objects.LabelWrapper");
+ //BA.debugLineNum = 32;BA.debugLine="Private PausePanel As Panel";
+main.mostCurrent._pausepanel = RemoteObject.createNew ("anywheresoftware.b4a.objects.PanelWrapper");
  //BA.debugLineNum = 33;BA.debugLine="Private ImageView1 As ImageView";
 main.mostCurrent._imageview1 = RemoteObject.createNew ("anywheresoftware.b4a.objects.ImageViewWrapper");
  //BA.debugLineNum = 36;BA.debugLine="Private strAn As Label";
@@ -951,6 +1008,61 @@ catch (Exception e) {
 finally {
 			Debug.PopSubsStack();
 		}}
+public static RemoteObject  _pause_click() throws Exception{
+try {
+		Debug.PushSubsStack("Pause_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,285);
+if (RapidSub.canDelegate("pause_click")) { return b4a.example.main.remoteMe.runUserSub(false, "main","pause_click");}
+ BA.debugLineNum = 285;BA.debugLine="Private Sub Pause_Click";
+Debug.ShouldStop(268435456);
+ BA.debugLineNum = 286;BA.debugLine="PauseState.Visible = True";
+Debug.ShouldStop(536870912);
+main.mostCurrent._pausestate.runMethod(true,"setVisible",main.mostCurrent.__c.getField(true,"True"));
+ BA.debugLineNum = 287;BA.debugLine="Button0.Enabled = False";
+Debug.ShouldStop(1073741824);
+main.mostCurrent._button0.runMethod(true,"setEnabled",main.mostCurrent.__c.getField(true,"False"));
+ BA.debugLineNum = 288;BA.debugLine="Button1.Enabled = False";
+Debug.ShouldStop(-2147483648);
+main.mostCurrent._button1.runMethod(true,"setEnabled",main.mostCurrent.__c.getField(true,"False"));
+ BA.debugLineNum = 289;BA.debugLine="Button2.Enabled = False";
+Debug.ShouldStop(1);
+main.mostCurrent._button2.runMethod(true,"setEnabled",main.mostCurrent.__c.getField(true,"False"));
+ BA.debugLineNum = 290;BA.debugLine="Button3.Enabled = False";
+Debug.ShouldStop(2);
+main.mostCurrent._button3.runMethod(true,"setEnabled",main.mostCurrent.__c.getField(true,"False"));
+ BA.debugLineNum = 291;BA.debugLine="Button4.Enabled = False";
+Debug.ShouldStop(4);
+main.mostCurrent._button4.runMethod(true,"setEnabled",main.mostCurrent.__c.getField(true,"False"));
+ BA.debugLineNum = 292;BA.debugLine="Button5.Enabled = False";
+Debug.ShouldStop(8);
+main.mostCurrent._button5.runMethod(true,"setEnabled",main.mostCurrent.__c.getField(true,"False"));
+ BA.debugLineNum = 293;BA.debugLine="Button6.Enabled = False";
+Debug.ShouldStop(16);
+main.mostCurrent._button6.runMethod(true,"setEnabled",main.mostCurrent.__c.getField(true,"False"));
+ BA.debugLineNum = 294;BA.debugLine="Button7.Enabled = False";
+Debug.ShouldStop(32);
+main.mostCurrent._button7.runMethod(true,"setEnabled",main.mostCurrent.__c.getField(true,"False"));
+ BA.debugLineNum = 295;BA.debugLine="Button8.Enabled = False";
+Debug.ShouldStop(64);
+main.mostCurrent._button8.runMethod(true,"setEnabled",main.mostCurrent.__c.getField(true,"False"));
+ BA.debugLineNum = 296;BA.debugLine="Button9.Enabled = False";
+Debug.ShouldStop(128);
+main.mostCurrent._button9.runMethod(true,"setEnabled",main.mostCurrent.__c.getField(true,"False"));
+ BA.debugLineNum = 297;BA.debugLine="ButtonEnter.Enabled = False";
+Debug.ShouldStop(256);
+main.mostCurrent._buttonenter.runMethod(true,"setEnabled",main.mostCurrent.__c.getField(true,"False"));
+ BA.debugLineNum = 298;BA.debugLine="ButtonClear.Enabled = False";
+Debug.ShouldStop(512);
+main.mostCurrent._buttonclear.runMethod(true,"setEnabled",main.mostCurrent.__c.getField(true,"False"));
+ BA.debugLineNum = 302;BA.debugLine="End Sub";
+Debug.ShouldStop(8192);
+return RemoteObject.createImmutable("");
+}
+catch (Exception e) {
+			throw Debug.ErrorCaught(e);
+		} 
+finally {
+			Debug.PopSubsStack();
+		}}
 
 public static void initializeProcessGlobals() {
     
@@ -1001,7 +1113,7 @@ main._xui = RemoteObject.createNew ("anywheresoftware.b4a.objects.B4XViewWrapper
  //BA.debugLineNum = 19;BA.debugLine="Private MonsterType As Int = 0";
 main._monstertype = BA.numberCast(int.class, 0);
  //BA.debugLineNum = 20;BA.debugLine="Private Monster() As String = Array As String(\"re";
-main._monster = RemoteObject.createNewArray("String",new int[] {3},new Object[] {BA.ObjectToString("redslime.png"),BA.ObjectToString("orc.png"),RemoteObject.createImmutable("sk\\eleton.png")});
+main._monster = RemoteObject.createNewArray("String",new int[] {3},new Object[] {BA.ObjectToString("redslime.png"),BA.ObjectToString("orc.png"),RemoteObject.createImmutable("skeleton.png")});
  //BA.debugLineNum = 21;BA.debugLine="Private FileName As String = Monster(MonsterType)";
 main._filename = main._monster.getArrayElement(true,main._monstertype);
  //BA.debugLineNum = 22;BA.debugLine="Private MediaPlayer As MediaPlayer";
@@ -1048,42 +1160,42 @@ finally {
 		}}
 public static RemoteObject  _retry_click() throws Exception{
 try {
-		Debug.PushSubsStack("Retry_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,297);
+		Debug.PushSubsStack("Retry_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,315);
 if (RapidSub.canDelegate("retry_click")) { return b4a.example.main.remoteMe.runUserSub(false, "main","retry_click");}
- BA.debugLineNum = 297;BA.debugLine="Private Sub Retry_Click";
-Debug.ShouldStop(256);
- BA.debugLineNum = 298;BA.debugLine="hpshake = False";
-Debug.ShouldStop(512);
+ BA.debugLineNum = 315;BA.debugLine="Private Sub Retry_Click";
+Debug.ShouldStop(67108864);
+ BA.debugLineNum = 316;BA.debugLine="hpshake = False";
+Debug.ShouldStop(134217728);
 main._hpshake = main.mostCurrent.__c.getField(true,"False");
- BA.debugLineNum = 299;BA.debugLine="mobshake = False";
-Debug.ShouldStop(1024);
+ BA.debugLineNum = 317;BA.debugLine="mobshake = False";
+Debug.ShouldStop(268435456);
 main._mobshake = main.mostCurrent.__c.getField(true,"False");
- BA.debugLineNum = 300;BA.debugLine="HPval = 100";
-Debug.ShouldStop(2048);
+ BA.debugLineNum = 318;BA.debugLine="HPval = 100";
+Debug.ShouldStop(536870912);
 main._hpval = BA.numberCast(int.class, 100);
- BA.debugLineNum = 301;BA.debugLine="mobVal = 100";
-Debug.ShouldStop(4096);
+ BA.debugLineNum = 319;BA.debugLine="mobVal = 100";
+Debug.ShouldStop(1073741824);
 main._mobval = BA.numberCast(int.class, 100);
- BA.debugLineNum = 302;BA.debugLine="MonsterType = 0";
-Debug.ShouldStop(8192);
+ BA.debugLineNum = 320;BA.debugLine="MonsterType = 0";
+Debug.ShouldStop(-2147483648);
 main._monstertype = BA.numberCast(int.class, 0);
- BA.debugLineNum = 303;BA.debugLine="FileName = Monster(MonsterType)";
-Debug.ShouldStop(16384);
+ BA.debugLineNum = 321;BA.debugLine="FileName = Monster(MonsterType)";
+Debug.ShouldStop(1);
 main._filename = main._monster.getArrayElement(true,main._monstertype);
- BA.debugLineNum = 304;BA.debugLine="GameOverState.Visible = False";
-Debug.ShouldStop(32768);
+ BA.debugLineNum = 322;BA.debugLine="GameOverState.Visible = False";
+Debug.ShouldStop(2);
 main.mostCurrent._gameoverstate.runMethod(true,"setVisible",main.mostCurrent.__c.getField(true,"False"));
- BA.debugLineNum = 305;BA.debugLine="ReDraw";
-Debug.ShouldStop(65536);
+ BA.debugLineNum = 323;BA.debugLine="ReDraw";
+Debug.ShouldStop(4);
 _redraw();
- BA.debugLineNum = 306;BA.debugLine="Activity_Create(True)";
-Debug.ShouldStop(131072);
+ BA.debugLineNum = 324;BA.debugLine="Activity_Create(True)";
+Debug.ShouldStop(8);
 _activity_create(main.mostCurrent.__c.getField(true,"True"));
- BA.debugLineNum = 307;BA.debugLine="GameState.Visible = True";
-Debug.ShouldStop(262144);
+ BA.debugLineNum = 325;BA.debugLine="GameState.Visible = True";
+Debug.ShouldStop(16);
 main.mostCurrent._gamestate.runMethod(true,"setVisible",main.mostCurrent.__c.getField(true,"True"));
- BA.debugLineNum = 310;BA.debugLine="End Sub";
-Debug.ShouldStop(2097152);
+ BA.debugLineNum = 328;BA.debugLine="End Sub";
+Debug.ShouldStop(128);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -1143,21 +1255,21 @@ finally {
 		}}
 public static RemoteObject  _start_click() throws Exception{
 try {
-		Debug.PushSubsStack("Start_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,286);
+		Debug.PushSubsStack("Start_Click (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,304);
 if (RapidSub.canDelegate("start_click")) { return b4a.example.main.remoteMe.runUserSub(false, "main","start_click");}
- BA.debugLineNum = 286;BA.debugLine="Private Sub Start_Click";
-Debug.ShouldStop(536870912);
- BA.debugLineNum = 287;BA.debugLine="check = True";
-Debug.ShouldStop(1073741824);
+ BA.debugLineNum = 304;BA.debugLine="Private Sub Start_Click";
+Debug.ShouldStop(32768);
+ BA.debugLineNum = 305;BA.debugLine="check = True";
+Debug.ShouldStop(65536);
 main._check = main.mostCurrent.__c.getField(true,"True");
- BA.debugLineNum = 288;BA.debugLine="TitleState.Visible = False";
-Debug.ShouldStop(-2147483648);
+ BA.debugLineNum = 306;BA.debugLine="TitleState.Visible = False";
+Debug.ShouldStop(131072);
 main.mostCurrent._titlestate.runMethod(true,"setVisible",main.mostCurrent.__c.getField(true,"False"));
- BA.debugLineNum = 289;BA.debugLine="GameState.Visible = True";
-Debug.ShouldStop(1);
+ BA.debugLineNum = 307;BA.debugLine="GameState.Visible = True";
+Debug.ShouldStop(262144);
 main.mostCurrent._gamestate.runMethod(true,"setVisible",main.mostCurrent.__c.getField(true,"True"));
- BA.debugLineNum = 291;BA.debugLine="End Sub";
-Debug.ShouldStop(4);
+ BA.debugLineNum = 309;BA.debugLine="End Sub";
+Debug.ShouldStop(1048576);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -1168,12 +1280,12 @@ finally {
 		}}
 public static RemoteObject  _start_pressed() throws Exception{
 try {
-		Debug.PushSubsStack("Start_Pressed (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,293);
+		Debug.PushSubsStack("Start_Pressed (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,311);
 if (RapidSub.canDelegate("start_pressed")) { return b4a.example.main.remoteMe.runUserSub(false, "main","start_pressed");}
- BA.debugLineNum = 293;BA.debugLine="Private Sub Start_Pressed";
-Debug.ShouldStop(16);
- BA.debugLineNum = 295;BA.debugLine="End Sub";
-Debug.ShouldStop(64);
+ BA.debugLineNum = 311;BA.debugLine="Private Sub Start_Pressed";
+Debug.ShouldStop(4194304);
+ BA.debugLineNum = 313;BA.debugLine="End Sub";
+Debug.ShouldStop(16777216);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {

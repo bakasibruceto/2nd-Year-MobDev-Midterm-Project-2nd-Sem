@@ -391,6 +391,7 @@ public anywheresoftware.b4a.objects.LabelWrapper _hp = null;
 public anywheresoftware.b4a.objects.LabelWrapper _mobhp = null;
 public anywheresoftware.b4a.objects.LabelWrapper _answer = null;
 public anywheresoftware.b4a.objects.LabelWrapper _equal = null;
+public anywheresoftware.b4a.objects.PanelWrapper _pausepanel = null;
 public anywheresoftware.b4a.objects.ImageViewWrapper _imageview1 = null;
 public anywheresoftware.b4a.objects.LabelWrapper _stran = null;
 public static String _str = "";
@@ -1123,6 +1124,55 @@ RDebugUtils.currentLine=917509;
  //BA.debugLineNum = 917509;BA.debugLine="End Sub";
 return "";
 }
+public static String  _buttonresume_click() throws Exception{
+RDebugUtils.currentModule="main";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "buttonresume_click", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "buttonresume_click", null));}
+RDebugUtils.currentLine=25690112;
+ //BA.debugLineNum = 25690112;BA.debugLine="Private Sub ButtonResume_Click";
+RDebugUtils.currentLine=25690113;
+ //BA.debugLineNum = 25690113;BA.debugLine="PauseState.Visible = False";
+mostCurrent._pausestate.setVisible(anywheresoftware.b4a.keywords.Common.False);
+RDebugUtils.currentLine=25690114;
+ //BA.debugLineNum = 25690114;BA.debugLine="Button0.Enabled = True";
+mostCurrent._button0.setEnabled(anywheresoftware.b4a.keywords.Common.True);
+RDebugUtils.currentLine=25690115;
+ //BA.debugLineNum = 25690115;BA.debugLine="Button1.Enabled = True";
+mostCurrent._button1.setEnabled(anywheresoftware.b4a.keywords.Common.True);
+RDebugUtils.currentLine=25690116;
+ //BA.debugLineNum = 25690116;BA.debugLine="Button2.Enabled = True";
+mostCurrent._button2.setEnabled(anywheresoftware.b4a.keywords.Common.True);
+RDebugUtils.currentLine=25690117;
+ //BA.debugLineNum = 25690117;BA.debugLine="Button3.Enabled = True";
+mostCurrent._button3.setEnabled(anywheresoftware.b4a.keywords.Common.True);
+RDebugUtils.currentLine=25690118;
+ //BA.debugLineNum = 25690118;BA.debugLine="Button4.Enabled = True";
+mostCurrent._button4.setEnabled(anywheresoftware.b4a.keywords.Common.True);
+RDebugUtils.currentLine=25690119;
+ //BA.debugLineNum = 25690119;BA.debugLine="Button5.Enabled = True";
+mostCurrent._button5.setEnabled(anywheresoftware.b4a.keywords.Common.True);
+RDebugUtils.currentLine=25690120;
+ //BA.debugLineNum = 25690120;BA.debugLine="Button6.Enabled = True";
+mostCurrent._button6.setEnabled(anywheresoftware.b4a.keywords.Common.True);
+RDebugUtils.currentLine=25690121;
+ //BA.debugLineNum = 25690121;BA.debugLine="Button7.Enabled = True";
+mostCurrent._button7.setEnabled(anywheresoftware.b4a.keywords.Common.True);
+RDebugUtils.currentLine=25690122;
+ //BA.debugLineNum = 25690122;BA.debugLine="Button8.Enabled = True";
+mostCurrent._button8.setEnabled(anywheresoftware.b4a.keywords.Common.True);
+RDebugUtils.currentLine=25690123;
+ //BA.debugLineNum = 25690123;BA.debugLine="Button9.Enabled = True";
+mostCurrent._button9.setEnabled(anywheresoftware.b4a.keywords.Common.True);
+RDebugUtils.currentLine=25690124;
+ //BA.debugLineNum = 25690124;BA.debugLine="ButtonEnter.Enabled = True";
+mostCurrent._buttonenter.setEnabled(anywheresoftware.b4a.keywords.Common.True);
+RDebugUtils.currentLine=25690125;
+ //BA.debugLineNum = 25690125;BA.debugLine="ButtonClear.Enabled = True";
+mostCurrent._buttonclear.setEnabled(anywheresoftware.b4a.keywords.Common.True);
+RDebugUtils.currentLine=25690126;
+ //BA.debugLineNum = 25690126;BA.debugLine="End Sub";
+return "";
+}
 public static String  _shufflearray(String[] _stringarray) throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "shufflearray", false))
@@ -1212,6 +1262,55 @@ RDebugUtils.currentLine=393223;
 mostCurrent._equal.setTypeface((android.graphics.Typeface)(_font.getObject()));
 RDebugUtils.currentLine=393224;
  //BA.debugLineNum = 393224;BA.debugLine="End Sub";
+return "";
+}
+public static String  _pause_click() throws Exception{
+RDebugUtils.currentModule="main";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "pause_click", false))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "pause_click", null));}
+RDebugUtils.currentLine=25624576;
+ //BA.debugLineNum = 25624576;BA.debugLine="Private Sub Pause_Click";
+RDebugUtils.currentLine=25624577;
+ //BA.debugLineNum = 25624577;BA.debugLine="PauseState.Visible = True";
+mostCurrent._pausestate.setVisible(anywheresoftware.b4a.keywords.Common.True);
+RDebugUtils.currentLine=25624578;
+ //BA.debugLineNum = 25624578;BA.debugLine="Button0.Enabled = False";
+mostCurrent._button0.setEnabled(anywheresoftware.b4a.keywords.Common.False);
+RDebugUtils.currentLine=25624579;
+ //BA.debugLineNum = 25624579;BA.debugLine="Button1.Enabled = False";
+mostCurrent._button1.setEnabled(anywheresoftware.b4a.keywords.Common.False);
+RDebugUtils.currentLine=25624580;
+ //BA.debugLineNum = 25624580;BA.debugLine="Button2.Enabled = False";
+mostCurrent._button2.setEnabled(anywheresoftware.b4a.keywords.Common.False);
+RDebugUtils.currentLine=25624581;
+ //BA.debugLineNum = 25624581;BA.debugLine="Button3.Enabled = False";
+mostCurrent._button3.setEnabled(anywheresoftware.b4a.keywords.Common.False);
+RDebugUtils.currentLine=25624582;
+ //BA.debugLineNum = 25624582;BA.debugLine="Button4.Enabled = False";
+mostCurrent._button4.setEnabled(anywheresoftware.b4a.keywords.Common.False);
+RDebugUtils.currentLine=25624583;
+ //BA.debugLineNum = 25624583;BA.debugLine="Button5.Enabled = False";
+mostCurrent._button5.setEnabled(anywheresoftware.b4a.keywords.Common.False);
+RDebugUtils.currentLine=25624584;
+ //BA.debugLineNum = 25624584;BA.debugLine="Button6.Enabled = False";
+mostCurrent._button6.setEnabled(anywheresoftware.b4a.keywords.Common.False);
+RDebugUtils.currentLine=25624585;
+ //BA.debugLineNum = 25624585;BA.debugLine="Button7.Enabled = False";
+mostCurrent._button7.setEnabled(anywheresoftware.b4a.keywords.Common.False);
+RDebugUtils.currentLine=25624586;
+ //BA.debugLineNum = 25624586;BA.debugLine="Button8.Enabled = False";
+mostCurrent._button8.setEnabled(anywheresoftware.b4a.keywords.Common.False);
+RDebugUtils.currentLine=25624587;
+ //BA.debugLineNum = 25624587;BA.debugLine="Button9.Enabled = False";
+mostCurrent._button9.setEnabled(anywheresoftware.b4a.keywords.Common.False);
+RDebugUtils.currentLine=25624588;
+ //BA.debugLineNum = 25624588;BA.debugLine="ButtonEnter.Enabled = False";
+mostCurrent._buttonenter.setEnabled(anywheresoftware.b4a.keywords.Common.False);
+RDebugUtils.currentLine=25624589;
+ //BA.debugLineNum = 25624589;BA.debugLine="ButtonClear.Enabled = False";
+mostCurrent._buttonclear.setEnabled(anywheresoftware.b4a.keywords.Common.False);
+RDebugUtils.currentLine=25624593;
+ //BA.debugLineNum = 25624593;BA.debugLine="End Sub";
 return "";
 }
 public static String  _retry_click() throws Exception{
