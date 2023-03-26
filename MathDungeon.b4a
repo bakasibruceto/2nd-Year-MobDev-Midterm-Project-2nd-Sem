@@ -94,7 +94,7 @@ Sub Globals
 	Private bar As Int = 100
 	Private damage As Int = 0
 	Private HPval As Int = 100
-	Private mobVal As Int = 1
+	Private mobVal As Int = 100
 	Private tempStr As String =""
 	Private check As Boolean = False
 	Private operator() As String = Array As String("+", "*")
@@ -235,9 +235,9 @@ Sub DrawMonster
 		MonsterType = MonsterType+1
 		Select MonsterType
 			Case 1
-				mobVal = 1
+				mobVal = 200
 			Case 2
-				mobVal = 1
+				mobVal = 300
 		End Select
 		
 	End If
@@ -378,7 +378,7 @@ Private Sub Retry_Click
 	hpshake = False
 	mobshake = False
 	mobshake = False
-	HPval = 100
+	HPval = 100                      
 	mobVal = 100
 	MonsterType = 0
 	FileName = Monster(MonsterType)
