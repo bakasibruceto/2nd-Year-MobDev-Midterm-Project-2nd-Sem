@@ -1,32 +1,36 @@
 ﻿Build1=Default,b4a.example
 File1=alagard.ttf
-File10=redslime.png
-File11=skeletonlord_phase2_down_2.png
-File12=TitleScreen.png
-File13=TitleState.bal
-File14=UnpressedPlayButton.png
+File10=PressedPauseButton.png
+File11=PressedPlayButton.png
+File12=redslime.png
+File13=TitleScreen.png
+File14=TitleState.bal
+File15=UnpressedPauseButton.png
+File16=UnpressedPlayButton.png
 File2=GameDefeated.bal
 File3=GameOverState.bal
 File4=GameState.bal
 File5=Load.bal
 File6=MATH DUNGEON TITLE .png
 File7=MathTitle.png
-File8=PauseState.bal
-File9=PressedPlayButton.png
+File8=PAUSE STATE.png
+File9=PauseState.bal
 FileGroup1=Default Group
 FileGroup10=New Group
-FileGroup11=Default Group\REs
-FileGroup12=Default Group
+FileGroup11=New Group
+FileGroup12=New Group
 FileGroup13=Default Group
-FileGroup14=New Group
+FileGroup14=Default Group
+FileGroup15=New Group
+FileGroup16=New Group
 FileGroup2=Default Group
 FileGroup3=Default Group
 FileGroup4=Default Group
 FileGroup5=Default Group
 FileGroup6=New Group
 FileGroup7=New Group
-FileGroup8=Default Group
-FileGroup9=New Group
+FileGroup8=New Group
+FileGroup9=Default Group
 Group=Default Group
 Library1=animation
 Library2=audio
@@ -37,7 +41,7 @@ Library6=xui views
 Library7=xui2d
 ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="31"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~
 Module1=Starter
-NumberOfFiles=14
+NumberOfFiles=16
 NumberOfLibraries=7
 NumberOfModules=1
 Version=12.2
@@ -214,8 +218,6 @@ Sub DrawState
 		GameOverState.Visible = True
 	End If
 	
-	
-	
 End Sub
 
 Sub DrawMonster
@@ -328,6 +330,9 @@ Sub ReDraw
 	Next
 End Sub
 
+Private Sub Pause_Click
+	PauseState.Visible = True
+End Sub
 
 Private Sub Start_Click
 	check = True
