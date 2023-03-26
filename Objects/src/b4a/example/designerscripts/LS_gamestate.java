@@ -9,22 +9,18 @@ public class LS_gamestate{
 public static void LS_general(anywheresoftware.b4a.BA ba, android.view.View parent, anywheresoftware.b4a.keywords.LayoutValues lv, java.util.Map props,
 java.util.Map<String, anywheresoftware.b4a.keywords.LayoutBuilder.ViewWrapperAndAnchor> views, int width, int height, float scale) throws Exception {
 anywheresoftware.b4a.keywords.LayoutBuilder.setScaleRate(0.3);
-//BA.debugLineNum = 2;BA.debugLine="AutoScaleAll"[GameState/General script]
 anywheresoftware.b4a.keywords.LayoutBuilder.scaleAll(views);
-//BA.debugLineNum = 4;BA.debugLine="Panel1.SetLeftAndRight(0,100%x)"[GameState/General script]
 views.get("panel1").vw.setLeft((int)(0d));
 views.get("panel1").vw.setWidth((int)((100d / 100 * width) - (0d)));
-//BA.debugLineNum = 5;BA.debugLine="Panel1.SetTopAndBottom(0,100%y)"[GameState/General script]
 views.get("panel1").vw.setTop((int)(0d));
 views.get("panel1").vw.setHeight((int)((100d / 100 * height) - (0d)));
-//BA.debugLineNum = 7;BA.debugLine="ImageView1.HorizontalCenter = Panel1.Width/2"[GameState/General script]
 views.get("imageview1").vw.setLeft((int)((views.get("panel1").vw.getWidth())/2d - (views.get("imageview1").vw.getWidth() / 2)));
 //BA.debugLineNum = 8;BA.debugLine="ImageView1.VerticalCenter = Panel1.Height/3"[GameState/General script]
 views.get("imageview1").vw.setTop((int)((views.get("panel1").vw.getHeight())/3d - (views.get("imageview1").vw.getHeight() / 2)));
-//BA.debugLineNum = 10;BA.debugLine="Pause.HorizontalCenter = Panel1.Width/6"[GameState/General script]
-views.get("pause").vw.setLeft((int)((views.get("panel1").vw.getWidth())/6d - (views.get("pause").vw.getWidth() / 2)));
-//BA.debugLineNum = 11;BA.debugLine="Pause.VerticalCenter = Panel1.Height/5"[GameState/General script]
-views.get("pause").vw.setTop((int)((views.get("panel1").vw.getHeight())/5d - (views.get("pause").vw.getHeight() / 2)));
+//BA.debugLineNum = 10;BA.debugLine="Pause.HorizontalCenter = Panel1.Width/12"[GameState/General script]
+views.get("pause").vw.setLeft((int)((views.get("panel1").vw.getWidth())/12d - (views.get("pause").vw.getWidth() / 2)));
+//BA.debugLineNum = 11;BA.debugLine="Pause.VerticalCenter = Panel1.Height/20"[GameState/General script]
+views.get("pause").vw.setTop((int)((views.get("panel1").vw.getHeight())/20d - (views.get("pause").vw.getHeight() / 2)));
 //BA.debugLineNum = 14;BA.debugLine="mob.HorizontalCenter = Panel1.Width/2"[GameState/General script]
 views.get("mob").vw.setLeft((int)((views.get("panel1").vw.getWidth())/2d - (views.get("mob").vw.getWidth() / 2)));
 //BA.debugLineNum = 15;BA.debugLine="mob.VerticalCenter = Panel1.Height/10"[GameState/General script]

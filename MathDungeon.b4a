@@ -1,38 +1,40 @@
 ﻿Build1=Default,b4a.example
 File1=alagard.ttf
-File10=pausestate.png
-File11=PressedPauseButton.png
-File12=PressedPlayButton.png
-File13=redslime.png
-File14=TitleScreen.png
-File15=TitleState.bal
-File16=UnpressedPauseButton.png
-File17=UnpressedPlayButton.png
-File2=GameDefeated.bal
-File3=GameOverState.bal
-File4=GameState.bal
-File5=Load.bal
-File6=MATH DUNGEON TITLE .png
-File7=MathTitle.png
-File8=PAUSE STATE.png
-File9=PauseState.bal
+File10=PauseState.bal
+File11=pausestate.png
+File12=PressedPauseButton.png
+File13=PressedPlayButton.png
+File14=redslime.png
+File15=TitleScreen.png
+File16=TitleState.bal
+File17=UnpressedPauseButton.png
+File18=UnpressedPlayButton.png
+File2=GAME OVER.png
+File3=GameDefeated.bal
+File4=GameOverState.bal
+File5=GameState.bal
+File6=Load.bal
+File7=MATH DUNGEON TITLE .png
+File8=MathTitle.png
+File9=PAUSE STATE.png
 FileGroup1=Default Group
-FileGroup10=New Group
+FileGroup10=Default Group
 FileGroup11=New Group
 FileGroup12=New Group
 FileGroup13=New Group
-FileGroup14=Default Group
+FileGroup14=New Group
 FileGroup15=Default Group
-FileGroup16=New Group
+FileGroup16=Default Group
 FileGroup17=New Group
-FileGroup2=Default Group
+FileGroup18=New Group
+FileGroup2=New Group
 FileGroup3=Default Group
 FileGroup4=Default Group
 FileGroup5=Default Group
-FileGroup6=New Group
+FileGroup6=Default Group
 FileGroup7=New Group
 FileGroup8=New Group
-FileGroup9=Default Group
+FileGroup9=New Group
 Group=Default Group
 Library1=animation
 Library2=audio
@@ -43,7 +45,7 @@ Library6=xui views
 Library7=xui2d
 ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="31"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~
 Module1=Starter
-NumberOfFiles=17
+NumberOfFiles=18
 NumberOfLibraries=7
 NumberOfModules=1
 Version=12.2
@@ -70,7 +72,9 @@ Sub Process_Globals
 	Private Monster() As String = Array As String("redslime.png", "orc.png","skeleton.png")
 	Private FileName As String = Monster(MonsterType)
 	Private MediaPlayer As MediaPlayer
+	Private MediaPlayer2 As MediaPlayer
 	Private Font As Typeface = Typeface.LoadFromAssets("alagard.ttf")
+
 	
 End Sub
 		
@@ -90,7 +94,7 @@ Sub Globals
 	Private bar As Int = 100
 	Private damage As Int = 0
 	Private HPval As Int = 100
-	Private mobVal As Int = 100
+	Private mobVal As Int = 1
 	Private tempStr As String =""
 	Private check As Boolean = False
 	Private operator() As String = Array As String("+", "*")
@@ -122,13 +126,10 @@ Sub Globals
 	Private ButtonClear As Button
 	
 	Private shake As Animation
+
 	
 	
 End Sub
-
-
-
-
 
 Sub Activity_Create(FirstTime As Boolean)
 	
@@ -142,6 +143,11 @@ Sub Activity_Create(FirstTime As Boolean)
 		DrawEquation
 		
 	End If
+	If GameOverState.Visible == True Then
+		MediaPlayer.Load(File.DirAssets,"gameover.mp3")
+	End If
+	MediaPlayer.Play
+	
 
 End Sub
 
@@ -157,6 +163,8 @@ End Sub
 Sub Activity_KeyPress (KeyCode As Int) As Boolean
 	If KeyCode = KeyCodes.KEYCODE_BACK Then
 		If Msgbox2("Are you sure to exit?", "", "Yes", "", "No", Null) = DialogResponse.POSITIVE Then
+			MediaPlayer.Stop
+			MediaPlayer2.Stop
 			Return False
 			ExitApplication '...or whatever other previous killing actions.
 		Else
@@ -177,11 +185,10 @@ Sub FontStyle
 	equal.Typeface = Font
 End Sub
 
-
-
 Sub InitializeState
 	
 	MediaPlayer.Initialize()
+	MediaPlayer2.Initialize()
 	shake.InitializeTranslate("", -9dip, 0, 9dip, 0)
 	shake.RepeatCount = 3
 	shake.RepeatMode = shake.REPEAT_REVERSE
@@ -213,6 +220,7 @@ End Sub
 Sub DrawState
 	If check == False Then
 		TitleState.Visible = True
+		
 	End If
 	
 	If HPval <=0 Then
@@ -227,9 +235,9 @@ Sub DrawMonster
 		MonsterType = MonsterType+1
 		Select MonsterType
 			Case 1
-				mobVal = 200
+				mobVal = 1
 			Case 2
-				mobVal = 300
+				mobVal = 1
 		End Select
 		
 	End If
@@ -259,7 +267,7 @@ Sub DrawHealth
 			
 	mob.Color = Colors.ARGB(0, 0, 0, 0)
 	cvsGraph.Initialize(mob)
-	rect1.Initialize(10dip, 10dip, IntToDIP(bar*4.67), 35dip)
+	rect1.Initialize(10dip, 10dip, IntToDIP(bar*4.66), 35dip)
 	cvsGraph.DrawRect(rect1, xui.Color_Black, False, 2dip)
 			
 	mob2.Color=Colors.ARGB(0, 0, 0, 0)
@@ -269,7 +277,7 @@ Sub DrawHealth
 			
 	ply1.Color = Colors.ARGB(0, 0, 0, 0)
 	cvsGraph3.Initialize(ply1)
-	rect3.Initialize(10dip, 10dip, IntToDIP(bar*4.67), 35dip)
+	rect3.Initialize(10dip, 10dip, IntToDIP(bar*4.66), 35dip)
 	cvsGraph3.DrawRect(rect3, xui.Color_Black, False, 2dip)
 			
 	ply2.Color=Colors.ARGB(0, 0, 0, 0)
@@ -355,15 +363,20 @@ Private Sub Start_Click
 	check = True
 	TitleState.Visible = False
 	GameState.Visible = True
-	
+	MediaPlayer.Load(File.DirAssets,"click.mp3")
+	MediaPlayer.Play
+
 End Sub
 
-Private Sub Start_Pressed
-	 
+Private Sub Start_LongClick
+	MediaPlayer.Load(File.DirAssets,"click.mp3")
+	MediaPlayer.Play
 End Sub
 
 Private Sub Retry_Click
+	MediaPlayer.Stop
 	hpshake = False
+	mobshake = False
 	mobshake = False
 	HPval = 100
 	mobVal = 100
@@ -380,26 +393,31 @@ End Sub
 Private Sub ButtonEnter_Click
 	tempStr=""
 	damage = str
-	If answer.Text = str Then
-		strAn.Text = "Correct"
+	If answer.Text = str Then 'correct
 		mobVal= mobVal-damage
 		mobshake = True
 		MediaPlayer.Load(File.DirAssets,"dam.mp3")
+		MediaPlayer2.Load(File.DirAssets,"parry.mp3")
+		MediaPlayer2.Play
 		
-	Else
-		strAn.Text = "InCorrect"
+	Else 'Incorrect
 		HPval = HPval-damage
 		MediaPlayer.Play
 		hpshake = True
 		MediaPlayer.Load(File.DirAssets,"pdam.mp3")
+		
 	End If
+	
 	MediaPlayer.Play
 	
 	GameState.Visible=False
+	gamebg = True
 	ReDraw
 	Activity_Create(True)
 	If MonsterType == 3 Then
 		GameDefeated.Visible=True
+		MediaPlayer.Load(File.DirAssets,"fanfare.mp3")
+		MediaPlayer.Play
 	Else
 		check = True
 		If HPval <= 100 And HPval >= 0 Then
@@ -481,3 +499,4 @@ Private Sub ButtonResume_Click
 	ButtonEnter.Enabled = True
 	ButtonClear.Enabled = True
 End Sub
+
