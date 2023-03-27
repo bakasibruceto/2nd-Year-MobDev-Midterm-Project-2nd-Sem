@@ -183,6 +183,20 @@ Sub FontStyle
 	mobHP.Typeface = Font
 	answer.Typeface = Font	
 	equal.Typeface = Font
+	Button0.Typeface = Font
+	Button1.Typeface = Font
+	Button2.Typeface = Font
+	Button3.Typeface = Font
+	Button4.Typeface = Font
+	Button5.Typeface = Font
+	Button6.Typeface = Font
+	Button7.Typeface = Font
+	Button8.Typeface = Font
+	Button9.Typeface = Font
+	Button0.Typeface = Font
+	ButtonEnter.Typeface = Font
+	ButtonClear.Typeface = Font
+	
 End Sub
 
 Sub InitializeState
@@ -354,7 +368,8 @@ Private Sub Pause_Click
 	Button9.Enabled = False
 	ButtonEnter.Enabled = False
 	ButtonClear.Enabled = False
-	
+	MediaPlayer.Load(File.DirAssets,"click.mp3")
+	MediaPlayer.Play
 
 	
 End Sub
@@ -386,6 +401,8 @@ Private Sub Retry_Click
 	ReDraw
 	Activity_Create(True)
 	GameState.Visible = True
+	MediaPlayer.Load(File.DirAssets,"click.mp3")
+	MediaPlayer.Play
 	
 	
 End Sub
@@ -411,7 +428,6 @@ Private Sub ButtonEnter_Click
 	MediaPlayer.Play
 	
 	GameState.Visible=False
-	gamebg = True
 	ReDraw
 	Activity_Create(True)
 	If MonsterType == 3 Then
@@ -498,5 +514,7 @@ Private Sub ButtonResume_Click
 	Button9.Enabled = True
 	ButtonEnter.Enabled = True
 	ButtonClear.Enabled = True
+	MediaPlayer.Load(File.DirAssets,"click.mp3")
+	MediaPlayer.Play
 End Sub
 
