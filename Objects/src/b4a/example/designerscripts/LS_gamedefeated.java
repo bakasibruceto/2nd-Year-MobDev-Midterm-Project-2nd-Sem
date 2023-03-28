@@ -19,8 +19,8 @@ views.get("defpanel").vw.setTop((int)(0d));
 views.get("defpanel").vw.setHeight((int)((100d / 100 * height) - (0d)));
 //BA.debugLineNum = 7;BA.debugLine="retry.HorizontalCenter = DefPanel.Width/2"[GameDefeated/General script]
 views.get("retry").vw.setLeft((int)((views.get("defpanel").vw.getWidth())/2d - (views.get("retry").vw.getWidth() / 2)));
-//BA.debugLineNum = 8;BA.debugLine="retry.VerticalCenter = DefPanel.Height/3"[GameDefeated/General script]
-views.get("retry").vw.setTop((int)((views.get("defpanel").vw.getHeight())/3d - (views.get("retry").vw.getHeight() / 2)));
+//BA.debugLineNum = 8;BA.debugLine="retry.VerticalCenter = DefPanel.Height/1.2"[GameDefeated/General script]
+views.get("retry").vw.setTop((int)((views.get("defpanel").vw.getHeight())/1.2d - (views.get("retry").vw.getHeight() / 2)));
 
 }
 }

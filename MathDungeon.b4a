@@ -1,40 +1,46 @@
 ﻿Build1=Default,b4a.example
 File1=alagard.ttf
-File10=PauseState.bal
-File11=pausestate.png
-File12=PressedPauseButton.png
-File13=PressedPlayButton.png
-File14=redslime.png
-File15=TitleScreen.png
-File16=TitleState.bal
-File17=UnpressedPauseButton.png
-File18=UnpressedPlayButton.png
-File2=GAME OVER.png
-File3=GameDefeated.bal
-File4=GameOverState.bal
-File5=GameState.bal
-File6=Load.bal
-File7=MATH DUNGEON TITLE .png
-File8=MathTitle.png
-File9=PAUSE STATE.png
+File10=MATH DUNGEON GAMESTATE BG .png
+File11=MATH DUNGEON TITLE .png
+File12=MATH DUNGEON WINNER .png
+File13=MathTitle.png
+File14=PAUSE STATE.png
+File15=PauseState.bal
+File16=pausestate.png
+File17=PressedPauseButton.png
+File18=redslime.png
+File19=TitleScreen.png
+File2=BiggerPressedPlayButton.png
+File20=TitleState.bal
+File21=UnpressedPauseButton.png
+File3=BiggerUnpressedPlayButton.png
+File4=BrighterMATH DUNGEON TITLE .png
+File5=GAME OVER.png
+File6=GameDefeated.bal
+File7=GameOverState.bal
+File8=GameState.bal
+File9=Load.bal
 FileGroup1=Default Group
-FileGroup10=Default Group
+FileGroup10=New Group
 FileGroup11=New Group
 FileGroup12=New Group
 FileGroup13=New Group
 FileGroup14=New Group
 FileGroup15=Default Group
-FileGroup16=Default Group
+FileGroup16=New Group
 FileGroup17=New Group
 FileGroup18=New Group
+FileGroup19=Default Group
 FileGroup2=New Group
-FileGroup3=Default Group
-FileGroup4=Default Group
-FileGroup5=Default Group
+FileGroup20=Default Group
+FileGroup21=New Group
+FileGroup3=New Group
+FileGroup4=New Group
+FileGroup5=New Group
 FileGroup6=Default Group
-FileGroup7=New Group
-FileGroup8=New Group
-FileGroup9=New Group
+FileGroup7=Default Group
+FileGroup8=Default Group
+FileGroup9=Default Group
 Group=Default Group
 Library1=animation
 Library2=audio
@@ -45,7 +51,7 @@ Library6=xui views
 Library7=xui2d
 ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="31"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~
 Module1=Starter
-NumberOfFiles=18
+NumberOfFiles=21
 NumberOfLibraries=7
 NumberOfModules=1
 Version=12.2
@@ -97,7 +103,7 @@ Sub Globals
 	Private mobVal As Int = 100
 	Private tempStr As String =""
 	Private check As Boolean = False
-	Private operator() As String = Array As String("+", "*")
+	Private operator() As String = Array As String("+", "x")
 	Private barsize As Int
 	Private hpshake As Boolean = False
 	Private mobshake As Boolean = False
@@ -150,7 +156,6 @@ Sub Activity_Create(FirstTime As Boolean)
 	
 
 End Sub
-
 
 Sub Activity_Resume
 
@@ -321,7 +326,7 @@ Sub DrawEquation
 			str =rand1+rand2
 		Case "-"
 			str =rand1-rand2
-		Case "*"
+		Case "x"
 			str =rand1*rand2
 		Case "/"
 			str =rand1/rand2
@@ -356,25 +361,26 @@ End Sub
 
 Private Sub Pause_Click
 	PauseState.Visible = True
-	Button0.Enabled = False
-	Button1.Enabled = False
-	Button2.Enabled = False
-	Button3.Enabled = False
-	Button4.Enabled = False
-	Button5.Enabled = False
-	Button6.Enabled = False
-	Button7.Enabled = False
-	Button8.Enabled = False
-	Button9.Enabled = False
-	ButtonEnter.Enabled = False
-	ButtonClear.Enabled = False
+	buttonfalse
 	MediaPlayer.Load(File.DirAssets,"click.mp3")
 	MediaPlayer.Play
 
 	
 End Sub
 
+Private Sub ButtonTitle_Click
+	buttonfalse
+	check = False
+	PauseState.Visible = False
+	GameState.Visible = False
+	TitleState.Visible = True
+	MediaPlayer.Load(File.DirAssets,"click.mp3")
+	MediaPlayer.Play
+	
+End Sub
+
 Private Sub Start_Click
+	buttontrue
 	check = True
 	TitleState.Visible = False
 	GameState.Visible = True
@@ -403,7 +409,6 @@ Private Sub Retry_Click
 	GameState.Visible = True
 	MediaPlayer.Load(File.DirAssets,"click.mp3")
 	MediaPlayer.Play
-	
 	
 End Sub
 
@@ -502,6 +507,12 @@ End Sub
 
 Private Sub ButtonResume_Click
 	PauseState.Visible = False
+	buttontrue
+	MediaPlayer.Load(File.DirAssets,"click.mp3")
+	MediaPlayer.Play
+End Sub
+
+Sub buttontrue
 	Button0.Enabled = True
 	Button1.Enabled = True
 	Button2.Enabled = True
@@ -514,7 +525,20 @@ Private Sub ButtonResume_Click
 	Button9.Enabled = True
 	ButtonEnter.Enabled = True
 	ButtonClear.Enabled = True
-	MediaPlayer.Load(File.DirAssets,"click.mp3")
-	MediaPlayer.Play
+End Sub
+
+Sub buttonfalse
+	Button0.Enabled = False
+	Button1.Enabled = False
+	Button2.Enabled = False
+	Button3.Enabled = False
+	Button4.Enabled = False
+	Button5.Enabled = False
+	Button6.Enabled = False
+	Button7.Enabled = False
+	Button8.Enabled = False
+	Button9.Enabled = False
+	ButtonEnter.Enabled = False
+	ButtonClear.Enabled = False
 End Sub
 

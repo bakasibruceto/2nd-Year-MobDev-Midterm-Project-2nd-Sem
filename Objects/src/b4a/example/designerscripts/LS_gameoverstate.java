@@ -15,8 +15,8 @@ views.get("gamedefeatedpanel").vw.setWidth((int)((100d / 100 * width) - (0d)));
 views.get("gamedefeatedpanel").vw.setTop((int)(0d));
 views.get("gamedefeatedpanel").vw.setHeight((int)((100d / 100 * height) - (0d)));
 views.get("retry").vw.setLeft((int)((views.get("gamedefeatedpanel").vw.getWidth())/2d - (views.get("retry").vw.getWidth() / 2)));
-//BA.debugLineNum = 8;BA.debugLine="Retry.VerticalCenter = GameDefeatedPanel.Height/2"[GameOverState/General script]
-views.get("retry").vw.setTop((int)((views.get("gamedefeatedpanel").vw.getHeight())/2d - (views.get("retry").vw.getHeight() / 2)));
+//BA.debugLineNum = 8;BA.debugLine="Retry.VerticalCenter = GameDefeatedPanel.Height/1.2"[GameOverState/General script]
+views.get("retry").vw.setTop((int)((views.get("gamedefeatedpanel").vw.getHeight())/1.2d - (views.get("retry").vw.getHeight() / 2)));
 
 }
 }

@@ -2,8 +2,8 @@
 ModuleBookmarks1=
 ModuleBreakpoints0=
 ModuleBreakpoints1=
-ModuleClosedNodes0=1,3,7,8,10,11,14,15,16,20
+ModuleClosedNodes0=1,4,5,7,8,9,10,11,12,13,14,15,16,17,36,37
 ModuleClosedNodes1=
-NavigationStack=Main,Pause_Click,306,0,Main,Button8_Click,428,0,Main,Button9_Click,433,0,Main,ReDraw,286,0,Main,Globals,72,6,Main,ButtonEnter_Click,364,0,Main,FontStyle,139,6,Main,ButtonResume_Click,468,0,Visual Designer,GameState.bal,-100,6,Main,Activity_Create,89,0,Main,DrawHealth,227,0
+NavigationStack=Main,buttonfalse,483,0,Main,Pause_Click,311,1,Main,Start_Click,325,1,Visual Designer,TitleState.bal,-100,1,Visual Designer,PauseState.bal,-100,6,Visual Designer,GameDefeated.bal,-100,1,Main,ButtonTitle_Click,323,6,Visual Designer,GameState.bal,-100,1,Main,Globals,34,6,Main,Activity_Create,81,0,Main,Retry_Click,353,0
 SelectedBuild=0
 VisibleModules=1
