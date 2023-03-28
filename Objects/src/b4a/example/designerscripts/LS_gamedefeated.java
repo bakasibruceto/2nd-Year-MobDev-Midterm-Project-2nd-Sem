@@ -17,10 +17,14 @@ views.get("defpanel").vw.setWidth((int)((100d / 100 * width) - (0d)));
 //BA.debugLineNum = 5;BA.debugLine="DefPanel.SetTopAndBottom(0,100%y)"[GameDefeated/General script]
 views.get("defpanel").vw.setTop((int)(0d));
 views.get("defpanel").vw.setHeight((int)((100d / 100 * height) - (0d)));
-//BA.debugLineNum = 7;BA.debugLine="retry.HorizontalCenter = DefPanel.Width/2"[GameDefeated/General script]
+//BA.debugLineNum = 9;BA.debugLine="retry.HorizontalCenter = DefPanel.Width/2"[GameDefeated/General script]
 views.get("retry").vw.setLeft((int)((views.get("defpanel").vw.getWidth())/2d - (views.get("retry").vw.getWidth() / 2)));
-//BA.debugLineNum = 8;BA.debugLine="retry.VerticalCenter = DefPanel.Height/1.2"[GameDefeated/General script]
+//BA.debugLineNum = 10;BA.debugLine="retry.VerticalCenter = DefPanel.Height/1.2"[GameDefeated/General script]
 views.get("retry").vw.setTop((int)((views.get("defpanel").vw.getHeight())/1.2d - (views.get("retry").vw.getHeight() / 2)));
+//BA.debugLineNum = 12;BA.debugLine="ButtonTitle.HorizontalCenter = DefPanel.Width/2"[GameDefeated/General script]
+views.get("buttontitle").vw.setLeft((int)((views.get("defpanel").vw.getWidth())/2d - (views.get("buttontitle").vw.getWidth() / 2)));
+//BA.debugLineNum = 13;BA.debugLine="ButtonTitle.VerticalCenter = DefPanel.Height/2"[GameDefeated/General script]
+views.get("buttontitle").vw.setTop((int)((views.get("defpanel").vw.getHeight())/2d - (views.get("buttontitle").vw.getHeight() / 2)));
 
 }
 }

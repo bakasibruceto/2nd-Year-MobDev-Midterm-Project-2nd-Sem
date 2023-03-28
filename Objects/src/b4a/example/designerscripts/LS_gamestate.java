@@ -15,9 +15,7 @@ views.get("panel1").vw.setWidth((int)((100d / 100 * width) - (0d)));
 views.get("panel1").vw.setTop((int)(0d));
 views.get("panel1").vw.setHeight((int)((100d / 100 * height) - (0d)));
 views.get("imageview1").vw.setLeft((int)((views.get("panel1").vw.getWidth())/2d - (views.get("imageview1").vw.getWidth() / 2)));
-//BA.debugLineNum = 8;BA.debugLine="ImageView1.VerticalCenter = Panel1.Height/3"[GameState/General script]
 views.get("imageview1").vw.setTop((int)((views.get("panel1").vw.getHeight())/3d - (views.get("imageview1").vw.getHeight() / 2)));
-//BA.debugLineNum = 10;BA.debugLine="Pause.HorizontalCenter = Panel1.Width/12"[GameState/General script]
 views.get("pause").vw.setLeft((int)((views.get("panel1").vw.getWidth())/12d - (views.get("pause").vw.getWidth() / 2)));
 //BA.debugLineNum = 11;BA.debugLine="Pause.VerticalCenter = Panel1.Height/20"[GameState/General script]
 views.get("pause").vw.setTop((int)((views.get("panel1").vw.getHeight())/20d - (views.get("pause").vw.getHeight() / 2)));

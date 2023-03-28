@@ -142,6 +142,8 @@ Sub Activity_Create(FirstTime As Boolean)
 	InitializeState
 	DrawState
 	
+	
+	
 	If(HPval <= 100 And HPval >=1)Then
 			
 		DrawMonster
@@ -371,8 +373,14 @@ End Sub
 Private Sub ButtonTitle_Click
 	buttonfalse
 	check = False
-	PauseState.Visible = False
+	HPval = 100
+	mobVal = 100
+	MonsterType = 0
+	FileName = Monster(MonsterType)
 	GameState.Visible = False
+	PauseState.Visible = False
+	ReDraw
+	Activity_Create(True)
 	TitleState.Visible = True
 	MediaPlayer.Load(File.DirAssets,"click.mp3")
 	MediaPlayer.Play
@@ -383,9 +391,18 @@ Private Sub Start_Click
 	buttontrue
 	check = True
 	TitleState.Visible = False
+	If(TitleState.Visible == True)Then
+		MonsterType = 0
+		HPval = 100
+		mobVal = 100
+		
+	End If
+	
 	GameState.Visible = True
+	Activity_Create(True)
 	MediaPlayer.Load(File.DirAssets,"click.mp3")
 	MediaPlayer.Play
+	
 
 End Sub
 
