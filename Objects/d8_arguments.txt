@@ -78,7 +78,6 @@ D:\DHVSU\2nd Year\2nd Sem\Mob Dev\MathDungeon\MathDungeon\Objects\dexed\b4a\exam
 D:\DHVSU\2nd Year\2nd Sem\Mob Dev\MathDungeon\MathDungeon\Objects\dexed\b4a\example\designerscripts\LS_gamedefeated.dex
 D:\DHVSU\2nd Year\2nd Sem\Mob Dev\MathDungeon\MathDungeon\Objects\dexed\b4a\example\designerscripts\LS_gameoverstate.dex
 D:\DHVSU\2nd Year\2nd Sem\Mob Dev\MathDungeon\MathDungeon\Objects\dexed\b4a\example\designerscripts\LS_gamestate.dex
-D:\DHVSU\2nd Year\2nd Sem\Mob Dev\MathDungeon\MathDungeon\Objects\dexed\b4a\example\designerscripts\LS_load.dex
 D:\DHVSU\2nd Year\2nd Sem\Mob Dev\MathDungeon\MathDungeon\Objects\dexed\b4a\example\designerscripts\LS_pausestate.dex
 D:\DHVSU\2nd Year\2nd Sem\Mob Dev\MathDungeon\MathDungeon\Objects\dexed\b4a\example\designerscripts\LS_searchtemplate.dex
 D:\DHVSU\2nd Year\2nd Sem\Mob Dev\MathDungeon\MathDungeon\Objects\dexed\b4a\example\designerscripts\LS_titlestate.dex

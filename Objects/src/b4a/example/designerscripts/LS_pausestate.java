@@ -15,7 +15,7 @@ views.get("pausepanel").vw.setHeight((int)((100d / 100 * height)));
 views.get("buttonresume").vw.setLeft((int)((views.get("pausepanel").vw.getWidth())/2d - (views.get("buttonresume").vw.getWidth() / 2)));
 views.get("buttonresume").vw.setTop((int)((views.get("pausepanel").vw.getHeight())/1.7d - (views.get("buttonresume").vw.getHeight() / 2)));
 views.get("buttontitle").vw.setLeft((int)((views.get("pausepanel").vw.getWidth())/2d - (views.get("buttontitle").vw.getWidth() / 2)));
-views.get("buttontitle").vw.setTop((int)((views.get("pausepanel").vw.getHeight())/1.2d - (views.get("buttontitle").vw.getHeight() / 2)));
+views.get("buttontitle").vw.setTop((int)((views.get("pausepanel").vw.getHeight())/1.35d - (views.get("buttontitle").vw.getHeight() / 2)));
 
 }
 }

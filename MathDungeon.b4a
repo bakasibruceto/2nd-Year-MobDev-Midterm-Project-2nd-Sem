@@ -1,46 +1,82 @@
 ﻿Build1=Default,b4a.example
 File1=alagard.ttf
-File10=MATH DUNGEON GAMESTATE BG .png
-File11=MATH DUNGEON TITLE .png
-File12=MATH DUNGEON WINNER .png
-File13=MathTitle.png
-File14=PAUSE STATE.png
-File15=PauseState.bal
-File16=pausestate.png
-File17=PressedPauseButton.png
-File18=redslime.png
-File19=TitleScreen.png
-File2=BiggerPressedPlayButton.png
-File20=TitleState.bal
-File21=UnpressedPauseButton.png
-File3=BiggerUnpressedPlayButton.png
-File4=BrighterMATH DUNGEON TITLE .png
-File5=GAME OVER.png
-File6=GameDefeated.bal
-File7=GameOverState.bal
-File8=GameState.bal
-File9=Load.bal
+File10=GameDefeated.bal
+File11=GameOverState.bal
+File12=GameState.bal
+File13=MATH DUNGEON GAMESTATE BG .png
+File14=MATH DUNGEON TITLE .png
+File15=MATH DUNGEON WINNER .png
+File16=MathTitle.png
+File17=monsterbar.png
+File18=monsterbar-export.png
+File19=PAUSE STATE.png
+File2=BiggerPressedHOME.png
+File20=PauseState.bal
+File21=pausestate.png
+File22=plybar-export.png
+File23=pressedGameStateGREENLargebtn.png
+File24=pressedGameStateLargebtn.png
+File25=pressedGameStateREDLargebtn.png
+File26=pressedGameStbtn#.png
+File27=PressedPauseButton.png
+File28=PressedPlayButton.png
+File29=pressss.png
+File3=BiggerPressedPlayButton.png
+File30=redslime.png
+File31=TitleScreen.png
+File32=TitleState.bal
+File33=UnpressedGameStateGREENLargebtn.png
+File34=UnpressedGameStateLargebtn.png
+File35=UnpressedGameStateREDLargebtn.png
+File36=UnpressedGameStbtn#.png
+File37=UnpressedPauseButton.png
+File38=UnpressedPlayButton.png
+File39=upresssss.png
+File4=BiggerPressedrETRY.png
+File5=BiggerUnpressedHOME.png
+File6=BiggerUnpressedPlayButton.png
+File7=BiggerUnpressedRETRYt.png
+File8=BrighterMATH DUNGEON TITLE .png
+File9=GAME OVER.png
 FileGroup1=Default Group
-FileGroup10=New Group
-FileGroup11=New Group
-FileGroup12=New Group
+FileGroup10=Default Group
+FileGroup11=Default Group
+FileGroup12=Default Group
 FileGroup13=New Group
 FileGroup14=New Group
-FileGroup15=Default Group
+FileGroup15=New Group
 FileGroup16=New Group
 FileGroup17=New Group
 FileGroup18=New Group
-FileGroup19=Default Group
-FileGroup2=New Group
+FileGroup19=New Group
+FileGroup2=Default Group
 FileGroup20=Default Group
 FileGroup21=New Group
+FileGroup22=New Group
+FileGroup23=New Group
+FileGroup24=New Group
+FileGroup25=New Group
+FileGroup26=New Group
+FileGroup27=New Group
+FileGroup28=Default Group
+FileGroup29=New Group
 FileGroup3=New Group
-FileGroup4=New Group
+FileGroup30=New Group
+FileGroup31=Default Group
+FileGroup32=Default Group
+FileGroup33=New Group
+FileGroup34=New Group
+FileGroup35=New Group
+FileGroup36=New Group
+FileGroup37=New Group
+FileGroup38=Default Group
+FileGroup39=New Group
+FileGroup4=Default Group
 FileGroup5=New Group
 FileGroup6=Default Group
 FileGroup7=Default Group
-FileGroup8=Default Group
-FileGroup9=Default Group
+FileGroup8=New Group
+FileGroup9=New Group
 Group=Default Group
 Library1=animation
 Library2=audio
@@ -51,7 +87,7 @@ Library6=xui views
 Library7=xui2d
 ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="31"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~
 Module1=Starter
-NumberOfFiles=21
+NumberOfFiles=39
 NumberOfLibraries=7
 NumberOfModules=1
 Version=12.2
@@ -74,11 +110,21 @@ Version=12.2
 
 Sub Process_Globals
 	Private xui As XUI
+	'The Type of Monster In the Game 
 	Private MonsterType As Int = 0
+	
+	'An Array of Images stored in the Files Directory
 	Private Monster() As String = Array As String("redslime.png", "orc.png","skeleton.png")
+	
+	'File Name is Taken From the Monster Array and MonsterType as an Index
 	Private FileName As String = Monster(MonsterType)
+	
+	'MediaPlayer is For SoundEfx
 	Private MediaPlayer As MediaPlayer
 	Private MediaPlayer2 As MediaPlayer
+	Private MediaPlayer3 As MediaPlayer
+	
+	'Custom Font stored in the Files Directory
 	Private Font As Typeface = Typeface.LoadFromAssets("alagard.ttf")
 
 	
@@ -90,14 +136,12 @@ Sub Globals
 	Private HP, mobHP As Label
 	Private answer, equal As Label
 	Private PausePanel As Panel
-	Private ImageView1 As ImageView
+	Private ImageView1 As ImageView 'Show The Monster On the Screen
 	
 	'These are the variables for storing the correct answer
-	Private strAn As Label
 	Private str As String
 	
 	'Default Values
-	Private bar As Int = 100
 	Private damage As Int = 0
 	Private HPval As Int = 100
 	Private mobVal As Int = 100
@@ -107,15 +151,14 @@ Sub Globals
 	Private barsize As Int
 	Private hpshake As Boolean = False
 	Private mobshake As Boolean = False
+	
 	'Game States
 	Private GameState, PauseState, TitleState, GameOverState, GameDefeated As Panel
-	Private Button1 As Button
-	
 	
 	'Health Bar
-	Private mob, mob2, ply1, ply2 As Panel
-	Private cvsGraph, cvsGraph2, cvsGraph3, cvsGraph4 As Canvas
-	Private rect1, rect2, rect3, rect4 As Rect
+	Private mob2,ply2 As Panel
+	Private cvsGraph2, cvsGraph4 As Canvas
+	Private rect2, rect4 As Rect
 	
 	'Keypad
 	Private Button0 As Button
@@ -130,6 +173,7 @@ Sub Globals
 	Private Button9 As Button
 	Private ButtonEnter As Button
 	Private ButtonClear As Button
+	Private Retry As Button
 	
 	Private shake As Animation
 
@@ -139,22 +183,22 @@ End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
 	
-	InitializeState
-	DrawState
+	InitializeState 'Sub Function
+	DrawState 'Sub Function
 	
 	
 	
 	If(HPval <= 100 And HPval >=1)Then
 			
-		DrawMonster
-		DrawHealth
-		DrawEquation
+		DrawMonster 'Sub Function
+		DrawHealth 'Sub Function
+		DrawEquation 'Sub Function
 		
 	End If
 	If GameOverState.Visible == True Then
-		MediaPlayer.Load(File.DirAssets,"gameover.mp3")
+		MediaPlayer.Load(File.DirAssets,"gameover.mp3")'SoundEfx
 	End If
-	MediaPlayer.Play
+	MediaPlayer.Play'Play The SoundEfx
 	
 
 End Sub
@@ -168,6 +212,7 @@ Sub Activity_Pause (UserClosed As Boolean)
 End Sub
 
 Sub Activity_KeyPress (KeyCode As Int) As Boolean
+	'When The Back Button of the Phone is Pressed
 	If KeyCode = KeyCodes.KEYCODE_BACK Then
 		If Msgbox2("Are you sure to exit?", "", "Yes", "", "No", Null) = DialogResponse.POSITIVE Then
 			MediaPlayer.Stop
@@ -183,6 +228,7 @@ Sub Activity_KeyPress (KeyCode As Int) As Boolean
 End Sub
 
 Sub FontStyle
+	'Changes Fontstyle Programmatically
 	num1.Typeface = Font
 	num2.Typeface = Font
 	operation.Typeface = Font
@@ -206,16 +252,15 @@ Sub FontStyle
 	
 End Sub
 
-Sub InitializeState
-	
+Sub InitializeState 
+	'Initialize Panels, MediaPlayers, & Animations
 	MediaPlayer.Initialize()
 	MediaPlayer2.Initialize()
+	MediaPlayer3.Initialize()
 	shake.InitializeTranslate("", -9dip, 0, 9dip, 0)
 	shake.RepeatCount = 3
 	shake.RepeatMode = shake.REPEAT_REVERSE
 	shake.Duration = 30
-	
-	strAn.Initialize("")
 
 	GameState.Initialize("") : GameState.Visible = False
 	GameOverState.Initialize("") : GameOverState.Visible = False
@@ -223,13 +268,14 @@ Sub InitializeState
 	TitleState.Initialize(""): TitleState.Visible = False
 	GameDefeated.Initialize(""): GameDefeated.Visible = False
 	
-	
+	'Layout From the Designer (.bal Files)
 	GameState.LoadLayout("GameState")
 	TitleState.LoadLayout("TitleState")
 	GameOverState.LoadLayout("GameOverState")
 	GameDefeated.LoadLayout("GameDefeated")
 	PauseState.LoadLayout("PauseState")
-
+	
+	'Displays The Panel Size
 	Activity.AddView(GameState,0,0,100%x,100%y)
 	Activity.AddView(TitleState,0,0,100%x,100%y)
 	Activity.AddView(GameOverState,0,0,100%x,100%y)
@@ -238,10 +284,10 @@ Sub InitializeState
 	FontStyle
 End Sub
 
-Sub DrawState
+Sub DrawState 
+	'Conditon for when the Certain Panel is shown
 	If check == False Then
 		TitleState.Visible = True
-		
 	End If
 	
 	If HPval <=0 Then
@@ -252,6 +298,7 @@ Sub DrawState
 End Sub
 
 Sub DrawMonster
+	'A Sub Function for Displaying Different Monsters on the Screen
 	If mobVal <= 0 Then
 		MonsterType = MonsterType+1
 		Select MonsterType
@@ -263,8 +310,9 @@ Sub DrawMonster
 		
 	End If
 	
+	'Conditon for What Monster Image Shown
 	If MonsterType<3 Then
-		FileName = Monster(MonsterType)
+		FileName = Monster(MonsterType) 
 		ImageView1.Bitmap = LoadBitmap(File.DirAssets, FileName)
 	End If
 	
@@ -272,9 +320,11 @@ End Sub
 
 
 Sub DrawHealth
+	'A Sub Function for Displaying the HP (Hitpoints)
 	HP.Text=HPval
 	mobHP.Text=mobVal
 	
+	'Monster HP Changes when a new Monster Appear
 	If MonsterType<3 Then
 		Select MonsterType
 			Case 0
@@ -286,75 +336,72 @@ Sub DrawHealth
 		End Select
 	End If
 			
-	mob.Color = Colors.ARGB(0, 0, 0, 0)
-	cvsGraph.Initialize(mob)
-	rect1.Initialize(10dip, 10dip, IntToDIP(bar*4.66), 35dip)
-	cvsGraph.DrawRect(rect1, xui.Color_Black, False, 2dip)
-			
+	'Rectangle for representing the HP bar 	
+	'Monster HP bar
 	mob2.Color=Colors.ARGB(0, 0, 0, 0)
 	cvsGraph2.Initialize(mob2)
 	rect2.Initialize(10dip, 10dip, IntToDIP(barsize), 35dip)
 	cvsGraph2.DrawRect(rect2, xui.Color_Red , True, 3dip)
-			
-	ply1.Color = Colors.ARGB(0, 0, 0, 0)
-	cvsGraph3.Initialize(ply1)
-	rect3.Initialize(10dip, 10dip, IntToDIP(bar*4.66), 35dip)
-	cvsGraph3.DrawRect(rect3, xui.Color_Black, False, 2dip)
-			
+	'Player HP bar		
 	ply2.Color=Colors.ARGB(0, 0, 0, 0)
 	cvsGraph4.Initialize(ply2)
 	rect4.Initialize(10dip, 10dip, IntToDIP(HPval*4.68), 35dip)
 	cvsGraph4.DrawRect(rect4, xui.Color_Red , True, 2dip)
 	
+	'Shake Animation Condition
 	If hpshake == True Then
 		hpshake = False
-		shake.Start(ply2)
+		shake.Start(ply2) 'does shake animation when damaged
 	Else If mobshake == True Then
 		mobshake = False
-		shake.Start(mob2)
+		shake.Start(mob2) 'does shake animation when damaged
 		shake.Start(ImageView1)
 	End If
 End Sub
 
 Sub DrawEquation
+	'This is a Sub Funtion for displaying the Arithmetic Equation
+	
+	'Show Random Numbers
 	Dim rand1 As Int = Rnd(1,11)
 	Dim rand2 As Int = Rnd(1,11)
 	num1.Text=rand1
 	num2.Text=rand2
+	
+	'Show Random Arithmetic operation, In this case we have Add & Multiply
 	ShuffleArray(operator)
 	operation.text = operator(0)
 	Select operator(0)
 		Case "+"
 			str =rand1+rand2
-		Case "-"
-			str =rand1-rand2
 		Case "x"
 			str =rand1*rand2
-		Case "/"
-			str =rand1/rand2
+	
 	End Select
 End Sub
 
-Sub ShuffleArray(StringArray() As String)
+Sub ShuffleArray(StringArray() As String) 
+	'This Sub Function does the Shuffling for the Array Making the operator() Variable as a parameter
 	Dim ArrayVal As String
 	Dim Random As Int
- 
 	For i = 0 To StringArray.Length - 1
 		Random = Rnd(i, StringArray.Length)
 		ArrayVal = StringArray(i)
 		StringArray(i) = StringArray(Random)
 		StringArray(Random) = ArrayVal
 	Next
-	
 End Sub
 
 Sub IntToDIP(Integer As Int) As Int
+	'This is a Sub Function Converts Int To Dip for the HP Value of the Rectangle 
+	'making the barsize as a parameter
 	Dim DIP As Int
 	DIP = Integer *1dip
 	Return DIP
 End Sub
 
 Sub ReDraw
+	'This is a Sub Function that Refresh the Panel to display new value. ex HP change values, Generete New Equation
 	Dim i As Int
 	For i = Activity.NumberOfViews - 1 To 0 Step -1
 		Activity.RemoveViewAt(i)
@@ -362,15 +409,17 @@ Sub ReDraw
 End Sub
 
 Private Sub Pause_Click
+	'Pause Button Click
 	PauseState.Visible = True
 	buttonfalse
-	MediaPlayer.Load(File.DirAssets,"click.mp3")
+	MediaPlayer.Load(File.DirAssets,"click.mp3") 'SoundEfx
 	MediaPlayer.Play
 
 	
 End Sub
 
 Private Sub ButtonTitle_Click
+	'To Title Screen Button
 	buttonfalse
 	check = False
 	HPval = 100
@@ -379,81 +428,89 @@ Private Sub ButtonTitle_Click
 	FileName = Monster(MonsterType)
 	GameState.Visible = False
 	PauseState.Visible = False
+	'Refresh Panel
 	ReDraw
 	Activity_Create(True)
 	TitleState.Visible = True
-	MediaPlayer.Load(File.DirAssets,"click.mp3")
+	MediaPlayer.Load(File.DirAssets,"click.mp3") 'SoundEfx
 	MediaPlayer.Play
 	
 End Sub
 
 Private Sub Start_Click
-	buttontrue
+	'Start Button
 	check = True
 	TitleState.Visible = False
 	If(TitleState.Visible == True)Then
+		'Default Values
 		MonsterType = 0
 		HPval = 100
-		mobVal = 100
-		
+		mobVal = 100	
 	End If
 	
-	GameState.Visible = True
+	'Refresh the Panel
+	ReDraw 'Sub Function
 	Activity_Create(True)
-	MediaPlayer.Load(File.DirAssets,"click.mp3")
+	GameState.Visible = True
+	MediaPlayer.Load(File.DirAssets,"click.mp3")'SoundEfx
 	MediaPlayer.Play
 	
 
 End Sub
 
-Private Sub Start_LongClick
-	MediaPlayer.Load(File.DirAssets,"click.mp3")
-	MediaPlayer.Play
-End Sub
 
 Private Sub Retry_Click
+	'Retry Button
 	MediaPlayer.Stop
 	hpshake = False
 	mobshake = False
 	mobshake = False
+	
+	'Default Values
 	HPval = 100                      
 	mobVal = 100
 	MonsterType = 0
 	FileName = Monster(MonsterType)
 	GameOverState.Visible = False
+	MediaPlayer.Stop
+	
+	'Refresh the Panel
 	ReDraw
 	Activity_Create(True)
 	GameState.Visible = True
-	MediaPlayer.Load(File.DirAssets,"click.mp3")
+	MediaPlayer.Load(File.DirAssets,"click.mp3") 'SoundEfx
 	MediaPlayer.Play
 	
 End Sub
 
+
 Private Sub ButtonEnter_Click
 	tempStr=""
 	damage = str
-	If answer.Text = str Then 'correct
-		mobVal= mobVal-damage
+	If answer.Text = str Then 'If the user input is correct
+		mobVal= mobVal-damage 'Substract the answer to the Monster HP
 		mobshake = True
-		MediaPlayer.Load(File.DirAssets,"dam.mp3")
-		MediaPlayer2.Load(File.DirAssets,"parry.mp3")
+		MediaPlayer.Load(File.DirAssets,"dam.mp3") 'SoundEfx
+		MediaPlayer2.Load(File.DirAssets,"parry.mp3") 'SoundEfx
 		MediaPlayer2.Play
 		
-	Else 'Incorrect
-		HPval = HPval-damage
-		MediaPlayer.Play
+	Else 'If the user input is Incorrect
+		HPval = HPval-damage 'Substract answer to the Player HP
 		hpshake = True
-		MediaPlayer.Load(File.DirAssets,"pdam.mp3")
-		
+		MediaPlayer.Load(File.DirAssets,"pdam.mp3") 'SoundEfx
 	End If
 	
 	MediaPlayer.Play
 	
+	'Refresh The Panel
 	GameState.Visible=False
-	ReDraw
+	ReDraw 'Sub Function
 	Activity_Create(True)
+	
+	'Condtion for Completing the Game
 	If MonsterType == 3 Then
 		GameDefeated.Visible=True
+		Retry.Visible = True
 		MediaPlayer.Load(File.DirAssets,"fanfare.mp3")
 		MediaPlayer.Play
 	Else
@@ -464,72 +521,99 @@ Private Sub ButtonEnter_Click
 	End If
 	
 End Sub
+
+'KeyPad Buttons
  
 Private Sub ButtonClear_Click
 	answer.Text=""
 	tempStr=""
+	MediaPlayer2.Load(File.DirAssets,"clickbut.mp3") 'SoundEfx
+	MediaPlayer2.Play
 	
 End Sub
 
 Private Sub Button0_Click
 	answer.Text = tempStr&"0"
 	tempStr = answer.Text
+	MediaPlayer2.Load(File.DirAssets,"clickbut.mp3") 'SoundEfx
+	MediaPlayer2.Play
 	
 End Sub
 
 Private Sub Button1_Click
 	answer.Text = tempStr&"1"
 	tempStr = answer.Text
+	MediaPlayer2.Load(File.DirAssets,"clickbut.mp3") 'SoundEfx
+	MediaPlayer2.Play
 End Sub
 
 Private Sub Button2_Click
 	answer.Text = tempStr&"2"
 	tempStr = answer.Text
+	MediaPlayer2.Load(File.DirAssets,"clickbut.mp3") 'SoundEfx
+	MediaPlayer2.Play
 End Sub
 
 Private Sub Button3_Click
 	answer.Text = tempStr&"3"
 	tempStr = answer.Text
+	MediaPlayer2.Load(File.DirAssets,"clickbut.mp3") 'SoundEfx
+	MediaPlayer2.Play
 End Sub
 
 Private Sub Button4_Click
 	answer.Text = tempStr&"4"
 	tempStr = answer.Text
+	MediaPlayer2.Load(File.DirAssets,"clickbut.mp3") 'SoundEfx
+	MediaPlayer2.Play
 End Sub
 
 Private Sub Button5_Click
 	answer.Text = tempStr&"5"
 	tempStr = answer.Text
+	MediaPlayer2.Load(File.DirAssets,"clickbut.mp3") 'SoundEfx
+	MediaPlayer2.Play
 End Sub
 
 Private Sub Button6_Click
 	answer.Text = tempStr&"6"
 	tempStr = answer.Text
+	MediaPlayer2.Load(File.DirAssets,"clickbut.mp3") 'SoundEfx
+	MediaPlayer2.Play
 End Sub
 
 Private Sub Button7_Click
 	answer.Text = tempStr&"7"
 	tempStr = answer.Text
+	MediaPlayer2.Load(File.DirAssets,"clickbut.mp3") 'SoundEfx
+	MediaPlayer2.Play
 End Sub
 
 Private Sub Button8_Click
 	answer.Text = tempStr&"8"
 	tempStr = answer.Text
+	MediaPlayer2.Load(File.DirAssets,"clickbut.mp3") 'SoundEfx
+	MediaPlayer2.Play
 End Sub
 
 Private Sub Button9_Click
 	answer.Text = tempStr&"9"
 	tempStr = answer.Text
+	MediaPlayer2.Load(File.DirAssets,"clickbut.mp3") 'SoundEfx
+	MediaPlayer2.Play
+	
 End Sub
 
 Private Sub ButtonResume_Click
 	PauseState.Visible = False
-	buttontrue
-	MediaPlayer.Load(File.DirAssets,"click.mp3")
+	buttontrue 'Sub Function
+	MediaPlayer.Load(File.DirAssets,"click.mp3") 'SoundEfx
 	MediaPlayer.Play
 End Sub
 
+
 Sub buttontrue
+	'A Sub Function for Enabling Buttons if the Screen is on GameState
 	Button0.Enabled = True
 	Button1.Enabled = True
 	Button2.Enabled = True
@@ -544,7 +628,9 @@ Sub buttontrue
 	ButtonClear.Enabled = True
 End Sub
 
+
 Sub buttonfalse
+	'A Sub Function for Disabling Buttons if the Screen is on PauseState
 	Button0.Enabled = False
 	Button1.Enabled = False
 	Button2.Enabled = False
