@@ -398,17 +398,17 @@ vis = vis | (main.mostCurrent != null);
 return vis;}
 public static String  _activity_create(boolean _firsttime) throws Exception{
  //BA.debugLineNum = 90;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
- //BA.debugLineNum = 92;BA.debugLine="InitializeState 'Sub Fucntion";
+ //BA.debugLineNum = 92;BA.debugLine="InitializeState 'Sub Function";
 _initializestate();
- //BA.debugLineNum = 93;BA.debugLine="DrawState 'Sub Fucntion";
+ //BA.debugLineNum = 93;BA.debugLine="DrawState 'Sub Function";
 _drawstate();
  //BA.debugLineNum = 97;BA.debugLine="If(HPval <= 100 And HPval >=1)Then";
 if ((_hpval<=100 && _hpval>=1)) { 
- //BA.debugLineNum = 99;BA.debugLine="DrawMonster 'Sub Fucntion";
+ //BA.debugLineNum = 99;BA.debugLine="DrawMonster 'Sub Function";
 _drawmonster();
- //BA.debugLineNum = 100;BA.debugLine="DrawHealth 'Sub Fucntion";
+ //BA.debugLineNum = 100;BA.debugLine="DrawHealth 'Sub Function";
 _drawhealth();
- //BA.debugLineNum = 101;BA.debugLine="DrawEquation 'Sub Fucntion";
+ //BA.debugLineNum = 101;BA.debugLine="DrawEquation 'Sub Function";
 _drawequation();
  };
  //BA.debugLineNum = 104;BA.debugLine="If GameOverState.Visible == True Then";
@@ -656,32 +656,32 @@ mostCurrent._gamestate.setVisible(anywheresoftware.b4a.keywords.Common.True);
 return "";
 }
 public static String  _buttonfalse() throws Exception{
- //BA.debugLineNum = 537;BA.debugLine="Sub buttonfalse";
- //BA.debugLineNum = 538;BA.debugLine="Button0.Enabled = False";
+ //BA.debugLineNum = 538;BA.debugLine="Sub buttonfalse";
+ //BA.debugLineNum = 540;BA.debugLine="Button0.Enabled = False";
 mostCurrent._button0.setEnabled(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 539;BA.debugLine="Button1.Enabled = False";
+ //BA.debugLineNum = 541;BA.debugLine="Button1.Enabled = False";
 mostCurrent._button1.setEnabled(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 540;BA.debugLine="Button2.Enabled = False";
+ //BA.debugLineNum = 542;BA.debugLine="Button2.Enabled = False";
 mostCurrent._button2.setEnabled(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 541;BA.debugLine="Button3.Enabled = False";
+ //BA.debugLineNum = 543;BA.debugLine="Button3.Enabled = False";
 mostCurrent._button3.setEnabled(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 542;BA.debugLine="Button4.Enabled = False";
+ //BA.debugLineNum = 544;BA.debugLine="Button4.Enabled = False";
 mostCurrent._button4.setEnabled(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 543;BA.debugLine="Button5.Enabled = False";
+ //BA.debugLineNum = 545;BA.debugLine="Button5.Enabled = False";
 mostCurrent._button5.setEnabled(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 544;BA.debugLine="Button6.Enabled = False";
+ //BA.debugLineNum = 546;BA.debugLine="Button6.Enabled = False";
 mostCurrent._button6.setEnabled(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 545;BA.debugLine="Button7.Enabled = False";
+ //BA.debugLineNum = 547;BA.debugLine="Button7.Enabled = False";
 mostCurrent._button7.setEnabled(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 546;BA.debugLine="Button8.Enabled = False";
+ //BA.debugLineNum = 548;BA.debugLine="Button8.Enabled = False";
 mostCurrent._button8.setEnabled(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 547;BA.debugLine="Button9.Enabled = False";
+ //BA.debugLineNum = 549;BA.debugLine="Button9.Enabled = False";
 mostCurrent._button9.setEnabled(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 548;BA.debugLine="ButtonEnter.Enabled = False";
+ //BA.debugLineNum = 550;BA.debugLine="ButtonEnter.Enabled = False";
 mostCurrent._buttonenter.setEnabled(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 549;BA.debugLine="ButtonClear.Enabled = False";
+ //BA.debugLineNum = 551;BA.debugLine="ButtonClear.Enabled = False";
 mostCurrent._buttonclear.setEnabled(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 550;BA.debugLine="End Sub";
+ //BA.debugLineNum = 552;BA.debugLine="End Sub";
 return "";
 }
 public static String  _buttonresume_click() throws Exception{
@@ -730,31 +730,31 @@ return "";
 }
 public static String  _buttontrue() throws Exception{
  //BA.debugLineNum = 521;BA.debugLine="Sub buttontrue";
- //BA.debugLineNum = 522;BA.debugLine="Button0.Enabled = True";
+ //BA.debugLineNum = 523;BA.debugLine="Button0.Enabled = True";
 mostCurrent._button0.setEnabled(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 523;BA.debugLine="Button1.Enabled = True";
+ //BA.debugLineNum = 524;BA.debugLine="Button1.Enabled = True";
 mostCurrent._button1.setEnabled(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 524;BA.debugLine="Button2.Enabled = True";
+ //BA.debugLineNum = 525;BA.debugLine="Button2.Enabled = True";
 mostCurrent._button2.setEnabled(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 525;BA.debugLine="Button3.Enabled = True";
+ //BA.debugLineNum = 526;BA.debugLine="Button3.Enabled = True";
 mostCurrent._button3.setEnabled(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 526;BA.debugLine="Button4.Enabled = True";
+ //BA.debugLineNum = 527;BA.debugLine="Button4.Enabled = True";
 mostCurrent._button4.setEnabled(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 527;BA.debugLine="Button5.Enabled = True";
+ //BA.debugLineNum = 528;BA.debugLine="Button5.Enabled = True";
 mostCurrent._button5.setEnabled(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 528;BA.debugLine="Button6.Enabled = True";
+ //BA.debugLineNum = 529;BA.debugLine="Button6.Enabled = True";
 mostCurrent._button6.setEnabled(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 529;BA.debugLine="Button7.Enabled = True";
+ //BA.debugLineNum = 530;BA.debugLine="Button7.Enabled = True";
 mostCurrent._button7.setEnabled(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 530;BA.debugLine="Button8.Enabled = True";
+ //BA.debugLineNum = 531;BA.debugLine="Button8.Enabled = True";
 mostCurrent._button8.setEnabled(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 531;BA.debugLine="Button9.Enabled = True";
+ //BA.debugLineNum = 532;BA.debugLine="Button9.Enabled = True";
 mostCurrent._button9.setEnabled(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 532;BA.debugLine="ButtonEnter.Enabled = True";
+ //BA.debugLineNum = 533;BA.debugLine="ButtonEnter.Enabled = True";
 mostCurrent._buttonenter.setEnabled(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 533;BA.debugLine="ButtonClear.Enabled = True";
+ //BA.debugLineNum = 534;BA.debugLine="ButtonClear.Enabled = True";
 mostCurrent._buttonclear.setEnabled(anywheresoftware.b4a.keywords.Common.True);
- //BA.debugLineNum = 534;BA.debugLine="End Sub";
+ //BA.debugLineNum = 535;BA.debugLine="End Sub";
 return "";
 }
 public static String  _drawequation() throws Exception{

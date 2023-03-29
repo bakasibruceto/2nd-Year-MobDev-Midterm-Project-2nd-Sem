@@ -17,7 +17,7 @@ views.get("gamedefeatedpanel").vw.setHeight((int)((100d / 100 * height) - (0d)))
 views.get("retry").vw.setLeft((int)((views.get("gamedefeatedpanel").vw.getWidth())/2d - (views.get("retry").vw.getWidth() / 2)));
 views.get("retry").vw.setTop((int)((views.get("gamedefeatedpanel").vw.getHeight())/1.17d - (views.get("retry").vw.getHeight() / 2)));
 views.get("buttontitle").vw.setLeft((int)((views.get("gamedefeatedpanel").vw.getWidth())/2d - (views.get("buttontitle").vw.getWidth() / 2)));
-//BA.debugLineNum = 11;BA.debugLine="ButtonTitle.VerticalCenter = GameDefeatedPanel.Height/1.95"[GameOverState/General script]
+//BA.debugLineNum = 13;BA.debugLine="ButtonTitle.VerticalCenter = GameDefeatedPanel.Height/1.95"[GameOverState/General script]
 views.get("buttontitle").vw.setTop((int)((views.get("gamedefeatedpanel").vw.getHeight())/1.95d - (views.get("buttontitle").vw.getHeight() / 2)));
 
 }
