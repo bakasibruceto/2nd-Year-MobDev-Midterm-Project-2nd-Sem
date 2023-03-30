@@ -156,7 +156,7 @@ Sub Globals
 	Private GameState, PauseState, TitleState, GameOverState, GameDefeated As Panel
 	
 	'Health Bar
-	Private mob2,ply2 As Panel
+	Private mob2,ply2, Panel1 As Panel
 	Private cvsGraph2, cvsGraph4 As Canvas
 	Private rect2, rect4 As Rect
 	
@@ -338,10 +338,12 @@ Sub DrawHealth
 			
 	'Rectangle for representing the HP bar 	
 	'Monster HP bar
+
 	mob2.Color=Colors.ARGB(0, 0, 0, 0)
 	cvsGraph2.Initialize(mob2)
 	rect2.Initialize(10dip, 10dip, IntToDIP(barsize), 35dip)
 	cvsGraph2.DrawRect(rect2, xui.Color_Red , True, 3dip)
+
 	'Player HP bar		
 	ply2.Color=Colors.ARGB(0, 0, 0, 0)
 	cvsGraph4.Initialize(ply2)
