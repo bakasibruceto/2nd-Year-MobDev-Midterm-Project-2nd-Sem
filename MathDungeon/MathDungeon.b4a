@@ -602,7 +602,6 @@ Private Sub Button9_Click
 	answer.Text = tempStr&"9"
 	tempStr = answer.Text
 	MediaPlayer2.Load(File.DirAssets,"clickbut.mp3") 'SoundEfx
-	MediaPlayer2.Play
 	
 End Sub
 
