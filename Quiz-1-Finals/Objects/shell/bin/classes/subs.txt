@@ -2,31 +2,31 @@ b4a.example
 0
 0
 0
-main,activity_create,1,0,32,40
-,txtdiscountedprice,,txtpricedrinks,,txtpricepizza,,txttotal,,txttotaldiscount
-,txtdiscountedprice,,txtpricedrinks,,txtpricepizza,,txttotal,,txttotaldiscount
+main,activity_create,1,1,32,42
+,txtdiscountedprice,,txtpricedrinks,,txtpricepizza,,txttotal,,txttotaldiscount,,priceforpizza,,pricefordrinks
+,txtdiscountedprice,,txtpricedrinks,,txtpricepizza,,txttotal,,txttotaldiscount,,priceforpizza,,pricefordrinks
 
-main,activity_pause,0,0,48,50
+main,activity_pause,0,0,50,52
 
 
 
-main,activity_resume,1,0,42,46
+main,activity_resume,1,0,44,48
 ,txtpricepizza,,priceforpizza,,txtpricedrinks,,pricefordrinks
 
 
-main,btndrinks_click,0,1,78,81
+main,btndrinks_click,0,1,88,91
 
 
 
-main,btnexit_click,0,0,83,86
+main,btnexit_click,0,0,93,96
 
 
 
-main,btnpizza_click,0,1,73,76
+main,btnpizza_click,0,1,83,86
 
 
 
-main,btntotal_click,1,0,68,71
+main,btntotal_click,1,0,78,81
 ,txttotal,,txtpricepizza,,txtpricedrinks
 
 
@@ -38,20 +38,20 @@ main,process_globals,0,1,15,21
 
 
 
-main,rdo0_checkedchange,0,0,64,66
+main,rdo0_checkedchange,1,1,72,76
+,txttotaldiscount,,txttotal,,txtdiscountedprice
 
 
-
-main,rdo05_checkedchange,0,0,60,62
-
-
-
-main,rdo10_checkedchange,0,0,56,58
+main,rdo05_checkedchange,1,1,66,70
+,txttotaldiscount,,txttotal,,txtdiscountedprice
 
 
+main,rdo10_checkedchange,1,1,60,64
+,txttotaldiscount,,txttotal,,txtdiscountedprice
 
-main,rdo20_checkedchange,0,0,52,54
 
+main,rdo20_checkedchange,1,1,54,58
+,txttotaldiscount,,txttotal,,txtdiscountedprice
 
 
 starter,application_error,0,0,27,29

@@ -438,8 +438,14 @@ mostCurrent._txttotal.setEnabled(anywheresoftware.b4a.keywords.Common.False);
 RDebugUtils.currentLine=131078;
  //BA.debugLineNum = 131078;BA.debugLine="txttotaldiscount.Enabled=False";
 mostCurrent._txttotaldiscount.setEnabled(anywheresoftware.b4a.keywords.Common.False);
+RDebugUtils.currentLine=131079;
+ //BA.debugLineNum = 131079;BA.debugLine="priceforpizza = 0";
+_priceforpizza = BA.NumberToString(0);
 RDebugUtils.currentLine=131080;
- //BA.debugLineNum = 131080;BA.debugLine="End Sub";
+ //BA.debugLineNum = 131080;BA.debugLine="pricefordrinks = 0";
+_pricefordrinks = BA.NumberToString(0);
+RDebugUtils.currentLine=131082;
+ //BA.debugLineNum = 131082;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
@@ -524,8 +530,14 @@ if (Debug.shouldDelegate(mostCurrent.activityBA, "rdo0_checkedchange", false))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "rdo0_checkedchange", new Object[] {_checked}));}
 RDebugUtils.currentLine=589824;
  //BA.debugLineNum = 589824;BA.debugLine="Private Sub rdo0_CheckedChange(Checked As Boolean)";
+RDebugUtils.currentLine=589825;
+ //BA.debugLineNum = 589825;BA.debugLine="txttotaldiscount.Text = txttotal.Text * 0";
+mostCurrent._txttotaldiscount.setText(BA.ObjectToCharSequence((double)(Double.parseDouble(mostCurrent._txttotal.getText()))*0));
 RDebugUtils.currentLine=589826;
- //BA.debugLineNum = 589826;BA.debugLine="End Sub";
+ //BA.debugLineNum = 589826;BA.debugLine="txtdiscountedprice.Text = txttotal.Text - txttota";
+mostCurrent._txtdiscountedprice.setText(BA.ObjectToCharSequence((double)(Double.parseDouble(mostCurrent._txttotal.getText()))-(double)(Double.parseDouble(mostCurrent._txttotaldiscount.getText()))));
+RDebugUtils.currentLine=589828;
+ //BA.debugLineNum = 589828;BA.debugLine="End Sub";
 return "";
 }
 public static String  _rdo05_checkedchange(boolean _checked) throws Exception{
@@ -534,8 +546,14 @@ if (Debug.shouldDelegate(mostCurrent.activityBA, "rdo05_checkedchange", false))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "rdo05_checkedchange", new Object[] {_checked}));}
 RDebugUtils.currentLine=524288;
  //BA.debugLineNum = 524288;BA.debugLine="Private Sub rdo05_CheckedChange(Checked As Boolean";
+RDebugUtils.currentLine=524289;
+ //BA.debugLineNum = 524289;BA.debugLine="txttotaldiscount.Text = txttotal.Text * 0.05";
+mostCurrent._txttotaldiscount.setText(BA.ObjectToCharSequence((double)(Double.parseDouble(mostCurrent._txttotal.getText()))*0.05));
 RDebugUtils.currentLine=524290;
- //BA.debugLineNum = 524290;BA.debugLine="End Sub";
+ //BA.debugLineNum = 524290;BA.debugLine="txtdiscountedprice.Text = txttotal.Text - txttota";
+mostCurrent._txtdiscountedprice.setText(BA.ObjectToCharSequence((double)(Double.parseDouble(mostCurrent._txttotal.getText()))-(double)(Double.parseDouble(mostCurrent._txttotaldiscount.getText()))));
+RDebugUtils.currentLine=524292;
+ //BA.debugLineNum = 524292;BA.debugLine="End Sub";
 return "";
 }
 public static String  _rdo10_checkedchange(boolean _checked) throws Exception{
@@ -544,8 +562,14 @@ if (Debug.shouldDelegate(mostCurrent.activityBA, "rdo10_checkedchange", false))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "rdo10_checkedchange", new Object[] {_checked}));}
 RDebugUtils.currentLine=458752;
  //BA.debugLineNum = 458752;BA.debugLine="Private Sub rdo10_CheckedChange(Checked As Boolean";
+RDebugUtils.currentLine=458753;
+ //BA.debugLineNum = 458753;BA.debugLine="txttotaldiscount.Text = txttotal.Text * 1";
+mostCurrent._txttotaldiscount.setText(BA.ObjectToCharSequence((double)(Double.parseDouble(mostCurrent._txttotal.getText()))*1));
 RDebugUtils.currentLine=458754;
- //BA.debugLineNum = 458754;BA.debugLine="End Sub";
+ //BA.debugLineNum = 458754;BA.debugLine="txtdiscountedprice.Text = txttotal.Text - txttota";
+mostCurrent._txtdiscountedprice.setText(BA.ObjectToCharSequence((double)(Double.parseDouble(mostCurrent._txttotal.getText()))-(double)(Double.parseDouble(mostCurrent._txttotaldiscount.getText()))));
+RDebugUtils.currentLine=458756;
+ //BA.debugLineNum = 458756;BA.debugLine="End Sub";
 return "";
 }
 public static String  _rdo20_checkedchange(boolean _checked) throws Exception{
@@ -554,8 +578,14 @@ if (Debug.shouldDelegate(mostCurrent.activityBA, "rdo20_checkedchange", false))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "rdo20_checkedchange", new Object[] {_checked}));}
 RDebugUtils.currentLine=393216;
  //BA.debugLineNum = 393216;BA.debugLine="Private Sub rdo20_CheckedChange(Checked As Boolean";
+RDebugUtils.currentLine=393217;
+ //BA.debugLineNum = 393217;BA.debugLine="txttotaldiscount.Text = txttotal.Text * 2";
+mostCurrent._txttotaldiscount.setText(BA.ObjectToCharSequence((double)(Double.parseDouble(mostCurrent._txttotal.getText()))*2));
 RDebugUtils.currentLine=393218;
- //BA.debugLineNum = 393218;BA.debugLine="End Sub";
+ //BA.debugLineNum = 393218;BA.debugLine="txtdiscountedprice.Text = txttotal.Text - txttota";
+mostCurrent._txtdiscountedprice.setText(BA.ObjectToCharSequence((double)(Double.parseDouble(mostCurrent._txttotal.getText()))-(double)(Double.parseDouble(mostCurrent._txttotaldiscount.getText()))));
+RDebugUtils.currentLine=393220;
+ //BA.debugLineNum = 393220;BA.debugLine="End Sub";
 return "";
 }
 }

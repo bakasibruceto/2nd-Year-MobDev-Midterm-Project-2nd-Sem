@@ -55,6 +55,8 @@ Sub Activity_Create(FirstTime As Boolean)
 	txtdiscountedprice.Enabled=False
 	txttotal.Enabled=False
 	txttotaldiscount.Enabled=False
+	priceforpizza = 0
+	pricefordrinks = 0
 	
 End Sub
 
@@ -69,18 +71,26 @@ Sub Activity_Pause (UserClosed As Boolean)
 End Sub
 
 Private Sub rdo20_CheckedChange(Checked As Boolean)
+	txttotaldiscount.Text = txttotal.Text * 2
+	txtdiscountedprice.Text = txttotal.Text - txttotaldiscount.Text
 	
 End Sub
 
 Private Sub rdo10_CheckedChange(Checked As Boolean)
+	txttotaldiscount.Text = txttotal.Text * 1
+	txtdiscountedprice.Text = txttotal.Text - txttotaldiscount.Text
 	
 End Sub
 
 Private Sub rdo05_CheckedChange(Checked As Boolean)
+	txttotaldiscount.Text = txttotal.Text * 0.05
+	txtdiscountedprice.Text = txttotal.Text - txttotaldiscount.Text
 	
 End Sub
 
 Private Sub rdo0_CheckedChange(Checked As Boolean)
+	txttotaldiscount.Text = txttotal.Text * 0
+	txtdiscountedprice.Text = txttotal.Text - txttotaldiscount.Text
 	
 End Sub
 
