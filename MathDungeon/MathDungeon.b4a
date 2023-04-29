@@ -186,8 +186,6 @@ Sub Activity_Create(FirstTime As Boolean)
 	InitializeState 'Sub Function
 	DrawState 'Sub Function
 	
-	
-	
 	If(HPval <= 100 And HPval >=1)Then
 			
 		DrawMonster 'Sub Function
