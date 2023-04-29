@@ -1,15 +1,21 @@
 ﻿Build1=Default,b4a.example
-File1=Layout.bal
+File1=laydrinks.bal
+File2=Layout.bal
+File3=laypizza.bal
 FileGroup1=Default Group
+FileGroup2=Default Group
+FileGroup3=Default Group
 Group=Default Group
 Library1=core
 Library2=xui
 ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="31"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~
-Module1=Starter
-NumberOfFiles=1
+Module1=Drinks
+Module2=Pizza
+Module3=Starter
+NumberOfFiles=3
 NumberOfLibraries=2
-NumberOfModules=1
-Version=9.9
+NumberOfModules=3
+Version=12.2
 @EndOfDesignText@
 #Region  Project Attributes 
 	#ApplicationLabel: B4A Example
@@ -29,17 +35,32 @@ Sub Process_Globals
 	'These global variables will be declared once when the application starts.
 	'These variables can be accessed from all modules.
 	Private xui As XUI
+	Dim priceforpizza As String
+	Dim pricefordrinks As String
 End Sub
 
 Sub Globals
 	'These global variables will be redeclared each time the activity is created.
+	Private txtdiscountedprice As EditText
+	Private txtpricedrinks As EditText
+	Private txtpricepizza As EditText
+	Private txttotal As EditText
+	Private txttotaldiscount As EditText
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
 	Activity.LoadLayout("Layout")
+	txtpricedrinks.Enabled=False
+	txtpricepizza.Enabled=False
+	txtdiscountedprice.Enabled=False
+	txttotal.Enabled=False
+	txttotaldiscount.Enabled=False
+	
 End Sub
 
 Sub Activity_Resume
+	txtpricepizza.Text = priceforpizza
+	txtpricedrinks.Text = pricefordrinks
 
 End Sub
 
@@ -47,6 +68,38 @@ Sub Activity_Pause (UserClosed As Boolean)
 
 End Sub
 
-Sub Button1_Click
-	xui.MsgboxAsync("Hello world!", "B4X")
+Private Sub rdo20_CheckedChange(Checked As Boolean)
+	
+End Sub
+
+Private Sub rdo10_CheckedChange(Checked As Boolean)
+	
+End Sub
+
+Private Sub rdo05_CheckedChange(Checked As Boolean)
+	
+End Sub
+
+Private Sub rdo0_CheckedChange(Checked As Boolean)
+	
+End Sub
+
+Private Sub btntotal_Click
+	txttotal.Text=txtpricepizza.Text + txtpricedrinks.Text
+	
+End Sub
+
+Private Sub btnPizza_Click
+	StartActivity(Pizza)
+	
+End Sub
+
+Private Sub btnDrinks_Click
+	StartActivity(Drinks)
+	
+End Sub
+
+Private Sub btnexit_Click
+	Activity.Finish
+	
 End Sub
