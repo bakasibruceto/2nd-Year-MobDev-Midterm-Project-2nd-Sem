@@ -10,6 +10,6 @@ ModuleClosedNodes0=
 ModuleClosedNodes1=
 ModuleClosedNodes2=
 ModuleClosedNodes3=1
-NavigationStack=Pizza,btnclear2_Click,72,0,Pizza,chkham_CheckedChange,56,0,Main,btnDrinks_Click,78,0,Main,rdo0_CheckedChange,65,0,Main,rdo05_CheckedChange,60,1,Main,rdo10_CheckedChange,58,0,Visual Designer,laydrinks.bal,-100,6,Visual Designer,laypizza.bal,-100,4,Visual Designer,Layout.bal,-100,5,Main,rdo20_CheckedChange,52,0,Main,Activity_Create,37,0
+NavigationStack=Pizza,chkham_CheckedChange,56,0,Main,btnDrinks_Click,78,0,Main,rdo0_CheckedChange,65,0,Main,rdo05_CheckedChange,60,1,Visual Designer,laydrinks.bal,-100,6,Visual Designer,laypizza.bal,-100,4,Visual Designer,Layout.bal,-100,6,Main,Activity_Create,32,0,Main,rdo10_CheckedChange,60,1,Main,rdo20_CheckedChange,54,1
 SelectedBuild=0
 VisibleModules=3,2,1

@@ -34,7 +34,7 @@ public class drinks extends Activity implements B4AActivity{
 		super.onCreate(savedInstanceState);
         mostCurrent = this;
 		if (processBA == null) {
-			processBA = new anywheresoftware.b4a.ShellBA(this.getApplicationContext(), null, null, "b4a.example", "b4a.example.drinks");
+			processBA = new BA(this.getApplicationContext(), null, null, "b4a.example", "b4a.example.drinks");
 			processBA.loadHtSubs(this.getClass());
 	        float deviceScale = getApplicationContext().getResources().getDisplayMetrics().density;
 	        BALayout.setDeviceScale(deviceScale);
@@ -335,15 +335,6 @@ public class drinks extends Activity implements B4AActivity{
             
     }
 
-
-
-public static void initializeProcessGlobals() {
-             try {
-                Class.forName(BA.applicationContext.getPackageName() + ".main").getMethod("initializeProcessGlobals").invoke(null, null);
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
-}
 public anywheresoftware.b4a.keywords.Common __c = null;
 public anywheresoftware.b4a.objects.EditTextWrapper _txtprice1 = null;
 public anywheresoftware.b4a.objects.CompoundButtonWrapper.CheckBoxWrapper _chkcoffee = null;
@@ -352,152 +343,117 @@ public anywheresoftware.b4a.objects.CompoundButtonWrapper.CheckBoxWrapper _chkte
 public b4a.example.main _main = null;
 public b4a.example.starter _starter = null;
 public b4a.example.pizza _pizza = null;
+
+public static void initializeProcessGlobals() {
+             try {
+                Class.forName(BA.applicationContext.getPackageName() + ".main").getMethod("initializeProcessGlobals").invoke(null, null);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+}
 public static String  _activity_create(boolean _firsttime) throws Exception{
-RDebugUtils.currentModule="drinks";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_create", new Object[] {_firsttime}));}
-RDebugUtils.currentLine=2228224;
- //BA.debugLineNum = 2228224;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-RDebugUtils.currentLine=2228226;
- //BA.debugLineNum = 2228226;BA.debugLine="Activity.LoadLayout(\"laydrinks\")";
+ //BA.debugLineNum = 23;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+ //BA.debugLineNum = 25;BA.debugLine="Activity.LoadLayout(\"laydrinks\")";
 mostCurrent._activity.LoadLayout("laydrinks",mostCurrent.activityBA);
-RDebugUtils.currentLine=2228228;
- //BA.debugLineNum = 2228228;BA.debugLine="End Sub";
+ //BA.debugLineNum = 27;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
-RDebugUtils.currentModule="drinks";
-RDebugUtils.currentLine=2359296;
- //BA.debugLineNum = 2359296;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-RDebugUtils.currentLine=2359298;
- //BA.debugLineNum = 2359298;BA.debugLine="End Sub";
+ //BA.debugLineNum = 33;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+ //BA.debugLineNum = 35;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
-RDebugUtils.currentModule="drinks";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_resume", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_resume", null));}
-RDebugUtils.currentLine=2293760;
- //BA.debugLineNum = 2293760;BA.debugLine="Sub Activity_Resume";
-RDebugUtils.currentLine=2293762;
- //BA.debugLineNum = 2293762;BA.debugLine="End Sub";
+ //BA.debugLineNum = 29;BA.debugLine="Sub Activity_Resume";
+ //BA.debugLineNum = 31;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btnaccept1_click() throws Exception{
-RDebugUtils.currentModule="drinks";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "btnaccept1_click", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "btnaccept1_click", null));}
-RDebugUtils.currentLine=3014656;
- //BA.debugLineNum = 3014656;BA.debugLine="Private Sub btnaccept1_Click";
-RDebugUtils.currentLine=3014657;
- //BA.debugLineNum = 3014657;BA.debugLine="Main.pricefordrinks = txtprice1.Text";
+ //BA.debugLineNum = 49;BA.debugLine="Private Sub btnaccept1_Click";
+ //BA.debugLineNum = 50;BA.debugLine="Main.pricefordrinks = txtprice1.Text";
 mostCurrent._main._pricefordrinks /*String*/  = mostCurrent._txtprice1.getText();
-RDebugUtils.currentLine=3014658;
- //BA.debugLineNum = 3014658;BA.debugLine="Msgbox(\"Transaction Confirmed\",\"Successful\")";
+ //BA.debugLineNum = 51;BA.debugLine="Msgbox(\"Transaction Confirmed\",\"Successful\")";
 anywheresoftware.b4a.keywords.Common.Msgbox(BA.ObjectToCharSequence("Transaction Confirmed"),BA.ObjectToCharSequence("Successful"),mostCurrent.activityBA);
-RDebugUtils.currentLine=3014659;
- //BA.debugLineNum = 3014659;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 52;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
-RDebugUtils.currentLine=3014660;
- //BA.debugLineNum = 3014660;BA.debugLine="End Sub";
+ //BA.debugLineNum = 53;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btnclear1_click() throws Exception{
-RDebugUtils.currentModule="drinks";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "btnclear1_click", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "btnclear1_click", null));}
-RDebugUtils.currentLine=3080192;
- //BA.debugLineNum = 3080192;BA.debugLine="Private Sub btnclear1_Click";
-RDebugUtils.currentLine=3080193;
- //BA.debugLineNum = 3080193;BA.debugLine="chkcoffee.Checked = False";
+ //BA.debugLineNum = 41;BA.debugLine="Private Sub btnclear1_Click";
+ //BA.debugLineNum = 42;BA.debugLine="chkcoffee.Checked = False";
 mostCurrent._chkcoffee.setChecked(anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=3080194;
- //BA.debugLineNum = 3080194;BA.debugLine="chktea.Checked = False";
+ //BA.debugLineNum = 43;BA.debugLine="chktea.Checked = False";
 mostCurrent._chktea.setChecked(anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=3080195;
- //BA.debugLineNum = 3080195;BA.debugLine="chksoda.Checked = False";
+ //BA.debugLineNum = 44;BA.debugLine="chksoda.Checked = False";
 mostCurrent._chksoda.setChecked(anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=3080196;
- //BA.debugLineNum = 3080196;BA.debugLine="txtprice1.Text = 0";
+ //BA.debugLineNum = 45;BA.debugLine="txtprice1.Text = 0";
 mostCurrent._txtprice1.setText(BA.ObjectToCharSequence(0));
-RDebugUtils.currentLine=3080198;
- //BA.debugLineNum = 3080198;BA.debugLine="End Sub";
+ //BA.debugLineNum = 47;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btnhome1_click() throws Exception{
-RDebugUtils.currentModule="drinks";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "btnhome1_click", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "btnhome1_click", null));}
-RDebugUtils.currentLine=3145728;
- //BA.debugLineNum = 3145728;BA.debugLine="Private Sub btnhome1_Click";
-RDebugUtils.currentLine=3145729;
- //BA.debugLineNum = 3145729;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 37;BA.debugLine="Private Sub btnhome1_Click";
+ //BA.debugLineNum = 38;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
-RDebugUtils.currentLine=3145730;
- //BA.debugLineNum = 3145730;BA.debugLine="End Sub";
+ //BA.debugLineNum = 39;BA.debugLine="End Sub";
 return "";
 }
 public static String  _chkcoffee_checkedchange(boolean _checked) throws Exception{
-RDebugUtils.currentModule="drinks";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "chkcoffee_checkedchange", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "chkcoffee_checkedchange", new Object[] {_checked}));}
-RDebugUtils.currentLine=2949120;
- //BA.debugLineNum = 2949120;BA.debugLine="Private Sub chkcoffee_CheckedChange(Checked As Boo";
-RDebugUtils.currentLine=2949121;
- //BA.debugLineNum = 2949121;BA.debugLine="If chkcoffee.Checked = True Then";
+ //BA.debugLineNum = 73;BA.debugLine="Private Sub chkcoffee_CheckedChange(Checked As Boo";
+ //BA.debugLineNum = 74;BA.debugLine="If chkcoffee.Checked = True Then";
 if (mostCurrent._chkcoffee.getChecked()==anywheresoftware.b4a.keywords.Common.True) { 
-RDebugUtils.currentLine=2949122;
- //BA.debugLineNum = 2949122;BA.debugLine="txtprice1.Text = txtprice1.Text + 50";
+ //BA.debugLineNum = 75;BA.debugLine="txtprice1.Text = txtprice1.Text + 50";
 mostCurrent._txtprice1.setText(BA.ObjectToCharSequence((double)(Double.parseDouble(mostCurrent._txtprice1.getText()))+50));
  }else {
-RDebugUtils.currentLine=2949124;
- //BA.debugLineNum = 2949124;BA.debugLine="txtprice1.Text = txtprice1.Text - 50";
+ //BA.debugLineNum = 77;BA.debugLine="txtprice1.Text = txtprice1.Text - 50";
 mostCurrent._txtprice1.setText(BA.ObjectToCharSequence((double)(Double.parseDouble(mostCurrent._txtprice1.getText()))-50));
  };
-RDebugUtils.currentLine=2949126;
- //BA.debugLineNum = 2949126;BA.debugLine="End Sub";
+ //BA.debugLineNum = 79;BA.debugLine="End Sub";
 return "";
 }
 public static String  _chksoda_checkedchange(boolean _checked) throws Exception{
-RDebugUtils.currentModule="drinks";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "chksoda_checkedchange", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "chksoda_checkedchange", new Object[] {_checked}));}
-RDebugUtils.currentLine=2883584;
- //BA.debugLineNum = 2883584;BA.debugLine="Private Sub chksoda_CheckedChange(Checked As Boole";
-RDebugUtils.currentLine=2883585;
- //BA.debugLineNum = 2883585;BA.debugLine="If chksoda.Checked = True Then";
+ //BA.debugLineNum = 64;BA.debugLine="Private Sub chksoda_CheckedChange(Checked As Boole";
+ //BA.debugLineNum = 65;BA.debugLine="If chksoda.Checked = True Then";
 if (mostCurrent._chksoda.getChecked()==anywheresoftware.b4a.keywords.Common.True) { 
-RDebugUtils.currentLine=2883586;
- //BA.debugLineNum = 2883586;BA.debugLine="txtprice1.Text = txtprice1.Text + 30";
+ //BA.debugLineNum = 66;BA.debugLine="txtprice1.Text = txtprice1.Text + 30";
 mostCurrent._txtprice1.setText(BA.ObjectToCharSequence((double)(Double.parseDouble(mostCurrent._txtprice1.getText()))+30));
  }else {
-RDebugUtils.currentLine=2883588;
- //BA.debugLineNum = 2883588;BA.debugLine="txtprice1.Text = txtprice1.Text - 30";
+ //BA.debugLineNum = 68;BA.debugLine="txtprice1.Text = txtprice1.Text - 30";
 mostCurrent._txtprice1.setText(BA.ObjectToCharSequence((double)(Double.parseDouble(mostCurrent._txtprice1.getText()))-30));
  };
-RDebugUtils.currentLine=2883591;
- //BA.debugLineNum = 2883591;BA.debugLine="End Sub";
+ //BA.debugLineNum = 71;BA.debugLine="End Sub";
 return "";
 }
 public static String  _chktea_checkedchange(boolean _checked) throws Exception{
-RDebugUtils.currentModule="drinks";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "chktea_checkedchange", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "chktea_checkedchange", new Object[] {_checked}));}
-RDebugUtils.currentLine=2818048;
- //BA.debugLineNum = 2818048;BA.debugLine="Private Sub chktea_CheckedChange(Checked As Boolea";
-RDebugUtils.currentLine=2818049;
- //BA.debugLineNum = 2818049;BA.debugLine="If chktea.Checked = True Then";
+ //BA.debugLineNum = 55;BA.debugLine="Private Sub chktea_CheckedChange(Checked As Boolea";
+ //BA.debugLineNum = 56;BA.debugLine="If chktea.Checked = True Then";
 if (mostCurrent._chktea.getChecked()==anywheresoftware.b4a.keywords.Common.True) { 
-RDebugUtils.currentLine=2818050;
- //BA.debugLineNum = 2818050;BA.debugLine="txtprice1.Text = txtprice1.Text + 40";
+ //BA.debugLineNum = 57;BA.debugLine="txtprice1.Text = txtprice1.Text + 40";
 mostCurrent._txtprice1.setText(BA.ObjectToCharSequence((double)(Double.parseDouble(mostCurrent._txtprice1.getText()))+40));
  }else {
-RDebugUtils.currentLine=2818052;
- //BA.debugLineNum = 2818052;BA.debugLine="txtprice1.Text = txtprice1.Text - 40";
+ //BA.debugLineNum = 59;BA.debugLine="txtprice1.Text = txtprice1.Text - 40";
 mostCurrent._txtprice1.setText(BA.ObjectToCharSequence((double)(Double.parseDouble(mostCurrent._txtprice1.getText()))-40));
  };
-RDebugUtils.currentLine=2818055;
- //BA.debugLineNum = 2818055;BA.debugLine="End Sub";
+ //BA.debugLineNum = 62;BA.debugLine="End Sub";
+return "";
+}
+public static String  _globals() throws Exception{
+ //BA.debugLineNum = 12;BA.debugLine="Sub Globals";
+ //BA.debugLineNum = 17;BA.debugLine="Private txtprice1 As EditText";
+mostCurrent._txtprice1 = new anywheresoftware.b4a.objects.EditTextWrapper();
+ //BA.debugLineNum = 18;BA.debugLine="Private chkcoffee As CheckBox";
+mostCurrent._chkcoffee = new anywheresoftware.b4a.objects.CompoundButtonWrapper.CheckBoxWrapper();
+ //BA.debugLineNum = 19;BA.debugLine="Private chksoda As CheckBox";
+mostCurrent._chksoda = new anywheresoftware.b4a.objects.CompoundButtonWrapper.CheckBoxWrapper();
+ //BA.debugLineNum = 20;BA.debugLine="Private chktea As CheckBox";
+mostCurrent._chktea = new anywheresoftware.b4a.objects.CompoundButtonWrapper.CheckBoxWrapper();
+ //BA.debugLineNum = 21;BA.debugLine="End Sub";
+return "";
+}
+public static String  _process_globals() throws Exception{
+ //BA.debugLineNum = 6;BA.debugLine="Sub Process_Globals";
+ //BA.debugLineNum = 10;BA.debugLine="End Sub";
 return "";
 }
 }

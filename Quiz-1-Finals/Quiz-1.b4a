@@ -71,13 +71,13 @@ Sub Activity_Pause (UserClosed As Boolean)
 End Sub
 
 Private Sub rdo20_CheckedChange(Checked As Boolean)
-	txttotaldiscount.Text = txttotal.Text * 2
+	txttotaldiscount.Text = txttotal.Text * 0.2
 	txtdiscountedprice.Text = txttotal.Text - txttotaldiscount.Text
 	
 End Sub
 
 Private Sub rdo10_CheckedChange(Checked As Boolean)
-	txttotaldiscount.Text = txttotal.Text * 1
+	txttotaldiscount.Text = txttotal.Text *0.1
 	txtdiscountedprice.Text = txttotal.Text - txttotaldiscount.Text
 	
 End Sub

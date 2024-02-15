@@ -14,8 +14,8 @@ import anywheresoftware.b4a.B4AUncaughtException;
 import anywheresoftware.b4a.debug.*;
 import java.lang.ref.WeakReference;
 
-public class pizza extends Activity implements B4AActivity{
-	public static pizza mostCurrent;
+public class main extends Activity implements B4AActivity{
+	public static main mostCurrent;
 	static boolean afterFirstLayout;
 	static boolean isFirst = true;
     private static boolean processGlobalsRun = false;
@@ -34,7 +34,7 @@ public class pizza extends Activity implements B4AActivity{
 		super.onCreate(savedInstanceState);
         mostCurrent = this;
 		if (processBA == null) {
-			processBA = new BA(this.getApplicationContext(), null, null, "b4a.example", "b4a.example.pizza");
+			processBA = new BA(this.getApplicationContext(), null, null, "b4a.example", "b4a.example.main");
 			processBA.loadHtSubs(this.getClass());
 	        float deviceScale = getApplicationContext().getResources().getDisplayMetrics().density;
 	        BALayout.setDeviceScale(deviceScale);
@@ -43,7 +43,7 @@ public class pizza extends Activity implements B4AActivity{
 		else if (previousOne != null) {
 			Activity p = previousOne.get();
 			if (p != null && p != this) {
-                BA.LogInfo("Killing previous instance (pizza).");
+                BA.LogInfo("Killing previous instance (main).");
 				p.finish();
 			}
 		}
@@ -86,7 +86,7 @@ public class pizza extends Activity implements B4AActivity{
 	private void afterFirstLayout() {
         if (this != mostCurrent)
 			return;
-		activityBA = new BA(this, layout, processBA, "b4a.example", "b4a.example.pizza");
+		activityBA = new BA(this, layout, processBA, "b4a.example", "b4a.example.main");
         
         processBA.sharedProcessBA.activityBA = new java.lang.ref.WeakReference<BA>(activityBA);
         anywheresoftware.b4a.objects.ViewWrapper.lastId = 0;
@@ -95,19 +95,19 @@ public class pizza extends Activity implements B4AActivity{
         if (BA.isShellModeRuntimeCheck(processBA)) {
 			if (isFirst)
 				processBA.raiseEvent2(null, true, "SHELL", false);
-			processBA.raiseEvent2(null, true, "CREATE", true, "b4a.example.pizza", processBA, activityBA, _activity, anywheresoftware.b4a.keywords.Common.Density, mostCurrent);
+			processBA.raiseEvent2(null, true, "CREATE", true, "b4a.example.main", processBA, activityBA, _activity, anywheresoftware.b4a.keywords.Common.Density, mostCurrent);
 			_activity.reinitializeForShell(activityBA, "activity");
 		}
         initializeProcessGlobals();		
         initializeGlobals();
         
-        BA.LogInfo("** Activity (pizza) Create " + (isFirst ? "(first time)" : "") + " **");
+        BA.LogInfo("** Activity (main) Create " + (isFirst ? "(first time)" : "") + " **");
         processBA.raiseEvent2(null, true, "activity_create", false, isFirst);
 		isFirst = false;
 		if (this != mostCurrent)
 			return;
         processBA.setActivityPaused(false);
-        BA.LogInfo("** Activity (pizza) Resume **");
+        BA.LogInfo("** Activity (main) Resume **");
         processBA.raiseEvent(null, "activity_resume");
         if (android.os.Build.VERSION.SDK_INT >= 11) {
 			try {
@@ -196,7 +196,7 @@ public class pizza extends Activity implements B4AActivity{
 		}
 	}
     public static Class<?> getObject() {
-		return pizza.class;
+		return main.class;
 	}
     private Boolean onKeySubExist = null;
     private Boolean onKeyUpSubExist = null;
@@ -268,9 +268,9 @@ public class pizza extends Activity implements B4AActivity{
 			return;
 		anywheresoftware.b4a.Msgbox.dismiss(true);
         if (!dontPause)
-            BA.LogInfo("** Activity (pizza) Pause, UserClosed = " + activityBA.activity.isFinishing() + " **");
+            BA.LogInfo("** Activity (main) Pause, UserClosed = " + activityBA.activity.isFinishing() + " **");
         else
-            BA.LogInfo("** Activity (pizza) Pause event (activity is not paused). **");
+            BA.LogInfo("** Activity (main) Pause event (activity is not paused). **");
         if (mostCurrent != null)
             processBA.raiseEvent2(_activity, true, "activity_pause", false, activityBA.activity.isFinishing());		
         if (!dontPause) {
@@ -307,11 +307,11 @@ public class pizza extends Activity implements B4AActivity{
     		this.activity = new WeakReference<Activity>(activity);
     	}
 		public void run() {
-            pizza mc = mostCurrent;
+            main mc = mostCurrent;
 			if (mc == null || mc != activity.get())
 				return;
 			processBA.setActivityPaused(false);
-            BA.LogInfo("** Activity (pizza) Resume **");
+            BA.LogInfo("** Activity (main) Resume **");
             if (mc != mostCurrent)
                 return;
 		    processBA.raiseEvent(mc._activity, "activity_resume", (Object[])null);
@@ -336,122 +336,120 @@ public class pizza extends Activity implements B4AActivity{
     }
 
 public anywheresoftware.b4a.keywords.Common __c = null;
-public anywheresoftware.b4a.objects.EditTextWrapper _txtprice2 = null;
-public anywheresoftware.b4a.objects.CompoundButtonWrapper.CheckBoxWrapper _chkham = null;
-public anywheresoftware.b4a.objects.CompoundButtonWrapper.CheckBoxWrapper _chkhaw = null;
-public anywheresoftware.b4a.objects.CompoundButtonWrapper.CheckBoxWrapper _chkpep = null;
-public b4a.example.main _main = null;
+public static anywheresoftware.b4a.objects.B4XViewWrapper.XUI _xui = null;
+public anywheresoftware.b4a.objects.EditTextWrapper _txt_price = null;
+public anywheresoftware.b4a.objects.EditTextWrapper _txt_discount = null;
+public anywheresoftware.b4a.objects.EditTextWrapper _txt_totaldiscount = null;
+public anywheresoftware.b4a.objects.EditTextWrapper _txt_discountedprice = null;
 public b4a.example.starter _starter = null;
-public b4a.example.drinks _drinks = null;
 
-public static void initializeProcessGlobals() {
-             try {
-                Class.forName(BA.applicationContext.getPackageName() + ".main").getMethod("initializeProcessGlobals").invoke(null, null);
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
-}
+public static boolean isAnyActivityVisible() {
+    boolean vis = false;
+vis = vis | (main.mostCurrent != null);
+return vis;}
 public static String  _activity_create(boolean _firsttime) throws Exception{
- //BA.debugLineNum = 22;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
- //BA.debugLineNum = 24;BA.debugLine="Activity.LoadLayout(\"laypizza\")";
-mostCurrent._activity.LoadLayout("laypizza",mostCurrent.activityBA);
- //BA.debugLineNum = 26;BA.debugLine="End Sub";
+ //BA.debugLineNum = 33;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+ //BA.debugLineNum = 34;BA.debugLine="Activity.LoadLayout(\"Layout\")";
+mostCurrent._activity.LoadLayout("Layout",mostCurrent.activityBA);
+ //BA.debugLineNum = 35;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
- //BA.debugLineNum = 32;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
- //BA.debugLineNum = 34;BA.debugLine="End Sub";
+ //BA.debugLineNum = 41;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+ //BA.debugLineNum = 43;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
- //BA.debugLineNum = 28;BA.debugLine="Sub Activity_Resume";
- //BA.debugLineNum = 30;BA.debugLine="End Sub";
+ //BA.debugLineNum = 37;BA.debugLine="Sub Activity_Resume";
+ //BA.debugLineNum = 39;BA.debugLine="End Sub";
 return "";
 }
-public static String  _btnaccept2_click() throws Exception{
- //BA.debugLineNum = 76;BA.debugLine="Private Sub btnaccept2_Click";
- //BA.debugLineNum = 77;BA.debugLine="Main.priceforpizza = txtprice2.Text";
-mostCurrent._main._priceforpizza /*String*/  = mostCurrent._txtprice2.getText();
- //BA.debugLineNum = 78;BA.debugLine="Msgbox(\"Transaction Confirmed\",\"Successful\")";
-anywheresoftware.b4a.keywords.Common.Msgbox(BA.ObjectToCharSequence("Transaction Confirmed"),BA.ObjectToCharSequence("Successful"),mostCurrent.activityBA);
- //BA.debugLineNum = 79;BA.debugLine="Activity.Finish";
-mostCurrent._activity.Finish();
- //BA.debugLineNum = 80;BA.debugLine="End Sub";
-return "";
-}
-public static String  _btnclear2_click() throws Exception{
- //BA.debugLineNum = 69;BA.debugLine="Private Sub btnclear2_Click";
- //BA.debugLineNum = 70;BA.debugLine="chkham.Checked=False";
-mostCurrent._chkham.setChecked(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 71;BA.debugLine="chkhaw.Checked=False";
-mostCurrent._chkhaw.setChecked(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 72;BA.debugLine="chkpep.Checked=False";
-mostCurrent._chkpep.setChecked(anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 73;BA.debugLine="txtprice2.Text =\"0\"";
-mostCurrent._txtprice2.setText(BA.ObjectToCharSequence("0"));
- //BA.debugLineNum = 74;BA.debugLine="End Sub";
-return "";
-}
-public static String  _btnhome2_click() throws Exception{
- //BA.debugLineNum = 64;BA.debugLine="Private Sub btnhome2_Click";
- //BA.debugLineNum = 65;BA.debugLine="Activity.Finish";
-mostCurrent._activity.Finish();
- //BA.debugLineNum = 67;BA.debugLine="End Sub";
-return "";
-}
-public static String  _chkham_checkedchange(boolean _checked) throws Exception{
- //BA.debugLineNum = 55;BA.debugLine="Private Sub chkham_CheckedChange(Checked As Boolea";
- //BA.debugLineNum = 56;BA.debugLine="If chkham.Checked = True Then";
-if (mostCurrent._chkham.getChecked()==anywheresoftware.b4a.keywords.Common.True) { 
- //BA.debugLineNum = 57;BA.debugLine="txtprice2.Text = txtprice2.Text + 200";
-mostCurrent._txtprice2.setText(BA.ObjectToCharSequence((double)(Double.parseDouble(mostCurrent._txtprice2.getText()))+200));
+public static String  _btn_discount_click() throws Exception{
+int _discount = 0;
+ //BA.debugLineNum = 57;BA.debugLine="Private Sub btn_Discount_Click";
+ //BA.debugLineNum = 58;BA.debugLine="Dim discount As Int";
+_discount = 0;
+ //BA.debugLineNum = 59;BA.debugLine="discount = Msgbox2(\"Select Discount\",\"Discount\",\"";
+_discount = anywheresoftware.b4a.keywords.Common.Msgbox2(BA.ObjectToCharSequence("Select Discount"),BA.ObjectToCharSequence("Discount"),"20%","5%","10%",(android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null),mostCurrent.activityBA);
+ //BA.debugLineNum = 60;BA.debugLine="If discount = DialogResponse.POSITIVE Then";
+if (_discount==anywheresoftware.b4a.keywords.Common.DialogResponse.POSITIVE) { 
+ //BA.debugLineNum = 61;BA.debugLine="txt_Discount.Text = \"20%\"";
+mostCurrent._txt_discount.setText(BA.ObjectToCharSequence("20%"));
+ //BA.debugLineNum = 62;BA.debugLine="txt_TotalDiscount.Text = txt_Price.Text * 0.2";
+mostCurrent._txt_totaldiscount.setText(BA.ObjectToCharSequence((double)(Double.parseDouble(mostCurrent._txt_price.getText()))*0.2));
+ //BA.debugLineNum = 63;BA.debugLine="txt_DiscountedPrice.Text = txt_Price.Text - txt_";
+mostCurrent._txt_discountedprice.setText(BA.ObjectToCharSequence((double)(Double.parseDouble(mostCurrent._txt_price.getText()))-(double)(Double.parseDouble(mostCurrent._txt_totaldiscount.getText()))));
+ }else if(_discount==anywheresoftware.b4a.keywords.Common.DialogResponse.CANCEL) { 
+ //BA.debugLineNum = 65;BA.debugLine="txt_Discount.Text = \"5%\"";
+mostCurrent._txt_discount.setText(BA.ObjectToCharSequence("5%"));
+ //BA.debugLineNum = 66;BA.debugLine="txt_TotalDiscount.Text = txt_Price.Text * 0.05";
+mostCurrent._txt_totaldiscount.setText(BA.ObjectToCharSequence((double)(Double.parseDouble(mostCurrent._txt_price.getText()))*0.05));
+ //BA.debugLineNum = 67;BA.debugLine="txt_DiscountedPrice.Text = txt_Price.Text - txt_";
+mostCurrent._txt_discountedprice.setText(BA.ObjectToCharSequence((double)(Double.parseDouble(mostCurrent._txt_price.getText()))-(double)(Double.parseDouble(mostCurrent._txt_totaldiscount.getText()))));
  }else {
- //BA.debugLineNum = 59;BA.debugLine="txtprice2.Text = txtprice2.Text - 200";
-mostCurrent._txtprice2.setText(BA.ObjectToCharSequence((double)(Double.parseDouble(mostCurrent._txtprice2.getText()))-200));
+ //BA.debugLineNum = 69;BA.debugLine="txt_Discount.Text = \"10%\"";
+mostCurrent._txt_discount.setText(BA.ObjectToCharSequence("10%"));
+ //BA.debugLineNum = 70;BA.debugLine="txt_TotalDiscount.Text = txt_Price.Text * 0.1";
+mostCurrent._txt_totaldiscount.setText(BA.ObjectToCharSequence((double)(Double.parseDouble(mostCurrent._txt_price.getText()))*0.1));
+ //BA.debugLineNum = 71;BA.debugLine="txt_DiscountedPrice.Text = txt_Price.Text - txt_";
+mostCurrent._txt_discountedprice.setText(BA.ObjectToCharSequence((double)(Double.parseDouble(mostCurrent._txt_price.getText()))-(double)(Double.parseDouble(mostCurrent._txt_totaldiscount.getText()))));
  };
- //BA.debugLineNum = 62;BA.debugLine="End Sub";
+ //BA.debugLineNum = 73;BA.debugLine="End Sub";
 return "";
 }
-public static String  _chkhaw_checkedchange(boolean _checked) throws Exception{
- //BA.debugLineNum = 46;BA.debugLine="Private Sub chkhaw_CheckedChange(Checked As Boolea";
- //BA.debugLineNum = 47;BA.debugLine="If chkhaw.Checked = True Then";
-if (mostCurrent._chkhaw.getChecked()==anywheresoftware.b4a.keywords.Common.True) { 
- //BA.debugLineNum = 48;BA.debugLine="txtprice2.Text = txtprice2.Text + 300";
-mostCurrent._txtprice2.setText(BA.ObjectToCharSequence((double)(Double.parseDouble(mostCurrent._txtprice2.getText()))+300));
- }else {
- //BA.debugLineNum = 50;BA.debugLine="txtprice2.Text = txtprice2.Text - 300";
-mostCurrent._txtprice2.setText(BA.ObjectToCharSequence((double)(Double.parseDouble(mostCurrent._txtprice2.getText()))-300));
+public static String  _btn_exit_click() throws Exception{
+int _result = 0;
+ //BA.debugLineNum = 49;BA.debugLine="Private Sub btn_Exit_Click";
+ //BA.debugLineNum = 50;BA.debugLine="Dim result As Int";
+_result = 0;
+ //BA.debugLineNum = 51;BA.debugLine="result = Msgbox2(\"Are you sure you want to exit?\"";
+_result = anywheresoftware.b4a.keywords.Common.Msgbox2(BA.ObjectToCharSequence("Are you sure you want to exit?"),BA.ObjectToCharSequence("Exit"),"yes","","no",(android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null),mostCurrent.activityBA);
+ //BA.debugLineNum = 52;BA.debugLine="If result = DialogResponse.POSITIVE Then";
+if (_result==anywheresoftware.b4a.keywords.Common.DialogResponse.POSITIVE) { 
+ //BA.debugLineNum = 53;BA.debugLine="ExitApplication";
+anywheresoftware.b4a.keywords.Common.ExitApplication();
  };
- //BA.debugLineNum = 53;BA.debugLine="End Sub";
+ //BA.debugLineNum = 55;BA.debugLine="End Sub";
 return "";
 }
-public static String  _chkpep_checkedchange(boolean _checked) throws Exception{
- //BA.debugLineNum = 37;BA.debugLine="Private Sub chkpep_CheckedChange(Checked As Boolea";
- //BA.debugLineNum = 38;BA.debugLine="If chkpep.Checked = True Then";
-if (mostCurrent._chkpep.getChecked()==anywheresoftware.b4a.keywords.Common.True) { 
- //BA.debugLineNum = 39;BA.debugLine="txtprice2.Text = txtprice2.Text + 400";
-mostCurrent._txtprice2.setText(BA.ObjectToCharSequence((double)(Double.parseDouble(mostCurrent._txtprice2.getText()))+400));
- }else {
- //BA.debugLineNum = 41;BA.debugLine="txtprice2.Text = txtprice2.Text - 400";
-mostCurrent._txtprice2.setText(BA.ObjectToCharSequence((double)(Double.parseDouble(mostCurrent._txtprice2.getText()))-400));
- };
- //BA.debugLineNum = 44;BA.debugLine="End Sub";
+public static String  _button1_click() throws Exception{
+ //BA.debugLineNum = 45;BA.debugLine="Sub Button1_Click";
+ //BA.debugLineNum = 46;BA.debugLine="xui.MsgboxAsync(\"Hello world!\", \"B4X\")";
+_xui.MsgboxAsync(processBA,BA.ObjectToCharSequence("Hello world!"),BA.ObjectToCharSequence("B4X"));
+ //BA.debugLineNum = 47;BA.debugLine="End Sub";
 return "";
 }
 public static String  _globals() throws Exception{
- //BA.debugLineNum = 14;BA.debugLine="Sub Globals";
- //BA.debugLineNum = 18;BA.debugLine="Private txtprice2 As EditText";
-mostCurrent._txtprice2 = new anywheresoftware.b4a.objects.EditTextWrapper();
- //BA.debugLineNum = 19;BA.debugLine="Private chkham, chkhaw, chkpep As CheckBox";
-mostCurrent._chkham = new anywheresoftware.b4a.objects.CompoundButtonWrapper.CheckBoxWrapper();
-mostCurrent._chkhaw = new anywheresoftware.b4a.objects.CompoundButtonWrapper.CheckBoxWrapper();
-mostCurrent._chkpep = new anywheresoftware.b4a.objects.CompoundButtonWrapper.CheckBoxWrapper();
- //BA.debugLineNum = 20;BA.debugLine="End Sub";
+ //BA.debugLineNum = 24;BA.debugLine="Sub Globals";
+ //BA.debugLineNum = 27;BA.debugLine="Private txt_Price As EditText";
+mostCurrent._txt_price = new anywheresoftware.b4a.objects.EditTextWrapper();
+ //BA.debugLineNum = 28;BA.debugLine="Private txt_Discount As EditText";
+mostCurrent._txt_discount = new anywheresoftware.b4a.objects.EditTextWrapper();
+ //BA.debugLineNum = 29;BA.debugLine="Private txt_TotalDiscount As EditText";
+mostCurrent._txt_totaldiscount = new anywheresoftware.b4a.objects.EditTextWrapper();
+ //BA.debugLineNum = 30;BA.debugLine="Private txt_DiscountedPrice As EditText";
+mostCurrent._txt_discountedprice = new anywheresoftware.b4a.objects.EditTextWrapper();
+ //BA.debugLineNum = 31;BA.debugLine="End Sub";
 return "";
 }
-public static String  _process_globals() throws Exception{
- //BA.debugLineNum = 6;BA.debugLine="Sub Process_Globals";
- //BA.debugLineNum = 12;BA.debugLine="End Sub";
+
+public static void initializeProcessGlobals() {
+    
+    if (main.processGlobalsRun == false) {
+	    main.processGlobalsRun = true;
+		try {
+		        main._process_globals();
+starter._process_globals();
+		
+        } catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+    }
+}public static String  _process_globals() throws Exception{
+ //BA.debugLineNum = 15;BA.debugLine="Sub Process_Globals";
+ //BA.debugLineNum = 18;BA.debugLine="Private xui As XUI";
+_xui = new anywheresoftware.b4a.objects.B4XViewWrapper.XUI();
+ //BA.debugLineNum = 22;BA.debugLine="End Sub";
 return "";
 }
 }

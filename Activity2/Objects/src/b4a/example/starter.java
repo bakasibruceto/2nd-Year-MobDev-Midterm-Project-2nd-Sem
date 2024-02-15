@@ -126,8 +126,6 @@ public class starter extends android.app.Service{
 		return null;
 	}public anywheresoftware.b4a.keywords.Common __c = null;
 public b4a.example.main _main = null;
-public b4a.example.pizza _pizza = null;
-public b4a.example.drinks _drinks = null;
 public static boolean  _application_error(anywheresoftware.b4a.objects.B4AException _error,String _stacktrace) throws Exception{
  //BA.debugLineNum = 27;BA.debugLine="Sub Application_Error (Error As Exception, StackTr";
  //BA.debugLineNum = 28;BA.debugLine="Return True";

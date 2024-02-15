@@ -34,7 +34,7 @@ public class main extends Activity implements B4AActivity{
 		super.onCreate(savedInstanceState);
         mostCurrent = this;
 		if (processBA == null) {
-			processBA = new anywheresoftware.b4a.ShellBA(this.getApplicationContext(), null, null, "b4a.example", "b4a.example.main");
+			processBA = new BA(this.getApplicationContext(), null, null, "b4a.example", "b4a.example.main");
 			processBA.loadHtSubs(this.getClass());
 	        float deviceScale = getApplicationContext().getResources().getDisplayMetrics().density;
 	        BALayout.setDeviceScale(deviceScale);
@@ -335,73 +335,6 @@ public class main extends Activity implements B4AActivity{
             
     }
 
-
-
-public static void initializeProcessGlobals() {
-    
-    if (main.processGlobalsRun == false) {
-	    main.processGlobalsRun = true;
-		try {
-		        		
-        } catch (Exception e) {
-			throw new RuntimeException(e);
-		}
-    }
-}
-public static boolean isAnyActivityVisible() {
-    boolean vis = false;
-vis = vis | (main.mostCurrent != null);
-vis = vis | (pizza.mostCurrent != null);
-vis = vis | (drinks.mostCurrent != null);
-return vis;}
-
-private static BA killProgramHelper(BA ba) {
-    if (ba == null)
-        return null;
-    anywheresoftware.b4a.BA.SharedProcessBA sharedProcessBA = ba.sharedProcessBA;
-    if (sharedProcessBA == null || sharedProcessBA.activityBA == null)
-        return null;
-    return sharedProcessBA.activityBA.get();
-}
-public static void killProgram() {
-     {
-            Activity __a = null;
-            if (main.previousOne != null) {
-				__a = main.previousOne.get();
-			}
-            else {
-                BA ba = killProgramHelper(main.mostCurrent == null ? null : main.mostCurrent.processBA);
-                if (ba != null) __a = ba.activity;
-            }
-            if (__a != null)
-				__a.finish();}
-
-BA.applicationContext.stopService(new android.content.Intent(BA.applicationContext, starter.class));
- {
-            Activity __a = null;
-            if (pizza.previousOne != null) {
-				__a = pizza.previousOne.get();
-			}
-            else {
-                BA ba = killProgramHelper(pizza.mostCurrent == null ? null : pizza.mostCurrent.processBA);
-                if (ba != null) __a = ba.activity;
-            }
-            if (__a != null)
-				__a.finish();}
-
- {
-            Activity __a = null;
-            if (drinks.previousOne != null) {
-				__a = drinks.previousOne.get();
-			}
-            else {
-                BA ba = killProgramHelper(drinks.mostCurrent == null ? null : drinks.mostCurrent.processBA);
-                if (ba != null) __a = ba.activity;
-            }
-            if (__a != null)
-				__a.finish();}
-
-}
 public anywheresoftware.b4a.keywords.Common __c = null;
 public static anywheresoftware.b4a.objects.B4XViewWrapper.XUI _xui = null;
 public static String _priceforpizza = "";
@@ -414,178 +347,151 @@ public anywheresoftware.b4a.objects.EditTextWrapper _txttotaldiscount = null;
 public b4a.example.starter _starter = null;
 public b4a.example.pizza _pizza = null;
 public b4a.example.drinks _drinks = null;
+
+public static boolean isAnyActivityVisible() {
+    boolean vis = false;
+vis = vis | (main.mostCurrent != null);
+vis = vis | (pizza.mostCurrent != null);
+vis = vis | (drinks.mostCurrent != null);
+return vis;}
 public static String  _activity_create(boolean _firsttime) throws Exception{
-RDebugUtils.currentModule="main";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_create", new Object[] {_firsttime}));}
-RDebugUtils.currentLine=131072;
- //BA.debugLineNum = 131072;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-RDebugUtils.currentLine=131073;
- //BA.debugLineNum = 131073;BA.debugLine="Activity.LoadLayout(\"Layout\")";
+ //BA.debugLineNum = 32;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+ //BA.debugLineNum = 33;BA.debugLine="Activity.LoadLayout(\"Layout\")";
 mostCurrent._activity.LoadLayout("Layout",mostCurrent.activityBA);
-RDebugUtils.currentLine=131074;
- //BA.debugLineNum = 131074;BA.debugLine="txtpricedrinks.Enabled=False";
+ //BA.debugLineNum = 34;BA.debugLine="txtpricedrinks.Enabled=False";
 mostCurrent._txtpricedrinks.setEnabled(anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=131075;
- //BA.debugLineNum = 131075;BA.debugLine="txtpricepizza.Enabled=False";
+ //BA.debugLineNum = 35;BA.debugLine="txtpricepizza.Enabled=False";
 mostCurrent._txtpricepizza.setEnabled(anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=131076;
- //BA.debugLineNum = 131076;BA.debugLine="txtdiscountedprice.Enabled=False";
+ //BA.debugLineNum = 36;BA.debugLine="txtdiscountedprice.Enabled=False";
 mostCurrent._txtdiscountedprice.setEnabled(anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=131077;
- //BA.debugLineNum = 131077;BA.debugLine="txttotal.Enabled=False";
+ //BA.debugLineNum = 37;BA.debugLine="txttotal.Enabled=False";
 mostCurrent._txttotal.setEnabled(anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=131078;
- //BA.debugLineNum = 131078;BA.debugLine="txttotaldiscount.Enabled=False";
+ //BA.debugLineNum = 38;BA.debugLine="txttotaldiscount.Enabled=False";
 mostCurrent._txttotaldiscount.setEnabled(anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=131079;
- //BA.debugLineNum = 131079;BA.debugLine="priceforpizza = 0";
+ //BA.debugLineNum = 39;BA.debugLine="priceforpizza = 0";
 _priceforpizza = BA.NumberToString(0);
-RDebugUtils.currentLine=131080;
- //BA.debugLineNum = 131080;BA.debugLine="pricefordrinks = 0";
+ //BA.debugLineNum = 40;BA.debugLine="pricefordrinks = 0";
 _pricefordrinks = BA.NumberToString(0);
-RDebugUtils.currentLine=131082;
- //BA.debugLineNum = 131082;BA.debugLine="End Sub";
+ //BA.debugLineNum = 42;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
-RDebugUtils.currentModule="main";
-RDebugUtils.currentLine=262144;
- //BA.debugLineNum = 262144;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-RDebugUtils.currentLine=262146;
- //BA.debugLineNum = 262146;BA.debugLine="End Sub";
+ //BA.debugLineNum = 50;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+ //BA.debugLineNum = 52;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
-RDebugUtils.currentModule="main";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_resume", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_resume", null));}
-RDebugUtils.currentLine=196608;
- //BA.debugLineNum = 196608;BA.debugLine="Sub Activity_Resume";
-RDebugUtils.currentLine=196609;
- //BA.debugLineNum = 196609;BA.debugLine="txtpricepizza.Text = priceforpizza";
+ //BA.debugLineNum = 44;BA.debugLine="Sub Activity_Resume";
+ //BA.debugLineNum = 45;BA.debugLine="txtpricepizza.Text = priceforpizza";
 mostCurrent._txtpricepizza.setText(BA.ObjectToCharSequence(_priceforpizza));
-RDebugUtils.currentLine=196610;
- //BA.debugLineNum = 196610;BA.debugLine="txtpricedrinks.Text = pricefordrinks";
+ //BA.debugLineNum = 46;BA.debugLine="txtpricedrinks.Text = pricefordrinks";
 mostCurrent._txtpricedrinks.setText(BA.ObjectToCharSequence(_pricefordrinks));
-RDebugUtils.currentLine=196612;
- //BA.debugLineNum = 196612;BA.debugLine="End Sub";
+ //BA.debugLineNum = 48;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btndrinks_click() throws Exception{
-RDebugUtils.currentModule="main";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "btndrinks_click", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "btndrinks_click", null));}
-RDebugUtils.currentLine=786432;
- //BA.debugLineNum = 786432;BA.debugLine="Private Sub btnDrinks_Click";
-RDebugUtils.currentLine=786433;
- //BA.debugLineNum = 786433;BA.debugLine="StartActivity(Drinks)";
+ //BA.debugLineNum = 88;BA.debugLine="Private Sub btnDrinks_Click";
+ //BA.debugLineNum = 89;BA.debugLine="StartActivity(Drinks)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._drinks.getObject()));
-RDebugUtils.currentLine=786435;
- //BA.debugLineNum = 786435;BA.debugLine="End Sub";
+ //BA.debugLineNum = 91;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btnexit_click() throws Exception{
-RDebugUtils.currentModule="main";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "btnexit_click", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "btnexit_click", null));}
-RDebugUtils.currentLine=851968;
- //BA.debugLineNum = 851968;BA.debugLine="Private Sub btnexit_Click";
-RDebugUtils.currentLine=851969;
- //BA.debugLineNum = 851969;BA.debugLine="Activity.Finish";
+ //BA.debugLineNum = 93;BA.debugLine="Private Sub btnexit_Click";
+ //BA.debugLineNum = 94;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
-RDebugUtils.currentLine=851971;
- //BA.debugLineNum = 851971;BA.debugLine="End Sub";
+ //BA.debugLineNum = 96;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btnpizza_click() throws Exception{
-RDebugUtils.currentModule="main";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "btnpizza_click", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "btnpizza_click", null));}
-RDebugUtils.currentLine=720896;
- //BA.debugLineNum = 720896;BA.debugLine="Private Sub btnPizza_Click";
-RDebugUtils.currentLine=720897;
- //BA.debugLineNum = 720897;BA.debugLine="StartActivity(Pizza)";
+ //BA.debugLineNum = 83;BA.debugLine="Private Sub btnPizza_Click";
+ //BA.debugLineNum = 84;BA.debugLine="StartActivity(Pizza)";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._pizza.getObject()));
-RDebugUtils.currentLine=720899;
- //BA.debugLineNum = 720899;BA.debugLine="End Sub";
+ //BA.debugLineNum = 86;BA.debugLine="End Sub";
 return "";
 }
 public static String  _btntotal_click() throws Exception{
-RDebugUtils.currentModule="main";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "btntotal_click", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "btntotal_click", null));}
-RDebugUtils.currentLine=655360;
- //BA.debugLineNum = 655360;BA.debugLine="Private Sub btntotal_Click";
-RDebugUtils.currentLine=655361;
- //BA.debugLineNum = 655361;BA.debugLine="txttotal.Text=txtpricepizza.Text + txtpricedrinks";
+ //BA.debugLineNum = 78;BA.debugLine="Private Sub btntotal_Click";
+ //BA.debugLineNum = 79;BA.debugLine="txttotal.Text=txtpricepizza.Text + txtpricedrinks";
 mostCurrent._txttotal.setText(BA.ObjectToCharSequence((double)(Double.parseDouble(mostCurrent._txtpricepizza.getText()))+(double)(Double.parseDouble(mostCurrent._txtpricedrinks.getText()))));
-RDebugUtils.currentLine=655363;
- //BA.debugLineNum = 655363;BA.debugLine="End Sub";
+ //BA.debugLineNum = 81;BA.debugLine="End Sub";
+return "";
+}
+public static String  _globals() throws Exception{
+ //BA.debugLineNum = 23;BA.debugLine="Sub Globals";
+ //BA.debugLineNum = 25;BA.debugLine="Private txtdiscountedprice As EditText";
+mostCurrent._txtdiscountedprice = new anywheresoftware.b4a.objects.EditTextWrapper();
+ //BA.debugLineNum = 26;BA.debugLine="Private txtpricedrinks As EditText";
+mostCurrent._txtpricedrinks = new anywheresoftware.b4a.objects.EditTextWrapper();
+ //BA.debugLineNum = 27;BA.debugLine="Private txtpricepizza As EditText";
+mostCurrent._txtpricepizza = new anywheresoftware.b4a.objects.EditTextWrapper();
+ //BA.debugLineNum = 28;BA.debugLine="Private txttotal As EditText";
+mostCurrent._txttotal = new anywheresoftware.b4a.objects.EditTextWrapper();
+ //BA.debugLineNum = 29;BA.debugLine="Private txttotaldiscount As EditText";
+mostCurrent._txttotaldiscount = new anywheresoftware.b4a.objects.EditTextWrapper();
+ //BA.debugLineNum = 30;BA.debugLine="End Sub";
+return "";
+}
+
+public static void initializeProcessGlobals() {
+    
+    if (main.processGlobalsRun == false) {
+	    main.processGlobalsRun = true;
+		try {
+		        main._process_globals();
+starter._process_globals();
+pizza._process_globals();
+drinks._process_globals();
+		
+        } catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+    }
+}public static String  _process_globals() throws Exception{
+ //BA.debugLineNum = 15;BA.debugLine="Sub Process_Globals";
+ //BA.debugLineNum = 18;BA.debugLine="Private xui As XUI";
+_xui = new anywheresoftware.b4a.objects.B4XViewWrapper.XUI();
+ //BA.debugLineNum = 19;BA.debugLine="Dim priceforpizza As String";
+_priceforpizza = "";
+ //BA.debugLineNum = 20;BA.debugLine="Dim pricefordrinks As String";
+_pricefordrinks = "";
+ //BA.debugLineNum = 21;BA.debugLine="End Sub";
 return "";
 }
 public static String  _rdo0_checkedchange(boolean _checked) throws Exception{
-RDebugUtils.currentModule="main";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "rdo0_checkedchange", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "rdo0_checkedchange", new Object[] {_checked}));}
-RDebugUtils.currentLine=589824;
- //BA.debugLineNum = 589824;BA.debugLine="Private Sub rdo0_CheckedChange(Checked As Boolean)";
-RDebugUtils.currentLine=589825;
- //BA.debugLineNum = 589825;BA.debugLine="txttotaldiscount.Text = txttotal.Text * 0";
+ //BA.debugLineNum = 72;BA.debugLine="Private Sub rdo0_CheckedChange(Checked As Boolean)";
+ //BA.debugLineNum = 73;BA.debugLine="txttotaldiscount.Text = txttotal.Text * 0";
 mostCurrent._txttotaldiscount.setText(BA.ObjectToCharSequence((double)(Double.parseDouble(mostCurrent._txttotal.getText()))*0));
-RDebugUtils.currentLine=589826;
- //BA.debugLineNum = 589826;BA.debugLine="txtdiscountedprice.Text = txttotal.Text - txttota";
+ //BA.debugLineNum = 74;BA.debugLine="txtdiscountedprice.Text = txttotal.Text - txttota";
 mostCurrent._txtdiscountedprice.setText(BA.ObjectToCharSequence((double)(Double.parseDouble(mostCurrent._txttotal.getText()))-(double)(Double.parseDouble(mostCurrent._txttotaldiscount.getText()))));
-RDebugUtils.currentLine=589828;
- //BA.debugLineNum = 589828;BA.debugLine="End Sub";
+ //BA.debugLineNum = 76;BA.debugLine="End Sub";
 return "";
 }
 public static String  _rdo05_checkedchange(boolean _checked) throws Exception{
-RDebugUtils.currentModule="main";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "rdo05_checkedchange", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "rdo05_checkedchange", new Object[] {_checked}));}
-RDebugUtils.currentLine=524288;
- //BA.debugLineNum = 524288;BA.debugLine="Private Sub rdo05_CheckedChange(Checked As Boolean";
-RDebugUtils.currentLine=524289;
- //BA.debugLineNum = 524289;BA.debugLine="txttotaldiscount.Text = txttotal.Text * 0.05";
+ //BA.debugLineNum = 66;BA.debugLine="Private Sub rdo05_CheckedChange(Checked As Boolean";
+ //BA.debugLineNum = 67;BA.debugLine="txttotaldiscount.Text = txttotal.Text * 0.05";
 mostCurrent._txttotaldiscount.setText(BA.ObjectToCharSequence((double)(Double.parseDouble(mostCurrent._txttotal.getText()))*0.05));
-RDebugUtils.currentLine=524290;
- //BA.debugLineNum = 524290;BA.debugLine="txtdiscountedprice.Text = txttotal.Text - txttota";
+ //BA.debugLineNum = 68;BA.debugLine="txtdiscountedprice.Text = txttotal.Text - txttota";
 mostCurrent._txtdiscountedprice.setText(BA.ObjectToCharSequence((double)(Double.parseDouble(mostCurrent._txttotal.getText()))-(double)(Double.parseDouble(mostCurrent._txttotaldiscount.getText()))));
-RDebugUtils.currentLine=524292;
- //BA.debugLineNum = 524292;BA.debugLine="End Sub";
+ //BA.debugLineNum = 70;BA.debugLine="End Sub";
 return "";
 }
 public static String  _rdo10_checkedchange(boolean _checked) throws Exception{
-RDebugUtils.currentModule="main";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "rdo10_checkedchange", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "rdo10_checkedchange", new Object[] {_checked}));}
-RDebugUtils.currentLine=458752;
- //BA.debugLineNum = 458752;BA.debugLine="Private Sub rdo10_CheckedChange(Checked As Boolean";
-RDebugUtils.currentLine=458753;
- //BA.debugLineNum = 458753;BA.debugLine="txttotaldiscount.Text = txttotal.Text * 1";
-mostCurrent._txttotaldiscount.setText(BA.ObjectToCharSequence((double)(Double.parseDouble(mostCurrent._txttotal.getText()))*1));
-RDebugUtils.currentLine=458754;
- //BA.debugLineNum = 458754;BA.debugLine="txtdiscountedprice.Text = txttotal.Text - txttota";
+ //BA.debugLineNum = 60;BA.debugLine="Private Sub rdo10_CheckedChange(Checked As Boolean";
+ //BA.debugLineNum = 61;BA.debugLine="txttotaldiscount.Text = txttotal.Text *0.1";
+mostCurrent._txttotaldiscount.setText(BA.ObjectToCharSequence((double)(Double.parseDouble(mostCurrent._txttotal.getText()))*0.1));
+ //BA.debugLineNum = 62;BA.debugLine="txtdiscountedprice.Text = txttotal.Text - txttota";
 mostCurrent._txtdiscountedprice.setText(BA.ObjectToCharSequence((double)(Double.parseDouble(mostCurrent._txttotal.getText()))-(double)(Double.parseDouble(mostCurrent._txttotaldiscount.getText()))));
-RDebugUtils.currentLine=458756;
- //BA.debugLineNum = 458756;BA.debugLine="End Sub";
+ //BA.debugLineNum = 64;BA.debugLine="End Sub";
 return "";
 }
 public static String  _rdo20_checkedchange(boolean _checked) throws Exception{
-RDebugUtils.currentModule="main";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "rdo20_checkedchange", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "rdo20_checkedchange", new Object[] {_checked}));}
-RDebugUtils.currentLine=393216;
- //BA.debugLineNum = 393216;BA.debugLine="Private Sub rdo20_CheckedChange(Checked As Boolean";
-RDebugUtils.currentLine=393217;
- //BA.debugLineNum = 393217;BA.debugLine="txttotaldiscount.Text = txttotal.Text * 2";
-mostCurrent._txttotaldiscount.setText(BA.ObjectToCharSequence((double)(Double.parseDouble(mostCurrent._txttotal.getText()))*2));
-RDebugUtils.currentLine=393218;
- //BA.debugLineNum = 393218;BA.debugLine="txtdiscountedprice.Text = txttotal.Text - txttota";
+ //BA.debugLineNum = 54;BA.debugLine="Private Sub rdo20_CheckedChange(Checked As Boolean";
+ //BA.debugLineNum = 55;BA.debugLine="txttotaldiscount.Text = txttotal.Text * 0.2";
+mostCurrent._txttotaldiscount.setText(BA.ObjectToCharSequence((double)(Double.parseDouble(mostCurrent._txttotal.getText()))*0.2));
+ //BA.debugLineNum = 56;BA.debugLine="txtdiscountedprice.Text = txttotal.Text - txttota";
 mostCurrent._txtdiscountedprice.setText(BA.ObjectToCharSequence((double)(Double.parseDouble(mostCurrent._txttotal.getText()))-(double)(Double.parseDouble(mostCurrent._txttotaldiscount.getText()))));
-RDebugUtils.currentLine=393220;
- //BA.debugLineNum = 393220;BA.debugLine="End Sub";
+ //BA.debugLineNum = 58;BA.debugLine="End Sub";
 return "";
 }
 }
